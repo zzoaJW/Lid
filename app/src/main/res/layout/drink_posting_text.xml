@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lid_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_finish"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/black"
+                android:text="등록"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/font_gray"
+                android:text="취소"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintEnd_toStartOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_drink_date" />
+
+            <TextView
+                android:id="@+id/txt_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="테이스팅 노트"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+            <EditText
+                android:id="@+id/tasting_note"
+                android:layout_width="0dp"
+                android:layout_height="450dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="top"
+                android:padding="15dp"
+                android:textColor="@color/font_default"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_text" />
+
+            <Button
+                android:id="@+id/btn_drink_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="#00ff0000"
+                android:text="2022.11.10"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/img_drink_date"
+                app:layout_constraintStart_toEndOf="@+id/img_drink_date"
+                app:layout_constraintTop_toTopOf="@+id/img_drink_date" />
+
+            <EditText
+                android:id="@+id/drink_place"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:singleLine="true"
+                android:backgroundTint="@color/font_gray"
+                android:maxLength="20"
+                android:padding="10dp"
+                android:hint="장소"
+                android:textColorHint="@color/font_gray"
+                android:gravity="left"
+                android:textColor="@color/font_default"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_drink_place"
+                app:layout_constraintStart_toEndOf="@+id/img_drink_place"
+                app:layout_constraintTop_toTopOf="@+id/img_drink_place" />
+
+            <ImageView
+                android:id="@+id/img_drink_date"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="@+id/img_drink_place"
+                app:layout_constraintTop_toBottomOf="@+id/img_drink_place"
+                app:srcCompat="@drawable/pencil" />
+
+            <ImageView
+                android:id="@+id/img_drink_place"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="@+id/switch_drink_keep"
+                app:layout_constraintTop_toBottomOf="@+id/switch_drink_keep"
+                app:srcCompat="@drawable/place" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:numStars="5"
+                android:progressTint="@color/lime"
+                android:progressBackgroundTint="@color/font_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <ImageView
+                android:id="@+id/posting_drink_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bottle" />
+
+            <TextView
+                android:id="@+id/posting_drink_kr_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="한글 술 이름"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/posting_drink_img"
+                app:layout_constraintStart_toEndOf="@+id/posting_drink_img"
+                app:layout_constraintTop_toTopOf="@+id/posting_drink_img" />
+
+            <TextView
+                android:id="@+id/posting_drink_eng_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="영문 술 이름"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toTopOf="@+id/posting_drink_kr_name"
+                app:layout_constraintStart_toStartOf="@+id/posting_drink_kr_name" />
+
+            <TextView
+                android:id="@+id/posting_drink_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="술 종류"
+                android:textSize="12dp"
+                android:textColor="@color/font_gray"
+                app:layout_constraintStart_toStartOf="@+id/posting_drink_kr_name"
+                app:layout_constraintTop_toBottomOf="@+id/posting_drink_kr_name" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/font_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/posting_drink_img" />
+
+            <Switch
+                android:id="@+id/switch_drink_keep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:thumbTint="@color/black"
+                android:trackTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tasting_note" />
+
+            <TextView
+                android:id="@+id/txt_drink_keep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="개봉 후 보관 안함"
+                android:visibility="invisible"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/switch_drink_keep"
+                app:layout_constraintStart_toEndOf="@+id/switch_drink_keep"
+                app:layout_constraintTop_toTopOf="@+id/switch_drink_keep" />
+
+            <Button
+                android:id="@+id/drink_keep_date"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="#00ff0000"
+                android:text="개봉일 선택"
+                android:textColor="@color/font_default"
+                android:textSize="15sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/switch_drink_keep"
+                app:layout_constraintStart_toEndOf="@+id/switch_drink_keep"
+                app:layout_constraintTop_toTopOf="@+id/switch_drink_keep" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

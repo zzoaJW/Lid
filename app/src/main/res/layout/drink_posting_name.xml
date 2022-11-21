@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lid_background">
+
+    <EditText
+        android:id="@+id/input_drink_kr_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:hint="한글 이름을 작성해주세요"
+        android:singleLine="true"
+        android:textColor="@color/font_default"
+        android:textColorHint="@color/font_gray"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input_drink_eng_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:hint="영문 이름을 작성해주세요"
+        android:singleLine="true"
+        android:textColor="@color/font_default"
+        android:textColorHint="@color/font_gray"
+        app:layout_constraintBottom_toTopOf="@+id/input_drink_kr_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="다음 단계"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_drink_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_drink_kr_name">
+
+        <RadioButton
+            android:id="@+id/radio_btn_wiskey"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/selector_background_drink_type"
+            android:button="@null"
+            android:gravity="center"
+            android:text="위스키"
+            android:textColor="@drawable/selector_txt_drink_type" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_wine"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/selector_background_drink_type"
+            android:button="@null"
+            android:gravity="center"
+            android:text="와인"
+            android:textColor="@drawable/selector_txt_drink_type" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_beer"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/selector_background_drink_type"
+            android:button="@null"
+            android:gravity="center"
+            android:text="맥주"
+            android:textColor="@drawable/selector_txt_drink_type" />
+
+        <RadioButton
+            android:id="@+id/radio_btn_etc"
+            android:layout_width="75dp"
+            android:layout_height="30dp"
+            android:background="@drawable/selector_background_drink_type"
+            android:button="@null"
+            android:gravity="center"
+            android:text="기타"
+            android:textColor="@drawable/selector_txt_drink_type" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit_txt_etc_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/font_default"
+        android:gravity="center"
+        android:singleLine="true"
+        android:hint="종류를 작성해주세요"
+        android:textColorHint="@color/font_gray"
+        android:textSize="15dp"
+        android:background="@drawable/edittext_background"
+        android:paddingVertical="10dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/radio_group_drink_type"
+        app:layout_constraintStart_toStartOf="@+id/radio_group_drink_type"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_drink_type" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#00ff0000"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

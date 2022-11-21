@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/lid_background">
+
+    <ImageButton
+        android:id="@+id/btn_back_beer"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#00ff0000"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="한글 술 이름"
+        android:textColor="@color/font_default"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="63dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="영문 술 이름"
+        android:textColor="@color/font_default"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="술 종류"
+        android:textColor="@color/font_gray"
+        android:textSize="12dp"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="116dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

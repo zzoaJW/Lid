@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/bottom_menu_select_color.xml" value="0.139" />
+        <entry key="app/src/main/res/drawable/btn_down_background.xml" value="0.1935" />
+        <entry key="app/src/main/res/drawable/btn_up_background.xml" value="0.1935" />
+        <entry key="app/src/main/res/drawable/drink_spinner.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/edittext_background.xml" value="0.199" />
+        <entry key="app/src/main/res/drawable/edittext_background_etc_type.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/item_drink_list_background.xml" value="0.123" />
+        <entry key="app/src/main/res/drawable/selector_background_drink_type.xml" value="0.199" />
+        <entry key="app/src/main/res/drawable/selector_drink_type.xml" value="0.3085" />
+        <entry key="app/src/main/res/drawable/selector_o_round_bacground_drink_type.xml" value="0.123" />
+        <entry key="app/src/main/res/drawable/selector_round_background_drink_type.xml" value="0.199" />
+        <entry key="app/src/main/res/drawable/selector_txt_drink_type.xml" value="0.3085" />
+        <entry key="app/src/main/res/drawable/selector_x_round_bacground_drink_type.xml" value="0.199" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/drink_info.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/drink_posting.xml" value="0.29266473679315474" />
+        <entry key="app/src/main/res/layout/drink_posting_img.xml" value="0.28377532958984375" />
+        <entry key="app/src/main/res/layout/drink_posting_name.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/drink_posting_note_beer.xml" value="0.30738489060174856" />
+        <entry key="app/src/main/res/layout/drink_posting_select_note.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/drink_posting_text.xml" value="0.3129370629370629" />
+        <entry key="app/src/main/res/layout/drink_spinner.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/drink_spinner_txt.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/drink_tasting_note.xml" value="0.33997883168301835" />
+        <entry key="app/src/main/res/layout/item_drink_list.xml" value="0.4006134033203125" />
+        <entry key="app/src/main/res/layout/life_is_drink.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/main_drinks.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/main_fragment_calendar.xml" value="0.29782877669166835" />
+        <entry key="app/src/main/res/layout/main_fragment_drinks.xml" value="0.24861145019531253" />
+        <entry key="app/src/main/res/layout/main_fragment_user.xml" value="0.23820767923824943" />
+        <entry key="app/src/main/res/layout/splash.xml" value="0.3239263463903357" />
+        <entry key="app/src/main/res/layout/user_help.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/user_letter.xml" value="0.2967601957775298" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

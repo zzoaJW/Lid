@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lid_background">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이미지를 선택해주세요"
+        android:textColor="@color/font_gray"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_img" />
+
+    <Button
+        android:id="@+id/btn_next2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="다음 단계"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_get_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/selector_background_drink_type"
+        android:text="갤러리에서 가져오기"
+        android:minHeight="0dp"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/font_default"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_back_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_back_2" />
+
+    <ImageButton
+        android:id="@+id/btn_back_2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#00ff0000"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/galley_pic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_img"
+        app:srcCompat="@drawable/transparency_img" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
