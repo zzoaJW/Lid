@@ -1,4 +1,4 @@
 # Lid
-## Life is Drink
+Life is Drink!
 
 🪸
