@@ -45,7 +45,7 @@ class MainFragmentDrinks: Fragment() {
         adapter!!.listData = recyclerviewData
         binding.drinksRecyclerview.adapter = adapter
         binding.drinksRecyclerview.layoutManager = LinearLayoutManager(activity)
-        binding.drinksRecyclerview.setHasFixedSize(true)
+//        binding.drinksRecyclerview.setHasFixedSize(true)
 
 
         return binding.root

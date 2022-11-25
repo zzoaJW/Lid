@@ -26,12 +26,7 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(listData[position], position)
 
-        holder.itemView.setOnClickListener {
-            val context=holder.itemView.context
-            val intent = Intent( context, DrinkTastingNote::class.java)
-            intent.putExtra("drinkId", listData[position].drinkId)
-            context.startActivity(intent)
-        }
+        // 투두 : 마지막 item의 그림자가 짤림. (position == listData.size -1) 일떄 itemView Height 늘려주기
 
     }
     //넣을 데이터는 몇 개인지(몇 개의 list를 만들 건지)
@@ -56,6 +51,16 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
             itemDrinkListBinding.itemListDrinkType.text = content.drinkType
             itemDrinkListBinding.itemListRating.text = content.drinkRating.toString()
             itemDrinkListBinding.itemListDrinkImg.setImageURI(Uri.parse(content.drinkImg))
+
+
+            itemView.setOnClickListener {
+                val context=itemView.context
+                val intent = Intent( context, DrinkTastingNote::class.java)
+                intent.putExtra("drinkId", listData[position].drinkId)
+                context.startActivity(intent)
+            }
+
+            itemView.elevation = 10F
         }
     }
 

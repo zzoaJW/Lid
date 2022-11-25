@@ -47,7 +47,7 @@ class MainFragmentCalendar: Fragment() {
         adapter!!.listData = recyclerviewData
         binding.focusDateDrinksRecyclerview.adapter = adapter
         binding.focusDateDrinksRecyclerview.layoutManager = LinearLayoutManager(activity)
-        binding.focusDateDrinksRecyclerview.setHasFixedSize(true)
+//        binding.focusDateDrinksRecyclerview.setHasFixedSize(true)
 
         // 날짜 누를때마다 바꿔주기
         binding.calendarView.setOnDateChangeListener { calendarView, y, m, d ->
