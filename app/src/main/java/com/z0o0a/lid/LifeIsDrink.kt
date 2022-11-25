@@ -129,7 +129,7 @@ class LifeIsDrink : AppCompatActivity() {
         binding.radarChart.getLegend().setEnabled(false)
         // 세로 값 보여줄건지 설정
         binding.radarChart.yAxis.setDrawLabels(false)
-        // 1-2-3-4-5로 만들기
+        // 1-2-3-4-5로 만들기 (는 내가 생각한거랑은 조금 다르게 나왔지만.. 대충 비슷함)
         binding.radarChart.getYAxis().setLabelCount(5)
         binding.radarChart.getYAxis().setAxisMaxValue(5F)
         binding.radarChart.getYAxis().setAxisMinValue(1F)
