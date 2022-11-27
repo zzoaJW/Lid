@@ -37,7 +37,13 @@ class MainFragmentUser: Fragment() {
             }
 
             // 엥 이거도 쓰레드 안에서는 되네..? 나중에 리팩토링 ㄱㄱ
-            pieChart()
+            if (!drinkNumOfTypes.isEmpty()) {
+                pieChart()
+            }else{
+//                binding.pieChart.setNoDataText("기록을 추가해주세요")
+//                binding.pieChart.setNoDataTextColor(Color.rgb(200, 200, 200))
+                binding.pieChart.visibility = View.GONE
+            }
 
         }).start()
 
@@ -54,8 +60,12 @@ class MainFragmentUser: Fragment() {
         }
 
         binding.btnLid.setOnClickListener {
+            // 개발 다 하고 이거 지우고 아래로 바꾸기
             var intent = Intent(context, LifeIsDrink::class.java)
             startActivity(intent)
+
+//            var intent = Intent(context, OpenLicenseList::class.java)
+//            startActivity(intent)
         }
 
         binding.btnDeveloperLetter.setOnClickListener {
@@ -105,6 +115,7 @@ class MainFragmentUser: Fragment() {
         binding.pieChart.getLegend().setEnabled(false)
         binding.pieChart.description.text = ""
         // 데이터가 없을때 나올 문장
-//        binding.pieChart.setNoDataText("")
+//        binding.pieChart.setNoDataText("add plz")
+//        binding.pieChart.setNoDataTextColor(Color.rgb(82, 97, 80))
     }
 }

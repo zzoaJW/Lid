@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="문의하기"
+        android:text="고객센터"
         android:textColor="@color/font_default"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -77,7 +77,6 @@
         android:lineSpacingExtra="5dp"
         android:text="* 메일 제목에 [LiD 문의]를 기입해 주셔야 정상 접수됩니다.\n* 사진을 첨부해 주시면 정확한 답변을 받으실 수 있습니다."
         android:textColor="@color/font_gray"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_copy_mail" />
 

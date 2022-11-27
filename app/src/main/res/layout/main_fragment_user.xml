@@ -34,16 +34,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <Button
-                android:id="@+id/btn_001"
+                android:id="@+id/btn_table_del"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/btn_up_background"
+                android:background="@drawable/btn_background"
                 android:gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="종류"
+                android:text="라이브러리 전체 삭제"
                 android:textColor="@color/font_default"
                 android:textSize="15dp"
                 android:textStyle="bold"
@@ -69,24 +69,7 @@
                 app:layout_constraintStart_toStartOf="@+id/btn_developer_letter"
                 app:layout_constraintTop_toBottomOf="@+id/btn_developer_letter" />
 
-            <Button
-                android:id="@+id/btn_002"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="1dp"
-                android:background="@drawable/btn_down_background"
-                android:gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:text="별점"
-                android:textColor="@color/font_default"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/btn_001"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/btn_001"
-                app:layout_constraintTop_toBottomOf="@+id/btn_001" />
-
-    <View
+            <View
         android:id="@+id/view8"
         android:layout_width="0dp"
         android:layout_height="5dp"
@@ -96,26 +79,16 @@
         app:layout_constraintStart_toStartOf="@+id/btn_developer_letter"
         app:layout_constraintTop_toTopOf="@+id/btn_developer_letter" />
 
-    <View
-        android:id="@+id/view9"
-        android:layout_width="0dp"
-        android:layout_height="5dp"
-        android:background="#E8E8E8"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_002"
-        app:layout_constraintEnd_toEndOf="@+id/btn_001"
-        app:layout_constraintStart_toStartOf="@+id/btn_001"
-        app:layout_constraintTop_toTopOf="@+id/btn_001" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:text="Life is Drink"
-        android:textColor="@color/font_gray"
-        app:layout_constraintStart_toStartOf="@+id/btn_developer_letter"
-        app:layout_constraintTop_toBottomOf="@+id/btn_002" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:text="Life is Drink"
+                android:textColor="@color/font_gray"
+                app:layout_constraintStart_toStartOf="@+id/btn_developer_letter"
+                app:layout_constraintTop_toBottomOf="@+id/btn_table_del" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -125,7 +98,7 @@
                 android:layout_marginTop="50dp"
                 android:text="라이브러리"
                 android:textColor="@color/font_gray"
-                app:layout_constraintStart_toStartOf="@+id/btn_001"
+                app:layout_constraintStart_toStartOf="@+id/btn_table_del"
                 app:layout_constraintTop_toBottomOf="@+id/pie_chart" />
 
             <Button
@@ -155,20 +128,10 @@
         android:layout_height="15dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/back_2"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_001"
-        app:layout_constraintEnd_toEndOf="@+id/btn_001"
-        app:layout_constraintTop_toTopOf="@+id/btn_001"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_table_del"
+        app:layout_constraintEnd_toEndOf="@+id/btn_table_del"
+        app:layout_constraintTop_toTopOf="@+id/btn_table_del"
         app:layout_constraintVertical_bias="0.525" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/back_2"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_002"
-                app:layout_constraintEnd_toEndOf="@+id/btn_002"
-                app:layout_constraintTop_toTopOf="@+id/btn_002" />
 
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/pie_chart"
@@ -186,16 +149,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_lid" />
-
-            <Button
-                android:id="@+id/btn_table_del"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
-                android:text="DB clear"
-                app:layout_constraintBottom_toTopOf="@+id/btn_developer_letter"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_002" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
