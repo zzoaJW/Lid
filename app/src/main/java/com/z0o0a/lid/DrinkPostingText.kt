@@ -31,9 +31,6 @@ class DrinkPostingText : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
-
-
         setDrinkImgNameType()
         binding.postingDrinkImg.setImageURI(Uri.parse(drinkImg))
 

@@ -34,24 +34,24 @@
         android:id="@+id/note_drink_eng_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:text="영문 술 이름"
         android:textColor="@color/font_default"
-        app:layout_constraintStart_toStartOf="@+id/note_drink_kr_name"
-        app:layout_constraintTop_toBottomOf="@+id/note_drink_kr_name" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/note_drink_img" />
 
     <TextView
         android:id="@+id/note_drink_kr_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="2dp"
         android:text="한글 술 이름"
         android:textColor="@color/font_default"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/note_drink_img" />
+        app:layout_constraintStart_toStartOf="@+id/note_drink_eng_name"
+        app:layout_constraintTop_toBottomOf="@+id/note_drink_eng_name" />
 
     <TextView
         android:id="@+id/note_drink_rating"
@@ -113,8 +113,8 @@
         android:layout_marginTop="5dp"
         android:text="술 종류"
         android:textColor="@color/font_gray"
-        app:layout_constraintStart_toStartOf="@+id/note_drink_kr_name"
-        app:layout_constraintTop_toBottomOf="@+id/note_drink_eng_name" />
+        app:layout_constraintStart_toStartOf="@+id/note_drink_eng_name"
+        app:layout_constraintTop_toBottomOf="@+id/note_drink_kr_name" />
 
     <ImageButton
         android:id="@+id/note_btn_back"
@@ -151,6 +151,7 @@
         android:padding="10dp"
         android:scaleType="fitCenter"
         android:tint="@color/font_gray"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/btn_drink_del"
         app:layout_constraintEnd_toStartOf="@+id/btn_drink_del"
         app:layout_constraintTop_toTopOf="@+id/btn_drink_del"
@@ -164,7 +165,7 @@
         android:text="★"
         android:textColor="@color/lime"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/note_drink_kr_name"
+        app:layout_constraintStart_toStartOf="@+id/note_drink_eng_name"
         app:layout_constraintTop_toBottomOf="@+id/note_drink_type" />
 
     <ImageView

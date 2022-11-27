@@ -26,8 +26,12 @@ class MainFragmentDrinks: Fragment() {
             var drinks = db!!.drinkDao().getAllRecyclerviewData()
             allNum = db!!.drinkDao().getAllNum()
 
-            // 엥 이게 되네?? 하지만 나중에 꼭 쓰레드 밖으로 꺼내자
-            binding.totalDrink.text = "${allNum}잔의 기록"
+            if (!drinks.isEmpty()) {
+                // 엥 이게 되네?? 하지만 나중에 꼭 쓰레드 밖으로 꺼내자
+                binding.totalDrink.text = "${allNum}잔의 기록"
+            } else{
+                binding.totalDrink.text = "기록이 없습니다"
+            }
 
             if (!drinks.isEmpty()){
                 drinks.forEach { drink ->

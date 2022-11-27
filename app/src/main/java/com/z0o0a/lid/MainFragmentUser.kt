@@ -1,5 +1,7 @@
 package com.z0o0a.lid
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -51,16 +53,11 @@ class MainFragmentUser: Fragment() {
 //        pieChart()
 
         binding.btnTableDel.setOnClickListener {
-            // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
-            Thread(Runnable {
-                val db = DrinkDatabase.getInstance(requireContext())
-
-                db!!.drinkDao().deleteTable()
-            }).start()
+            cancelConfirm()
         }
 
         binding.btnLid.setOnClickListener {
-            // 개발 다 하고 이거 지우고 아래로 바꾸기
+            // TODO : 개발 다 하고 이거 지우고 아래로 바꾸기
             var intent = Intent(context, LifeIsDrink::class.java)
             startActivity(intent)
 
@@ -117,5 +114,28 @@ class MainFragmentUser: Fragment() {
         // 데이터가 없을때 나올 문장
 //        binding.pieChart.setNoDataText("add plz")
 //        binding.pieChart.setNoDataTextColor(Color.rgb(82, 97, 80))
+    }
+
+    fun cancelConfirm(){
+        AlertDialog.Builder(context)
+            .setTitle("전체 기록을 삭제하시겠습니까?")
+            .setPositiveButton("네", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
+                    Thread(Runnable {
+                        val db = DrinkDatabase.getInstance(requireContext())
+                        db!!.drinkDao().deleteTable()
+                    }).start()
+
+                    binding.pieChart.visibility = View.GONE
+                }
+            })
+            .setNegativeButton("아니오", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    dialog.dismiss()
+                }
+            })
+            .create()
+            .show()
     }
 }
