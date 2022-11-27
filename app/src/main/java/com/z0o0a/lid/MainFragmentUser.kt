@@ -35,9 +35,14 @@ class MainFragmentUser: Fragment() {
                     drinkNumOfTypeList.add(drinkNumOfType)
                 }
             }
+
+            // 엥 이거도 쓰레드 안에서는 되네..? 나중에 리팩토링 ㄱㄱ
+            pieChart()
+
         }).start()
 
-        pieChart()
+        // 엥 이거도 쓰레드 안에서는 되네..? 나중에 리팩토링 ㄱㄱ
+//        pieChart()
 
         binding.btnTableDel.setOnClickListener {
             // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
@@ -70,7 +75,7 @@ class MainFragmentUser: Fragment() {
 //        yValues.add(PieEntry(30f, "temp3"))
 
         drinkNumOfTypeList.forEach { drinkNumOfType ->
-            yValues.add(PieEntry(drinkNumOfType.drinkTypeCnt.toFloat()))
+            yValues.add(PieEntry(drinkNumOfType.drinkTypeCnt.toFloat(), drinkNumOfType.drinkType))
         }
         return yValues
     }

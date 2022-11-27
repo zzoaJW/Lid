@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 android:text="라이브러리"
                 android:textColor="@color/font_gray"
                 app:layout_constraintStart_toStartOf="@+id/btn_001"
@@ -192,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="50dp"
-                android:text="Button"
+                android:text="DB clear"
                 app:layout_constraintBottom_toTopOf="@+id/btn_developer_letter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_002" />
