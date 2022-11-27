@@ -25,9 +25,6 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
     //생성된 뷰안에 어떤 데이터를 넣을 건지
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(listData[position], position)
-
-        // 투두 : 마지막 item의 그림자가 짤림. (position == listData.size -1) 일떄 itemView Height 늘려주기
-
     }
     //넣을 데이터는 몇 개인지(몇 개의 list를 만들 건지)
     override fun getItemCount(): Int {

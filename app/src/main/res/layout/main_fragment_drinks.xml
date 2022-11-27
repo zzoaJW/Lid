@@ -30,6 +30,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
+        android:paddingBottom="15dp"
+        android:clipToPadding="false"
         tools:listitem="@layout/item_drink_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
