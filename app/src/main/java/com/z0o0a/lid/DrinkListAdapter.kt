@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.z0o0a.lid.databinding.ItemDrinkListBinding
+import java.lang.Exception
 
 class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
     private lateinit var itemDrinkListBinding: ItemDrinkListBinding
@@ -52,9 +54,15 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
 
             itemView.setOnClickListener {
                 val context=itemView.context
-                val intent = Intent( context, DrinkTastingNote::class.java)
-                intent.putExtra("drinkId", listData[position].drinkId)
-                context.startActivity(intent)
+
+                // 사실 이 버그의 원인은 액티비티가 넘어간 뒤, 삭제된 정보를 가져오기때문이라 이렇게 예외처리하면 안됨..
+                try {
+                    val intent = Intent( context, DrinkTastingNote::class.java)
+                    intent.putExtra("drinkId", listData[position].drinkId)
+                    context.startActivity(intent)
+                } catch (e:Exception){
+                    Toast.makeText(context, "삭제된 기록입니다.",Toast.LENGTH_SHORT).show()
+                }
             }
 
             itemView.elevation = 10F
