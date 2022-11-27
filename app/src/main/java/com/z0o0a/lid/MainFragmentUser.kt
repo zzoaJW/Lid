@@ -39,6 +39,15 @@ class MainFragmentUser: Fragment() {
 
         pieChart()
 
+        binding.btnTableDel.setOnClickListener {
+            // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
+            Thread(Runnable {
+                val db = DrinkDatabase.getInstance(requireContext())
+
+                db!!.drinkDao().deleteTable()
+            }).start()
+        }
+
         binding.btnLid.setOnClickListener {
             var intent = Intent(context, LifeIsDrink::class.java)
             startActivity(intent)

@@ -16,6 +16,9 @@ interface DrinkDao {
     @Query("DELETE FROM Drink")
     fun deleteTable(): Int
 
+    @Query("SELECT COUNT(*) FROM Drink")
+    fun getAllNum(): Int
+
     // 종류별 갯수 : user 페이지의 파이 차트에 넣을 데이터
     @Query("SELECT drinkType, COUNT(drinkType) AS drinkTypeCnt FROM Drink GROUP BY drinkType")
     fun getNumOfEachType(): List<DrinkNumOfType>

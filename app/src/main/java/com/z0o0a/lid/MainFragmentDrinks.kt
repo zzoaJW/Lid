@@ -14,6 +14,7 @@ class MainFragmentDrinks: Fragment() {
 
     private val recyclerviewData : MutableList<DrinkListData> = mutableListOf()
     private var adapter : DrinkListAdapter? = null
+    private var allNum = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = MainFragmentDrinksBinding.inflate(inflater, container, false)
@@ -23,6 +24,10 @@ class MainFragmentDrinks: Fragment() {
             val db = DrinkDatabase.getInstance(requireContext())
 
             var drinks = db!!.drinkDao().getAllRecyclerviewData()
+            allNum = db!!.drinkDao().getAllNum()
+
+            // 엥 이게 되네??
+            binding.totalDrink.text = "${allNum}잔의 기록"
 
             if (!drinks.isEmpty()){
                 drinks.forEach { drink ->
@@ -31,9 +36,9 @@ class MainFragmentDrinks: Fragment() {
             }
         }).start()
 
-        // 왜 안되지..
-//        binding.totalDrink.setText("${recyclerviewData.size} 잔의 기록")
-        binding.totalDrink.setText("Life is Drink")
+        // 왜 안되지.. 일단 쓰레드에서 저렇게 하기 ^^.. 나중에 리팩토링 ㄱㄱ
+//        binding.totalDrink.text = "${allNum} 잔의 기록"
+//        binding.totalDrink.setText("Life is Drink")
 
         binding.btnPosting.setOnClickListener {
             val intent = Intent(context, DrinkPostingName::class.java)

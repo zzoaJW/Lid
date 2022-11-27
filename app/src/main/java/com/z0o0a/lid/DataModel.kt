@@ -36,3 +36,7 @@ data class FlavorWheel (
     var flavorRating : Float,
     var flavorName : String
 )
+
+data class AllNum (
+    var allNum : Int
+)
