@@ -33,7 +33,7 @@ class DrinkTastingNote  : AppCompatActivity() {
             binding.noteDrinkKrName.setText(drink?.drinkKrName)
             binding.noteDrinkType.setText(drink?.drinkType)
             binding.noteDrinkRating.setText(drink?.drinkRating.toString())
-            binding.noteDrinkTasting.setText(drink?.drinkTasting)
+            binding.noteDrinkTasting.setText(drink?.drinkOverallStr)
             binding.noteDrinkKeepDate.setText(drink?.drinkKeepDate)
             binding.noteDrinkPlace.setText(drink?.drinkPlace)
             binding.noteDrinkPostingDate.setText(drink?.drinkPostingDate)
@@ -67,7 +67,7 @@ class DrinkTastingNote  : AppCompatActivity() {
                     // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
                     Thread(Runnable {
                         val db = DrinkDatabase.getInstance(applicationContext)
-                        db!!.drinkDao().delete(drink)
+                        db!!.drinkDao().deleteDrink(drink)
                     }).start()
 
                     // 메인 화면으로 돌아가기

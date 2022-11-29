@@ -20,7 +20,9 @@ class DrinkPostingText : AppCompatActivity() {
 
     var drinkImg : String = ""
     var drinkRating : Float = 0F
-    var drinkTasting : String = ""
+    var drinkRegion : String = ""
+    var drinkPrice : String = ""
+    var drinkOverallStrRating : String = ""
     var drinkKeepDate : String = ""
     var drinkPlace : String = ""
     var drinkPostingDate : String = ""
@@ -40,9 +42,9 @@ class DrinkPostingText : AppCompatActivity() {
 
         binding.btnFinish.setOnClickListener {
             drinkRating = binding.ratingBar.rating
-            drinkTasting = binding.tastingNote.text.toString()
-            if (drinkTasting == "") {
-                drinkTasting = "-"
+            drinkOverallStrRating = binding.tastingNote.text.toString()
+            if (drinkOverallStrRating == "") {
+                drinkOverallStrRating = "-"
             }
             drinkKeepDate = binding.drinkKeepDate.text.toString()
             if (drinkKeepDate == "개봉일 선택") {
@@ -52,8 +54,16 @@ class DrinkPostingText : AppCompatActivity() {
             if (drinkPlace == "") {
                 drinkPlace = "-"
             }
+            drinkRegion = binding.drinkRegion.text.toString()
+            if (drinkRegion == "") {
+                drinkRegion = "-"
+            }
+            drinkPrice = binding.drinkPrice.text.toString()
+            if (drinkPrice == "") {
+                drinkPrice = "-"
+            }
             drinkPostingDate = binding.btnDrinkDate.text.toString()
-            saveDrink(drinkRating, drinkTasting, drinkKeepDate, drinkPlace, drinkPostingDate)
+            saveDrink(drinkOverallStrRating, drinkRating, drinkRegion, drinkPrice, drinkKeepDate, drinkPlace, drinkPostingDate)
 
             Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
@@ -116,7 +126,7 @@ class DrinkPostingText : AppCompatActivity() {
             .show()
     }
 
-    fun getCurrentDate():String?{
+    fun getCurrentDate():String{
         val now =  System.currentTimeMillis()
         val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
 
@@ -132,23 +142,26 @@ class DrinkPostingText : AppCompatActivity() {
         binding.postingDrinkType.setText(postingSingleton?.drinkType.toString())
     }
 
-    fun saveDrink(rating : Float, tasting : String, keepDate : String, place : String, postingDate : String){
+    fun saveDrink(overallStrRating : String, rating : Float, drinkRegion : String, drinkPrice : String, keepDate : String, place : String, postingDate : String){
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
 
         Thread(Runnable {
             var newDrink = Drink(0,
+                postingSingleton?.drinkImg.toString(),
                 postingSingleton?.drinkEngName.toString(),
                 postingSingleton?.drinkKrName.toString(),
                 postingSingleton?.drinkType.toString(),
+                0,
+                overallStrRating,
                 rating,
-                postingSingleton?.drinkImg.toString(),
-                tasting,
+                drinkRegion,
+                drinkPrice,
                 keepDate,
                 place,
                 postingDate)
 
             val db = DrinkDatabase.getInstance(applicationContext)
-            db!!.drinkDao().insert(newDrink)
+            db!!.drinkDao().insertDrink(newDrink)
         }).start()
     }
 }

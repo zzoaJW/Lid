@@ -14,7 +14,7 @@ class MainFragmentDrinks: Fragment() {
 
     private val recyclerviewData : MutableList<DrinkListData> = mutableListOf()
     private var adapter : DrinkListAdapter? = null
-    private var allNum = 0
+    private var allDrinkNum = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = MainFragmentDrinksBinding.inflate(inflater, container, false)
@@ -24,11 +24,11 @@ class MainFragmentDrinks: Fragment() {
             val db = DrinkDatabase.getInstance(requireContext())
 
             var drinks = db!!.drinkDao().getAllRecyclerviewData()
-            allNum = db!!.drinkDao().getAllNum()
+            allDrinkNum = db!!.drinkDao().getDrinkAllNum()
 
             if (!drinks.isEmpty()) {
                 // 엥 이게 되네?? 하지만 나중에 꼭 쓰레드 밖으로 꺼내자
-                binding.totalDrink.text = "${allNum}잔의 기록"
+                binding.totalDrink.text = "${allDrinkNum}잔의 기록"
             } else{
                 binding.totalDrink.text = "기록이 없습니다"
             }

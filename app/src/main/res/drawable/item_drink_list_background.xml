@@ -8,7 +8,7 @@
         android:topRightRadius="10dp"/>
     <stroke
         android:width="1dp"
-        android:color="#F1F1F1"/>
+        android:color="@color/lid_background"/>
     <solid
         android:color="@color/white"/>
 

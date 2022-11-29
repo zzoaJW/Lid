@@ -36,7 +36,7 @@ class LifeIsDrink : AppCompatActivity() {
         Thread(Runnable {
             val db = DrinkDatabase.getInstance(applicationContext)
 
-            var arr = db!!.drinkDao().getAll()
+            var arr = db!!.drinkDao().getDrinkAll()
 
             var result = "데이터가 없어용"
 

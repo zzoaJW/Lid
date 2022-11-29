@@ -77,10 +77,6 @@ class MainFragmentUser: Fragment() {
     private fun pieChartData(): ArrayList<PieEntry>?{
         val yValues = ArrayList<PieEntry>()
 
-//        yValues.add(PieEntry(10f, "temp"))
-//        yValues.add(PieEntry(20f, "temp2"))
-//        yValues.add(PieEntry(30f, "temp3"))
-
         drinkNumOfTypeList.forEach { drinkNumOfType ->
             yValues.add(PieEntry(drinkNumOfType.drinkTypeCnt.toFloat(), drinkNumOfType.drinkType))
         }
@@ -124,7 +120,10 @@ class MainFragmentUser: Fragment() {
                     // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
                     Thread(Runnable {
                         val db = DrinkDatabase.getInstance(requireContext())
-                        db!!.drinkDao().deleteTable()
+                        db!!.drinkDao().deleteDrinkTable()
+                        db!!.drinkDao().deleteDrinkWhiskeyTable()
+                        db!!.drinkDao().deleteDrinkWineTable()
+                        db!!.drinkDao().deleteDrinkBeerTable()
                     }).start()
 
                     binding.pieChart.visibility = View.GONE

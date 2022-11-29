@@ -3,6 +3,7 @@ package com.z0o0a.lid
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,24 +46,36 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
         fun setData(content : DrinkListData, position: Int) {
             this.position = position
             itemDrinkListBinding.itemListDrinkId.text = content.drinkId.toString()
-            itemDrinkListBinding.itemListDrinkEngName.text = content.drinkEngName
-            itemDrinkListBinding.itemListDrinkKrName.text = content.drinkKrName
+            itemDrinkListBinding.itemListDrinkImg.setImageURI(Uri.parse(content.drinkImg))
+
+            // 너무 길어지면 ...로 처리
+            if (content.drinkEngName.length > 18) {
+                var too_long_eng_name = content.drinkEngName.slice(0..18) + ".."
+                itemDrinkListBinding.itemListDrinkEngName.text = too_long_eng_name
+            }else {
+                itemDrinkListBinding.itemListDrinkEngName.text = content.drinkEngName
+            }
+
+            if (content.drinkKrName.length > 12) {
+                var too_long_kr_name = content.drinkKrName.slice(0..12) + ".."
+                itemDrinkListBinding.itemListDrinkKrName.text = too_long_kr_name
+            }else {
+                itemDrinkListBinding.itemListDrinkKrName.text = content.drinkKrName
+            }
+
             itemDrinkListBinding.itemListDrinkType.text = content.drinkType
             itemDrinkListBinding.itemListRating.text = content.drinkRating.toString()
-            itemDrinkListBinding.itemListDrinkImg.setImageURI(Uri.parse(content.drinkImg))
 
 
             itemView.setOnClickListener {
                 val context=itemView.context
 
-                // 사실 이 버그의 원인은 액티비티가 넘어간 뒤, 삭제된 정보를 가져오기때문이라 이렇게 예외처리하면 안됨..
-                try {
-                    val intent = Intent( context, DrinkTastingNote::class.java)
-                    intent.putExtra("drinkId", listData[position].drinkId)
-                    context.startActivity(intent)
-                } catch (e:Exception){
-                    Toast.makeText(context, "삭제된 기록입니다.",Toast.LENGTH_SHORT).show()
-                }
+                // 위스키/와인/맥주 넘어가는 화면 다르게하기
+                val intent = Intent( context, DrinkTastingNote::class.java)
+                // 삭제되고 없는 id 넘겨줄려고하면 Toast메시지 띄우기
+                intent.putExtra("drinkId", listData[position].drinkId)
+                Log.d("id넘겨줌", "id는 넣었네")
+                context.startActivity(intent)
             }
 
             itemView.elevation = 10F
