@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_info.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/drink_posting.xml" value="0.29266473679315474" />
+        <entry key="app/src/main/res/layout/drink_posting_guide.xml" value="0.18478260869565216" />
         <entry key="app/src/main/res/layout/drink_posting_img.xml" value="0.28377532958984375" />
         <entry key="app/src/main/res/layout/drink_posting_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/drink_posting_note_beer.xml" value="0.30738489060174856" />
