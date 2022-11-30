@@ -181,7 +181,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="개봉 후 보관 안함"
-                android:visibility="invisible"
                 android:textColor="@color/font_default"
                 app:layout_constraintBottom_toBottomOf="@+id/switch_drink_keep"
                 app:layout_constraintStart_toEndOf="@+id/switch_drink_keep"

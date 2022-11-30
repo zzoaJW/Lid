@@ -13,7 +13,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true">
 
     <ImageButton
         android:id="@+id/btn_whiskey_back"
@@ -35,7 +36,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:text="총평"
-        android:textColor="@color/black"
+        android:textColor="@color/font_default"
+        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/whiskey_ratingBar" />
 
@@ -62,13 +65,13 @@
         android:layout_marginStart="10dp"
         android:backgroundTint="@color/font_gray"
         android:gravity="left"
-        android:hint="장소"
+        android:hint="시음 장소"
         android:maxLength="20"
         android:padding="10dp"
         android:singleLine="true"
         android:textColor="@color/font_default"
         android:textColorHint="@color/font_gray"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_whiskey_place"
         app:layout_constraintStart_toEndOf="@+id/img_whiskey_place"
         app:layout_constraintTop_toTopOf="@+id/img_whiskey_place" />
@@ -77,7 +80,7 @@
                 android:id="@+id/img_whiskey_place"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="@+id/img_whiskey_region"
                 app:layout_constraintTop_toBottomOf="@+id/img_whiskey_price"
@@ -93,7 +96,7 @@
         android:progressTint="@color/lime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cc" />
+        app:layout_constraintTop_toBottomOf="@+id/detail_layout" />
 
             <ImageView
                 android:id="@+id/posting_whiskey_img"
@@ -153,7 +156,6 @@
         android:layout_marginStart="10dp"
         android:text="개봉 후 보관 안함"
         android:textColor="@color/font_default"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/switch_whiskey_keep"
         app:layout_constraintStart_toEndOf="@+id/switch_whiskey_keep"
         app:layout_constraintTop_toTopOf="@+id/switch_whiskey_keep" />
@@ -165,22 +167,21 @@
         android:layout_marginStart="10dp"
         android:background="#00ff0000"
         android:text="개봉일 선택"
+        android:visibility="invisible"
         android:textColor="@color/font_default"
         android:textSize="15sp"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/switch_whiskey_keep"
         app:layout_constraintStart_toEndOf="@+id/switch_whiskey_keep"
         app:layout_constraintTop_toTopOf="@+id/switch_whiskey_keep" />
 
-    <ImageView
-        android:id="@+id/img_whiskey_price"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        app:layout_constraintStart_toStartOf="@+id/img_whiskey_region"
-        app:layout_constraintTop_toBottomOf="@+id/img_whiskey_region"
-        app:srcCompat="@drawable/won" />
+            <ImageView
+                android:id="@+id/img_whiskey_price"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="@+id/img_whiskey_region"
+                app:layout_constraintTop_toBottomOf="@+id/img_whiskey_region"
+                app:srcCompat="@drawable/won" />
 
     <EditText
         android:id="@+id/whiskey_price"
@@ -195,7 +196,7 @@
         android:singleLine="true"
         android:textColor="@color/font_default"
         android:textColorHint="@color/font_gray"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_whiskey_price"
         app:layout_constraintStart_toEndOf="@+id/img_whiskey_price"
         app:layout_constraintTop_toTopOf="@+id/img_whiskey_price" />
@@ -224,18 +225,19 @@
         android:singleLine="true"
         android:textColor="@color/font_default"
         android:textColorHint="@color/font_gray"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_whiskey_region"
         app:layout_constraintStart_toEndOf="@+id/img_whiskey_region"
         app:layout_constraintTop_toTopOf="@+id/img_whiskey_region" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_whiskey_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:background="#00000000"
         android:text="간편 테이스팅"
+        android:textStyle="bold"
         android:textColor="@color/font_gray"
         app:layout_constraintBottom_toBottomOf="@+id/btn_whiskey_back"
         app:layout_constraintEnd_toEndOf="parent"
@@ -283,7 +285,7 @@
                 app:layout_constraintTop_toTopOf="@+id/view2313" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cc"
+                android:id="@+id/detail_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toBottomOf="@id/view15">
@@ -542,9 +544,9 @@
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="40dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="30dp"
                     android:indeterminateTint="@color/font_default"
                     android:max="6"
                     android:progress="3"
@@ -560,9 +562,9 @@
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="40dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="30dp"
                     android:backgroundTint="@color/font_gray"
                     android:indeterminateTint="@color/font_default"
                     android:max="6"
@@ -579,9 +581,9 @@
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="40dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="30dp"
                     android:backgroundTint="@color/font_gray"
                     android:indeterminateTint="@color/font_default"
                     android:max="6"
@@ -663,11 +665,11 @@
                     android:id="@+id/whiskey_palate_chip_group"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp"
-                    app:chipSpacingHorizontal="15dp"
+                    android:layout_marginEnd="30dp"
                     android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                    app:chipSpacingHorizontal="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_whiskey_palate">
@@ -676,65 +678,66 @@
                         android:id="@+id/whiskey_palate_chip_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="단맛"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_palate_chip_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="신맛"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_palate_chip_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="쓴맛"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_palate_chip_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="짠맛"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_palate_chip_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="떫은맛"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
+
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_palate_chip_plus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="+"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
                 </com.google.android.material.chip.ChipGroup>
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/whiskey_finish_chip_group"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp"
-                    app:chipSpacingHorizontal="15dp"
+                    android:layout_marginEnd="30dp"
                     android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                    app:chipSpacingHorizontal="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_whiskey_finish">
@@ -743,64 +746,64 @@
                         android:id="@+id/whiskey_finish_chip_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="곡물"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_finish_chip_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="과일"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_finish_chip_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="꽃"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_finish_chip_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="나무"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_finish_chip_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="피트"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_finish_chip_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="아로마"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/whiskey_finish_chip_plus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipMinTouchTargetSize="40dp"
                         android:checkable="true"
                         android:text="+"
-                        android:textColor="@color/font_default" />
+                        android:textColor="@color/font_default"
+                        app:chipMinTouchTargetSize="40dp" />
 
                 </com.google.android.material.chip.ChipGroup>
             </androidx.constraintlayout.widget.ConstraintLayout>

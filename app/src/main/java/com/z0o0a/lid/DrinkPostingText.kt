@@ -71,7 +71,6 @@ class DrinkPostingText : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.txtDrinkKeep.visibility = View.VISIBLE
         binding.switchDrinkKeep.setOnClickListener {
             if (binding.txtDrinkKeep.isVisible) {
                 binding.txtDrinkKeep.visibility = View.INVISIBLE

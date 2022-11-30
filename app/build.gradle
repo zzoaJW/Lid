@@ -63,4 +63,5 @@ dependencies {
     // Gson : java 객체를 json 형태로 변환
     implementation 'com.google.code.gson:gson:2.10'
 
+    // ColorPicker
 }

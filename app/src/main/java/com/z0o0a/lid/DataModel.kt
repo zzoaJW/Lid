@@ -30,14 +30,14 @@ data class DrinkWhiskey(
 
     @ColumnInfo(name = "whColor") var whColor : String, // 색 Appearoance
 
-    @ColumnInfo(name = "whNose") var whNose : List<String>, // 향 목록    // List<String>
+    @ColumnInfo(name = "whNose") var whNose : MutableList<String>, // 향 목록    // List<String>
 
-    @ColumnInfo(name = "whPalate") var whPalate : List<String>, // 맛 목록    // List<String>
+    @ColumnInfo(name = "whPalate") var whPalate : MutableList<String>, // 맛 목록    // List<String>
 
     @ColumnInfo(name = "whSweet") var whSweet : Int, // 드라이-스위트
     @ColumnInfo(name = "whSpicy") var whSpicy : Int, // 순함-스파이시
     @ColumnInfo(name = "whBody") var whBody : Int, // 가벼움-무거움
-    @ColumnInfo(name = "whFinish") var whFinish : List<String>, // 피니시 목록    // List<String>
+    @ColumnInfo(name = "whFinish") var whFinish : MutableList<String>, // 피니시 목록    // List<String>
 
 )
 
@@ -55,7 +55,7 @@ data class DrinkWine(
     @ColumnInfo(name = "wiTears") var wiTears : Int, // 눈물 점도
 
     @ColumnInfo(name = "wiNoseIntensity") var wiNoseIntensity : Int, // 향 강도
-    @ColumnInfo(name = "wiNose") var wiNose : List<String>, // 향 목록     // List<String>
+    @ColumnInfo(name = "wiNose") var wiNose : MutableList<String>, // 향 목록     // List<String>
 
     @ColumnInfo(name = "wiPalateIntensity") var wiPalateIntensity : Int, // 맛 강도
     @ColumnInfo(name = "wiSweet") var wiSweet : Int, // 당도
