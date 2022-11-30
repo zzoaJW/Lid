@@ -59,4 +59,8 @@ dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
+
+    // Gson : java 객체를 json 형태로 변환
+    implementation 'com.google.code.gson:gson:2.10'
+
 }

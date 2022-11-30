@@ -27,10 +27,11 @@
         <activity android:name=".LifeIsDrink"/>
         <activity android:name=".DrinkTastingNote"/>
         <activity android:name=".UserLetter"/>
-        <activity android:name=".DrinkPostingSelectNote"/>
-        <activity android:name=".DrinkPostingNoteBeer"/>
+        <activity android:name=".DrinkPostingTextBeer"/>
         <activity android:name=".OpenLicenseList"/>
         <activity android:name=".DrinkPostingGuide"/>
+        <activity android:name=".DrinkPostingTextWhiskey"/>
+        <activity android:name=".DrinkPostingTextWine"/>
     </application>
 
 </manifest>

@@ -41,8 +41,8 @@ class DrinkPostingText : AppCompatActivity() {
         }
 
         binding.btnFinish.setOnClickListener {
-            drinkRating = binding.ratingBar.rating
-            drinkOverallStrRating = binding.tastingNote.text.toString()
+            drinkRating = binding.drinkRatingBar.rating
+            drinkOverallStrRating = binding.drinkTastingNote.text.toString()
             if (drinkOverallStrRating == "") {
                 drinkOverallStrRating = "-"
             }

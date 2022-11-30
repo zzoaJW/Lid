@@ -55,10 +55,10 @@
                 android:text="테이스팅 노트"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+                app:layout_constraintTop_toBottomOf="@+id/drink_ratingBar" />
 
             <EditText
-                android:id="@+id/tasting_note"
+                android:id="@+id/drink_tasting_note"
                 android:layout_width="0dp"
                 android:layout_height="450dp"
                 android:layout_marginStart="15dp"
@@ -103,7 +103,7 @@
                 app:srcCompat="@drawable/place" />
 
             <RatingBar
-                android:id="@+id/ratingBar"
+                android:id="@+id/drink_ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -158,11 +158,9 @@
             <View
                 android:id="@+id/view3"
                 android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="20dp"
+                android:layout_height="12dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/font_gray"
+                android:background="@color/space_separate_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/posting_drink_img" />
@@ -239,7 +237,7 @@
                 android:layout_marginTop="30dp"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tasting_note"
+                app:layout_constraintTop_toBottomOf="@+id/drink_tasting_note"
                 app:srcCompat="@drawable/world" />
 
             <EditText
@@ -268,7 +266,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="Button"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tasting_note" />
+                app:layout_constraintTop_toBottomOf="@+id/drink_tasting_note" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 
 
 @Database(entities = [Drink::class, DrinkWhiskey::class, DrinkWine::class, DrinkBeer::class], version = 1)
+@TypeConverters(ListConverter::class)
 abstract class DrinkDatabase: RoomDatabase() {
     abstract fun drinkDao(): DrinkDao
 
@@ -21,7 +23,7 @@ abstract class DrinkDatabase: RoomDatabase() {
                         context.applicationContext,
                         DrinkDatabase::class.java,
                         "drink-database")
-                        // .fallbackToDestructiveMigration() // 이전 데이터베이스 삭제 후 새로운 데이터베이스 생성
+                        .fallbackToDestructiveMigration() // 이전 데이터베이스 삭제 후 새로운 데이터베이스 생성
                         .build()
                 }
             }

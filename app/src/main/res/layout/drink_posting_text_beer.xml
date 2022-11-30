@@ -19,29 +19,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="한글 술 이름"
-        android:textColor="@color/font_default"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="63dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="영문 술 이름"
-        android:textColor="@color/font_default"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="25dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="술 종류"
-        android:textColor="@color/font_gray"
-        android:textSize="12dp"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="116dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

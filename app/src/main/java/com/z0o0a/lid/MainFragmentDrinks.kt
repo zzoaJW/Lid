@@ -45,7 +45,10 @@ class MainFragmentDrinks: Fragment() {
 //        binding.totalDrink.setText("Life is Drink")
 
         binding.btnPosting.setOnClickListener {
-            val intent = Intent(context, DrinkPostingName::class.java)
+//            val intent = Intent(context, DrinkPostingName::class.java)
+//            startActivity(intent)
+
+            val intent = Intent(context, DrinkPostingTextWhiskey::class.java)
             startActivity(intent)
         }
 
