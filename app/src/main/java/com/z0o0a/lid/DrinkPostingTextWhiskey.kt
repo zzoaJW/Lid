@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.z0o0a.lid.databinding.DrinkPostingTextWhiskeyBinding
@@ -27,6 +28,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         binding.btnWhiskeyCancel.setOnClickListener {
             cancelConfirm()
         }
+
 
 
         binding.btnWhiskeyDetail.setOnClickListener {
