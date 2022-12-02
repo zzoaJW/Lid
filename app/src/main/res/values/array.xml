@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="whiskey_colors">
+        <item name="whiskey_color_0">#FFFFFF</item>
+        <item name="whiskey_color_1">#FFFCDD</item>
+        <item name="whiskey_color_2">#FCEE97</item>
+        <item name="whiskey_color_3">#FBEA78</item>
+        <item name="whiskey_color_4">#FAE166</item>
+        <item name="whiskey_color_5">#F9DB55</item>
+        <item name="whiskey_color_6">#F8D64A</item>
+        <item name="whiskey_color_7">#F7CE4B</item>
+        <item name="whiskey_color_8">#F5C94C</item>
+        <item name="whiskey_color_9">#F5C142</item>
+        <item name="whiskey_color_10">#F5BD41</item>
+        <item name="whiskey_color_11">#EAAD3C</item>
+        <item name="whiskey_color_12">#E79E37</item>
+        <item name="whiskey_color_13">#E69435</item>
+        <item name="whiskey_color_14">#DC732C</item>
+        <item name="whiskey_color_15">#E0652A</item>
+        <item name="whiskey_color_16">#CC4F2F</item>
+        <item name="whiskey_color_17">#B02F29</item>
+        <item name="whiskey_color_18">#9F241D</item>
+        <item name="whiskey_color_19">#712C1D</item>
+        <item name="whiskey_color_20">#421B0A</item>
+    </string-array>
+</resources>

@@ -296,7 +296,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button6" />
+                    app:layout_constraintTop_toBottomOf="@+id/btn_whiskey_color" />
 
                 <View
                     android:id="@+id/view14"
@@ -448,14 +448,13 @@
                     app:layout_constraintStart_toEndOf="@+id/txt_whiskey_finish" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/btn_whiskey_color"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"
-                    android:backgroundTint="@color/yellow"
-                    android:text=""
+                    android:text="select"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_whiskey_appearance" />
@@ -782,6 +781,17 @@
                         app:chipMinTouchTargetSize="40dp" />
 
                 </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/test_txt_tempppp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="선택 배열"
+                    android:textColor="@color/font_default"
+                    app:layout_constraintBottom_toTopOf="@+id/whiskey_nose_chip_group"
+                    app:layout_constraintEnd_toEndOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

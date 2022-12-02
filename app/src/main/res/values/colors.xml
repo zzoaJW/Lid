@@ -81,4 +81,8 @@
     <color name="beer_color_38">#390708</color>
     <color name="beer_color_39">#39080B</color>
     <color name="beer_color_40">#35080A</color>
+
+    <!-- ColorPicker -->
+    <color name="positiveButtonTextColor">#FFFFFF</color>
+    <color name="negativeButtonTextColor">#FFFFFF</color>
 </resources>

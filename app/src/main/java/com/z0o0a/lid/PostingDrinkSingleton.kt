@@ -20,9 +20,7 @@ class PostingDrinkSingleton {
         @Synchronized
         fun getInstance(context: Context): PostingDrinkSingleton? {
             if (instance == null) {
-                synchronized(DrinkDatabase::class){
-                    instance = PostingDrinkSingleton()
-                }
+                instance = PostingDrinkSingleton()
             }
             return instance
         }
