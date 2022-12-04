@@ -6,15 +6,11 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.view.animation.AlphaAnimation
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
-import androidx.core.view.children
 import androidx.core.view.isVisible
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
-import com.github.dhaval2404.colorpicker.model.ColorSwatch
 import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkPostingTextWhiskeyBinding
 
@@ -56,9 +52,13 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         binding.whiskeyNoseChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
 //            binding.testTxtTempppp.text = checkedIds.toString()
 
-            binding.testTxtTempppp.text = group.children.map {
-                (it as Chip).text.toString()
-            }.toList().toString()
+            // text 다 불러와지는거
+//            binding.testTxtTempppp.text = group.children.map {
+//                (it as Chip).text.toString()
+//            }.toList().toString()
+
+            // index로 text 가져오는건 가능한데.. index는 어케 가져옴?;;
+            binding.testTxtTempppp.text = (binding.whiskeyNoseChipGroup.getChildAt(0) as Chip).text
         }
 
 
