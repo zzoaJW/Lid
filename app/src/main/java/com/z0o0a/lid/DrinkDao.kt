@@ -49,7 +49,7 @@ interface DrinkDao {
 
     // Whiskey Dao
     @Insert
-    fun insertDrinkWhiskey(drinkWhiskey : DrinkWhiskey)
+    fun insertDrinkWhiskey(drinkWhiskey : DrinkWhiskey) : Long
 
     @Update
     fun updateDrinkWhiskey(drinkWhiskey : DrinkWhiskey)
@@ -73,7 +73,7 @@ interface DrinkDao {
 
     // Wine Dao
     @Insert
-    fun insertDrinkWine(drinkWine : DrinkWine)
+    fun insertDrinkWine(drinkWine : DrinkWine) : Long
 
     @Update
     fun updateDrinkWine(drinkWine : DrinkWine)
@@ -95,7 +95,7 @@ interface DrinkDao {
 
     // Beer Dao
     @Insert
-    fun insertDrinkBeer(drinkBeer : DrinkBeer)
+    fun insertDrinkBeer(drinkBeer : DrinkBeer) : Long
 
     @Update
     fun updateDrinkBeer(drinkBeer : DrinkBeer)

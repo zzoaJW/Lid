@@ -6,7 +6,9 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
 import androidx.core.view.isVisible
@@ -21,6 +23,7 @@ import java.util.*
 class DrinkPostingTextWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextWhiskeyBinding
 
+    var whId : Long = 0
     var whType = "-" // 소분류 (일단 다 -로 저장)
 
     var whColors = ""
@@ -36,9 +39,9 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
     var whRegion = ""
     var whPrice = ""
 
-    var drinkPlace = ""
-    var drinkKeepDate = ""
-    var drinkPostingDate = ""
+    var whPlace = ""
+    var whKeepDate = ""
+    var whPostingDate = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,7 +134,19 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
                 Calendar.DAY_OF_MONTH)).show()
         }
 
-        binding.
+        binding.btnWhiskeyPosting.setOnClickListener {
+            getCharacters()
+            getOverallEtc()
+
+            saveWhiskey()
+            saveDrink()
+
+
+            Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -177,14 +192,14 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
             whPrice = "-"
         }
 
-        drinkPlace = binding.whiskeyPlace.text.toString()
-        if (drinkPlace == "") {
-            drinkPlace = "-"
+        whPlace = binding.whiskeyPlace.text.toString()
+        if (whPlace == "") {
+            whPlace = "-"
         }
 
-        drinkKeepDate = binding.whiskeyKeepDate.text.toString()
+        whKeepDate = binding.whiskeyKeepDate.text.toString()
 
-        drinkPostingDate = getCurrentDate()
+        whPostingDate = getCurrentDate()
     }
 
     fun getCurrentDate():String{
@@ -192,5 +207,57 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
 
         return simpleDateFormat
+    }
+
+    private fun saveWhiskey(){
+        val run : Runnable = Runnable {
+            var drinkWhiskey = DrinkWhiskey(0,
+                whType,
+                whColors,
+                whNoses,
+                whPalates,
+                whCharSweet,
+                whCharSpicy,
+                whCharBody,
+                whFinishs
+            )
+
+            val db = DrinkDatabase.getInstance(applicationContext)
+            var returnWhId = db!!.drinkDao().insertDrinkWhiskey(drinkWhiskey)
+
+            whId = returnWhId
+        }
+
+        val t = Thread(run)
+        t.start()
+
+        try {
+            t.join()
+        }catch (e : InterruptedException){
+            Log.d("위스키 저장","실패")
+        }
+    }
+
+    private fun saveDrink(){
+        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
+
+        Thread(Runnable {
+            var newDrink = Drink(0,
+                postingSingleton?.drinkImg.toString(),
+                postingSingleton?.drinkEngName.toString(),
+                postingSingleton?.drinkKrName.toString(),
+                postingSingleton?.drinkType.toString(),
+                whId,
+                whOverallStr,
+                whRating,
+                whRegion,
+                whPrice,
+                whKeepDate,
+                whPlace,
+                whPostingDate)
+
+            val db = DrinkDatabase.getInstance(applicationContext)
+            db!!.drinkDao().insertDrink(newDrink)
+        }).start()
     }
 }

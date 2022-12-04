@@ -11,7 +11,7 @@ data class Drink (
     @ColumnInfo(name = "drinkEngName") var drinkEngName : String, // 영어 이름
     @ColumnInfo(name = "drinkKrName") var drinkKrName : String, // 한글 이름
     @ColumnInfo(name = "drinkType") var drinkType : String, // 대분류 (위스키/와인/맥주/기타)
-    @ColumnInfo(name = "typeId") var typeId : Int, // 위스키/와인/맥주테이블에서의 고유번호 (위/와/맥이 아닌 경우 0 저장)
+    @ColumnInfo(name = "typeId") var typeId : Long, // 위스키/와인/맥주테이블에서의 고유번호 (위/와/맥이 아닌 경우 0 저장)
 
     @ColumnInfo(name = "drinkOverallStr") var drinkOverallStr : String, // 총평 줄글로 쓴거
     @ColumnInfo(name = "drinkRating") var drinkRating : Float, // 별점
