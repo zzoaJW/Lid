@@ -81,6 +81,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:padding="10dp"
+                android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="@+id/img_whiskey_region"
                 app:layout_constraintTop_toBottomOf="@+id/img_whiskey_price"
                 app:srcCompat="@drawable/place" />
@@ -143,8 +144,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:thumbTint="@color/black"
-        android:trackTint="@color/black"
+        android:thumbTint="@color/font_default"
+        android:trackTint="@color/font_default"
         app:layout_constraintStart_toStartOf="@+id/img_whiskey_place"
         app:layout_constraintTop_toBottomOf="@+id/img_whiskey_place" />
 
@@ -178,6 +179,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:padding="10dp"
+                android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="@+id/img_whiskey_region"
                 app:layout_constraintTop_toBottomOf="@+id/img_whiskey_region"
                 app:srcCompat="@drawable/won" />
@@ -206,6 +208,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
+                android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/whiskey_overall_str"
                 app:srcCompat="@drawable/world" />

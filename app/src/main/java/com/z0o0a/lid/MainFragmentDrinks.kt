@@ -48,7 +48,7 @@ class MainFragmentDrinks: Fragment() {
 //            val intent = Intent(context, DrinkPostingName::class.java)
 //            startActivity(intent)
 
-            val intent = Intent(context, DrinkPostingTextWhiskey::class.java)
+            val intent = Intent(context, DrinkPostingName::class.java)
             startActivity(intent)
         }
 

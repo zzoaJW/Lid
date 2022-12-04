@@ -11,6 +11,7 @@
     <color name="lid_background">#FFFFFFFF</color>
     <color name="font_default">#323232</color>
     <color name="font_gray">#CDCDCD</color>
+    <color name="gray_2">#5C5C5C</color>
     <color name="space_separate_gray">#F7F7F7</color>
 
     <color name="lime">#E0F14E</color>

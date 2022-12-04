@@ -136,9 +136,9 @@ class DrinkPostingText : AppCompatActivity() {
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
 
         drinkImg = postingSingleton?.drinkImg.toString()
-        binding.postingDrinkEngName.setText(postingSingleton?.drinkEngName.toString())
-        binding.postingDrinkKrName.setText(postingSingleton?.drinkKrName.toString())
-        binding.postingDrinkType.setText(postingSingleton?.drinkType.toString())
+        binding.postingDrinkEngName.text = postingSingleton?.drinkEngName.toString()
+        binding.postingDrinkKrName.text = postingSingleton?.drinkKrName.toString()
+        binding.postingDrinkType.text = postingSingleton?.drinkType.toString()
     }
 
     fun saveDrink(overallStrRating : String, rating : Float, drinkRegion : String, drinkPrice : String, keepDate : String, place : String, postingDate : String){

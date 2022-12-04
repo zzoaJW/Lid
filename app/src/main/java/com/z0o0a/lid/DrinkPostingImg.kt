@@ -56,8 +56,7 @@ class DrinkPostingImg : AppCompatActivity() {
                 setPostingSingleton(drinkImg)
             }
 
-            intent = Intent(this, DrinkPostingText::class.java)
-            startActivity(intent)
+            setIntentFromType()
         }
 
         binding.btnBack2.setOnClickListener {
@@ -65,16 +64,18 @@ class DrinkPostingImg : AppCompatActivity() {
         }
     }
 
-    fun setPostingSingleton(img:String){
+    private fun setPostingSingleton(img:String){
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
 
-        postingSingleton?.drinkImg = img
+        postingSingleton!!.drinkImg = img
     }
+
     private fun openGalleryForImage() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         intent.type = "image/*"
         startActivityForResult(intent, 1000)
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == 1000){
@@ -83,4 +84,25 @@ class DrinkPostingImg : AppCompatActivity() {
             binding.textView5.visibility = View.INVISIBLE
         }
     }
+
+    private fun setIntentFromType(){
+        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
+
+        var whichType = postingSingleton!!.drinkType
+
+        if (whichType == "위스키"){
+            intent = Intent(this, DrinkPostingTextWhiskey::class.java)
+            startActivity(intent)
+        }else if (whichType == "와인"){
+            intent = Intent(this, DrinkPostingTextWine::class.java)
+            startActivity(intent)
+        }else if (whichType == "맥주"){
+            intent = Intent(this, DrinkPostingTextBeer::class.java)
+            startActivity(intent)
+        }else{
+            intent = Intent(this, DrinkPostingText::class.java)
+            startActivity(intent)
+        }
+    }
+
 }

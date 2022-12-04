@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -22,6 +23,11 @@ import java.util.*
 
 class DrinkPostingTextWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextWhiskeyBinding
+
+    var drinkImg = ""
+    var drinkEngName = ""
+    var drinkKrName = ""
+    var drinkType = ""
 
     var whId : Long = 0
     var whType = "-" // 소분류 (일단 다 -로 저장)
@@ -49,6 +55,9 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         binding = DrinkPostingTextWhiskeyBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        getSingletonValues()
+        setSingletonValuesToUI()
 
         binding.btnWhiskeyBack.setOnClickListener {
             finish()
@@ -209,6 +218,23 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         return simpleDateFormat
     }
 
+    private fun getSingletonValues(){
+        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
+
+        drinkImg = postingSingleton?.drinkImg.toString()
+        drinkEngName = postingSingleton?.drinkEngName.toString()
+        drinkKrName = postingSingleton?.drinkKrName.toString()
+        drinkType = postingSingleton?.drinkType.toString()
+
+    }
+
+    private fun setSingletonValuesToUI(){
+        binding.postingWhiskeyImg.setImageURI(Uri.parse(drinkImg))
+        binding.postingWhiskeyEngName.text = drinkEngName
+        binding.postingWhiskeyKrName.text = drinkKrName
+        binding.postingWhiskeyType.text = drinkType
+    }
+
     private fun saveWhiskey(){
         val run : Runnable = Runnable {
             var drinkWhiskey = DrinkWhiskey(0,
@@ -243,10 +269,10 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
 
         Thread(Runnable {
             var newDrink = Drink(0,
-                postingSingleton?.drinkImg.toString(),
-                postingSingleton?.drinkEngName.toString(),
-                postingSingleton?.drinkKrName.toString(),
-                postingSingleton?.drinkType.toString(),
+                drinkImg,
+                drinkEngName,
+                drinkKrName,
+                drinkType,
                 whId,
                 whOverallStr,
                 whRating,
