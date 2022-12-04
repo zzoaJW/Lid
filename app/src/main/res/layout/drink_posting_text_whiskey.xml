@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/whiskey_ratingBar" />
 
     <EditText
-        android:id="@+id/whiskey_tasting_note"
+        android:id="@+id/whiskey_overall_str"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:minHeight="300dp"
@@ -207,7 +207,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/whiskey_tasting_note"
+                app:layout_constraintTop_toBottomOf="@+id/whiskey_overall_str"
                 app:srcCompat="@drawable/world" />
 
             <EditText
@@ -260,7 +260,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/switch_whiskey_keep" />
 
             <Button
-                android:id="@+id/btn_whiskey_finish"
+                android:id="@+id/btn_whiskey_posting"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/black"
@@ -307,7 +307,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/whiskey_sweet3" />
+                    app:layout_constraintTop_toBottomOf="@+id/whiskey_body" />
 
                 <View
                     android:id="@+id/view12"
@@ -548,7 +548,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txt_whiskey_characters" />
 
                 <SeekBar
-                    android:id="@+id/whiskey_sweet2"
+                    android:id="@+id/whiskey_spicy"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -568,7 +568,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/whiskey_sweet" />
 
                 <SeekBar
-                    android:id="@+id/whiskey_sweet3"
+                    android:id="@+id/whiskey_body"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -585,7 +585,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/whiskey_sweet2" />
+                    app:layout_constraintTop_toBottomOf="@+id/whiskey_spicy" />
 
                 <TextView
                     android:id="@+id/txt_whiskey_sweet1"
@@ -606,8 +606,8 @@
                     android:text="순함"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/whiskey_sweet2"
-                    app:layout_constraintStart_toStartOf="@+id/whiskey_sweet2" />
+                    app:layout_constraintBottom_toTopOf="@+id/whiskey_spicy"
+                    app:layout_constraintStart_toStartOf="@+id/whiskey_spicy" />
 
                 <TextView
                     android:id="@+id/txt_whiskey_heavy1"
@@ -617,8 +617,8 @@
                     android:text="가벼움"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/whiskey_sweet3"
-                    app:layout_constraintStart_toStartOf="@+id/whiskey_sweet3" />
+                    app:layout_constraintBottom_toTopOf="@+id/whiskey_body"
+                    app:layout_constraintStart_toStartOf="@+id/whiskey_body" />
 
                 <TextView
                     android:id="@+id/txt_whiskey_sweet2"
@@ -639,8 +639,8 @@
                     android:text="스파이시"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/whiskey_sweet2"
-                    app:layout_constraintEnd_toEndOf="@+id/whiskey_sweet2" />
+                    app:layout_constraintBottom_toTopOf="@+id/whiskey_spicy"
+                    app:layout_constraintEnd_toEndOf="@+id/whiskey_spicy" />
 
                 <TextView
                     android:id="@+id/txt_whiskey_heavy2"
@@ -650,8 +650,8 @@
                     android:text="무거움"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/whiskey_sweet3"
-                    app:layout_constraintEnd_toEndOf="@+id/whiskey_sweet3" />
+                    app:layout_constraintBottom_toTopOf="@+id/whiskey_body"
+                    app:layout_constraintEnd_toEndOf="@+id/whiskey_body" />
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/whiskey_palate_chip_group"
@@ -782,16 +782,6 @@
 
                 </com.google.android.material.chip.ChipGroup>
 
-                <TextView
-                    android:id="@+id/test_txt_tempppp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="15dp"
-                    android:text="선택 배열"
-                    android:textColor="@color/font_default"
-                    app:layout_constraintBottom_toTopOf="@+id/whiskey_nose_chip_group"
-                    app:layout_constraintEnd_toEndOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -13,7 +13,7 @@ data class Drink (
     @ColumnInfo(name = "drinkType") var drinkType : String, // 대분류 (위스키/와인/맥주/기타)
     @ColumnInfo(name = "typeId") var typeId : Int, // 위스키/와인/맥주테이블에서의 고유번호 (위/와/맥이 아닌 경우 0 저장)
 
-    @ColumnInfo(name = "drinkOverallStrRating") var drinkOverallStr : String, // 총평 줄글로 쓴거
+    @ColumnInfo(name = "drinkOverallStr") var drinkOverallStr : String, // 총평 줄글로 쓴거
     @ColumnInfo(name = "drinkRating") var drinkRating : Float, // 별점
     @ColumnInfo(name = "drinkRegion") var drinkRegion : String, // 생산 국가/지역
     @ColumnInfo(name = "drinkPrice") var drinkPrice : String,
@@ -37,6 +37,7 @@ data class DrinkWhiskey(
     @ColumnInfo(name = "whSweet") var whSweet : Int, // 드라이-스위트
     @ColumnInfo(name = "whSpicy") var whSpicy : Int, // 순함-스파이시
     @ColumnInfo(name = "whBody") var whBody : Int, // 가벼움-무거움
+
     @ColumnInfo(name = "whFinish") var whFinish : MutableList<String>, // 피니시 목록    // List<String>
 
 )

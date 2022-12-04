@@ -260,7 +260,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/switch_beer_keep" />
 
             <Button
-                android:id="@+id/btn_beer_finish"
+                android:id="@+id/btn_beer_posting"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/black"

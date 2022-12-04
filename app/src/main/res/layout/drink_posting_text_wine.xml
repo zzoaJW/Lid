@@ -260,7 +260,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/switch_wine_keep" />
 
             <Button
-                android:id="@+id/btn_wine_finish"
+                android:id="@+id/btn_wine_posting"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@color/black"

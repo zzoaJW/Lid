@@ -1,6 +1,7 @@
 package com.z0o0a.lid
 
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
@@ -13,9 +14,32 @@ import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkPostingTextWhiskeyBinding
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class DrinkPostingTextWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextWhiskeyBinding
+
+    var whType = "-" // 소분류 (일단 다 -로 저장)
+
+    var whColors = ""
+    val whNoses : MutableList<String> = mutableListOf()
+    val whPalates : MutableList<String> = mutableListOf()
+    var whCharSweet = 3
+    var whCharSpicy = 3
+    var whCharBody = 3
+    val whFinishs : MutableList<String> = mutableListOf()
+
+    var whRating = 0f
+    var whOverallStr = ""
+    var whRegion = ""
+    var whPrice = ""
+
+    var drinkPlace = ""
+    var drinkKeepDate = ""
+    var drinkPostingDate = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,28 +63,38 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
                 .setColors(resources.getStringArray(R.array.whiskey_colors)) // 컬러 구성
 //                .setDefaultColor("#FCEE97") // Pass Default Color
                 .setColorListener { color, colorHex ->
-                    // Handle Color Selection
-                    if (colorHex == "FFFFFF"){
-                        binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
-                    }else {
-                        binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
-                    }
+                    binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
+                    whColors = colorHex.toColorInt().toString()
                 }
                 .show()
         }
 
         binding.whiskeyNoseChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
-//            binding.testTxtTempppp.text = checkedIds.toString()
-
-            // text 다 불러와지는거
-//            binding.testTxtTempppp.text = group.children.map {
-//                (it as Chip).text.toString()
-//            }.toList().toString()
-
-            // index로 text 가져오는건 가능한데.. index는 어케 가져옴?;;
-            binding.testTxtTempppp.text = (binding.whiskeyNoseChipGroup.getChildAt(0) as Chip).text
+            whNoses.clear()
+            for (id in checkedIds) {
+                var c: Chip = group.findViewById(id)
+                var c_t = c.text
+                whNoses.add(c_t.toString())
+            }
         }
 
+        binding.whiskeyPalateChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
+            whPalates.clear()
+            for (id in checkedIds) {
+                var c: Chip = group.findViewById(id)
+                var c_t = c.text
+                whPalates.add(c_t.toString())
+            }
+        }
+
+        binding.whiskeyFinishChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
+            whFinishs.clear()
+            for (id in checkedIds) {
+                var c: Chip = group.findViewById(id)
+                var c_t = c.text
+                whFinishs.add(c_t.toString())
+            }
+        }
 
 
         binding.btnWhiskeyDetail.setOnClickListener {
@@ -85,9 +119,23 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
             }
         }
 
+        binding.whiskeyKeepDate.setOnClickListener {
+            var dateString = ""
+
+            val cal = Calendar.getInstance()    //캘린더뷰 만들기
+            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                dateString = "${year}.${month+1}.${dayOfMonth}"
+                binding.whiskeyKeepDate.text = dateString
+            }
+            DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(
+                Calendar.DAY_OF_MONTH)).show()
+        }
+
+        binding.
+
     }
 
-    fun cancelConfirm(){
+    private fun cancelConfirm(){
         AlertDialog.Builder(this)
             .setTitle("작성을 취소하시겠습니까?")
             .setPositiveButton("네", object : DialogInterface.OnClickListener {
@@ -103,5 +151,46 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
             })
             .create()
             .show()
+    }
+
+    private fun getCharacters(){
+        whCharSweet = binding.whiskeySweet.progress
+        whCharSpicy = binding.whiskeySpicy.progress
+        whCharBody = binding.whiskeyBody.progress
+    }
+
+    private fun getOverallEtc(){
+        whRating = binding.whiskeyRatingBar.rating
+
+        whOverallStr = binding.whiskeyOverallStr.text.toString()
+        if (whOverallStr == "") {
+            whOverallStr = "-"
+        }
+
+        whRegion = binding.whiskeyRegion.text.toString()
+        if (whRegion == "") {
+            whRegion = "-"
+        }
+
+        whPrice = binding.whiskeyPrice.text.toString()
+        if (whPrice == "") {
+            whPrice = "-"
+        }
+
+        drinkPlace = binding.whiskeyPlace.text.toString()
+        if (drinkPlace == "") {
+            drinkPlace = "-"
+        }
+
+        drinkKeepDate = binding.whiskeyKeepDate.text.toString()
+
+        drinkPostingDate = getCurrentDate()
+    }
+
+    fun getCurrentDate():String{
+        val now =  System.currentTimeMillis()
+        val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
+
+        return simpleDateFormat
     }
 }
