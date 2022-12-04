@@ -29,6 +29,7 @@ class LifeIsDrink : AppCompatActivity() {
 
         showDrinkData()
         showDrinkNumOfTypeData()
+        showWhiskeyData()
 
     }
 
@@ -72,6 +73,28 @@ class LifeIsDrink : AppCompatActivity() {
 
             runOnUiThread {
                 binding.textView2.setText(result)
+            }
+        }).start()
+    }
+
+    fun showWhiskeyData(){
+        Thread(Runnable {
+            val db = DrinkDatabase.getInstance(applicationContext)
+
+            var arr = db!!.drinkDao().getDrinkWhiskeyAll()
+
+            var result = "데이터가 없어용"
+
+            if (!arr.isEmpty()){
+                result = ""
+                arr.forEach{ wh ->
+                    result += wh.toString() +
+                            '\n' + '\n'
+                }
+            }
+
+            runOnUiThread {
+                binding.textView9.setText(result)
             }
         }).start()
     }

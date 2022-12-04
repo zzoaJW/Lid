@@ -76,7 +76,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
 //                .setDefaultColor("#FCEE97") // Pass Default Color
                 .setColorListener { color, colorHex ->
                     binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
-                    whColors = colorHex.toColorInt().toString()
+                    whColors = colorHex
                 }
                 .show()
         }
