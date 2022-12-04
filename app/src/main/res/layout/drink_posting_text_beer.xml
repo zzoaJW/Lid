@@ -95,7 +95,7 @@
                 android:progressTint="@color/lime"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detail_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/beer_detail_layout" />
 
             <ImageView
                 android:id="@+id/posting_beer_img"
@@ -241,7 +241,7 @@
                 app:layout_constraintTop_toTopOf="@+id/btn_beer_back" />
 
             <View
-                android:id="@+id/view15"
+                android:id="@+id/view2001"
                 android:layout_width="0dp"
                 android:layout_height="12dp"
                 android:layout_marginTop="30dp"
@@ -282,13 +282,13 @@
                 app:layout_constraintTop_toTopOf="@+id/view2313" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/detail_layout"
+                android:id="@+id/beer_detail_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/view15">
+                app:layout_constraintTop_toBottomOf="@id/view2001">
 
                 <View
-                    android:id="@+id/view10"
+                    android:id="@+id/view2002"
                     android:layout_width="0dp"
                     android:layout_height="12dp"
                     android:layout_marginTop="40dp"
@@ -299,7 +299,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/btn_beer_color" />
 
                 <View
-                    android:id="@+id/view14"
+                    android:id="@+id/view2004"
                     android:layout_width="0dp"
                     android:layout_height="12dp"
                     android:layout_marginTop="40dp"
@@ -310,7 +310,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/beer_sweet3" />
 
                 <View
-                    android:id="@+id/view12"
+                    android:id="@+id/view2003"
                     android:layout_width="0dp"
                     android:layout_height="12dp"
                     android:layout_marginTop="40dp"
@@ -321,7 +321,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/beer_nose_chip_group" />
 
                 <View
-                    android:id="@+id/view13"
+                    android:id="@+id/view2005"
                     android:layout_width="0dp"
                     android:layout_height="12dp"
                     android:layout_marginTop="40dp"
@@ -356,7 +356,7 @@
                     android:textSize="18dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view10" />
+                    app:layout_constraintTop_toBottomOf="@+id/view2002" />
 
                 <TextView
                     android:id="@+id/txt_beer_palate"
@@ -369,7 +369,7 @@
                     android:textSize="18dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view12" />
+                    app:layout_constraintTop_toBottomOf="@+id/view2003" />
 
                 <TextView
                     android:id="@+id/txt_beer_characters"
@@ -390,12 +390,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="40dp"
-                    android:text="피니시"
+                    android:text="마우스필"
                     android:textColor="@color/font_default"
                     android:textSize="18dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view14" />
+                    app:layout_constraintTop_toBottomOf="@+id/view2004" />
 
                 <TextView
                     android:id="@+id/txt_beer_appearance2"
@@ -422,7 +422,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Palate"
+                    android:text="Aroma"
                     android:textColor="@color/font_gray"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_beer_palate"
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_palate" />
@@ -442,7 +442,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Finish"
+                    android:text="Mouthfeel"
                     android:textColor="@color/font_gray"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_beer_finish"
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_finish" />
