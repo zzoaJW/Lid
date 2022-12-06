@@ -447,7 +447,7 @@
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/chip_background"
@@ -465,7 +465,7 @@
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/chip_background"
@@ -708,7 +708,7 @@
                     android:layout_marginStart="30dp"
                     android:text="투명도"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet6"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet6" />
@@ -719,7 +719,7 @@
                     android:layout_height="wrap_content"
                     android:text="표면 밝기"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet4"
                     app:layout_constraintStart_toStartOf="@+id/textView10"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet4" />
@@ -730,7 +730,7 @@
                     android:layout_height="wrap_content"
                     android:text="눈물 점도"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet7"
                     app:layout_constraintStart_toStartOf="@+id/textView10"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet7" />
@@ -753,7 +753,7 @@
                     android:layout_marginStart="30dp"
                     android:text="당도"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet10"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet10" />
@@ -764,7 +764,7 @@
                     android:layout_height="wrap_content"
                     android:text="산미"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet14"
                     app:layout_constraintStart_toStartOf="@+id/textView15"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet14" />
@@ -775,7 +775,7 @@
                     android:layout_height="wrap_content"
                     android:text="바디"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet11"
                     app:layout_constraintStart_toStartOf="@+id/textView15"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet11" />
@@ -786,7 +786,7 @@
                     android:layout_height="wrap_content"
                     android:text="탄닌*"
                     android:textColor="@color/font_default"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet12"
                     app:layout_constraintStart_toStartOf="@+id/textView15"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet12" />
@@ -798,7 +798,7 @@
                     android:layout_marginTop="10dp"
                     android:text="* 레드와인 한정"
                     android:textColor="@color/font_gray"
-                    android:textSize="13dp"
+                    android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="@+id/textView20"
                     app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
@@ -825,7 +825,7 @@
                         style="@style/Widget.AppCompat.SeekBar.Discrete"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
+                        android:layout_marginStart="40dp"
                         android:layout_marginEnd="30dp"
                         android:background="@drawable/chip_background"
                         android:indeterminateTint="@color/font_default"
@@ -846,7 +846,7 @@
                         android:layout_marginTop="40dp"
                         android:text="림 넓이"
                         android:textColor="@color/font_default"
-                        android:textSize="13dp"
+                        android:textSize="14dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 

@@ -89,7 +89,7 @@
                 android:id="@+id/beer_ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:numStars="5"
                 android:progressBackgroundTint="@color/font_gray"
                 android:progressTint="@color/lime"
@@ -290,55 +290,62 @@
                 <View
                     android:id="@+id/view2002"
                     android:layout_width="0dp"
-                    android:layout_height="12dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/space_separate_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet2" />
+
+                <View
+                    android:id="@+id/view17"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_beer_color" />
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet4" />
 
                 <View
                     android:id="@+id/view2004"
                     android:layout_width="0dp"
-                    android:layout_height="12dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="50dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet3" />
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet11" />
 
                 <View
                     android:id="@+id/view2003"
                     android:layout_width="0dp"
-                    android:layout_height="12dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="50dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_nose_chip_group" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
                 <View
                     android:id="@+id/view2005"
                     android:layout_width="0dp"
                     android:layout_height="12dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="50dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_finish_chip_group" />
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet15" />
 
                 <TextView
                     android:id="@+id/txt_beer_appearance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
-                    android:text="색"
+                    android:layout_marginTop="50dp"
+                    android:text="외관"
                     android:textColor="@color/font_default"
                     android:textSize="18dp"
                     android:textStyle="bold"
@@ -350,7 +357,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="50dp"
                     android:text="향"
                     android:textColor="@color/font_default"
                     android:textSize="18dp"
@@ -363,7 +370,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="50dp"
                     android:text="맛"
                     android:textColor="@color/font_default"
                     android:textSize="18dp"
@@ -372,24 +379,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/view2003" />
 
                 <TextView
-                    android:id="@+id/txt_beer_characters"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="50dp"
-                    android:text="개성"
-                    android:textColor="@color/font_default"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_palate_chip_group" />
-
-                <TextView
                     android:id="@+id/txt_beer_finish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="50dp"
                     android:text="마우스필"
                     android:textColor="@color/font_default"
                     android:textSize="18dp"
@@ -406,6 +400,16 @@
                     android:textColor="@color/font_gray"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_beer_appearance"
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_appearance" />
+
+                <TextView
+                    android:id="@+id/txt_beer_appearance3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Beer Foam"
+                    android:textColor="@color/font_gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                    app:layout_constraintStart_toEndOf="@+id/textView21" />
 
                 <TextView
                     android:id="@+id/txt_beer_nose2"
@@ -428,16 +432,6 @@
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_palate" />
 
                 <TextView
-                    android:id="@+id/txt_beer_characters2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Characters"
-                    android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_characters"
-                    app:layout_constraintStart_toEndOf="@+id/txt_beer_characters" />
-
-                <TextView
                     android:id="@+id/txt_beer_finish2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -450,7 +444,7 @@
                 <Button
                     android:id="@+id/btn_beer_color"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"
@@ -459,77 +453,56 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_beer_appearance" />
 
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/beer_nose_chip_group"
+                <Button
+                    android:id="@+id/btn_beer_color2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="30dp"
-                    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-                    app:chipSpacingHorizontal="15dp"
+                    android:text="select"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_nose">
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_nose_chip_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="곡물"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_nose_chip_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="과일"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_nose_chip_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="꽃"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_nose_chip_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="나무"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_nose_chip_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="피트"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_nose_chip_7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="아로마"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                </com.google.android.material.chip.ChipGroup>
+                <SeekBar
+                    android:id="@+id/beer_sweet4"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView17"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_beer_color" />
 
                 <SeekBar
                     android:id="@+id/beer_sweet"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView23"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_beer_color2" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet3"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -543,255 +516,645 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_characters" />
+                    app:layout_constraintStart_toEndOf="@+id/textView29"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_nose" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet6"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet3" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet7"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet6" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet8"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_palate" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet9"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet8" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet10"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet9" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet11"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView39"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet10" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet5"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView37"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_finish" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet14"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet5"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet5"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet5" />
+
+                <SeekBar
+                    android:id="@+id/beer_sweet15"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/chip_background"
+                    android:indeterminateTint="@color/font_default"
+                    android:max="6"
+                    android:progress="3"
+                    android:progressTint="#00000000"
+                    android:thumbTint="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet5"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet5"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet14" />
 
                 <SeekBar
                     android:id="@+id/beer_sweet2"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
                     android:layout_marginTop="50dp"
-                    android:layout_marginEnd="30dp"
                     android:background="@drawable/chip_background"
-                    android:backgroundTint="@color/font_gray"
                     android:indeterminateTint="@color/font_default"
                     android:max="6"
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet"
                     app:layout_constraintTop_toBottomOf="@+id/beer_sweet" />
 
-                <SeekBar
-                    android:id="@+id/beer_sweet3"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/chip_background"
-                    android:backgroundTint="@color/font_gray"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet2" />
-
                 <TextView
-                    android:id="@+id/txt_beer_sweet1"
+                    android:id="@+id/txt_beer_sweet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="드라이"
+                    android:text="깨끗"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet4"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet4" />
+
+                <TextView
+                    android:id="@+id/txt_beer_sweet3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="탁함"
+                    android:textColor="@color/font_default"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet4"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet4" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="투명도"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet4" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="짧음"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toTopOf="@+id/beer_sweet"
                     app:layout_constraintStart_toStartOf="@+id/beer_sweet" />
 
                 <TextView
-                    android:id="@+id/txt_beer_spicy1"
+                    android:id="@+id/textView41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="순함"
+                    android:text="약함"
                     android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet2"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet2" />
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet3"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3" />
 
                 <TextView
-                    android:id="@+id/txt_beer_heavy1"
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet8"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet8" />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet9"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet9" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet9"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet9" />
+
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet10"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet10" />
+
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet11"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11" />
+
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet11"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11" />
+
+                <TextView
+                    android:id="@+id/textView54"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="가벼움"
                     android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet3"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3" />
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet5"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet5" />
 
                 <TextView
-                    android:id="@+id/txt_beer_sweet2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="스위트"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet" />
-
-                <TextView
-                    android:id="@+id/txt_beer_spicy2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="스파이시"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet2"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet2" />
-
-                <TextView
-                    android:id="@+id/txt_beer_heavy2"
+                    android:id="@+id/textView55"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="무거움"
                     android:textColor="@color/font_default"
-                    android:textSize="12dp"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet5"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet5" />
+
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet14"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet14" />
+
+                <TextView
+                    android:id="@+id/textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet14"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet14" />
+
+                <TextView
+                    android:id="@+id/textView58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet15"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet15" />
+
+                <TextView
+                    android:id="@+id/textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet15"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet15" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet10"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet10" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet8"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet8" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet6"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet6" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet7"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet7" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="약함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet7"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet7" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet6"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet6" />
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="강함"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
                     app:layout_constraintBottom_toTopOf="@+id/beer_sweet3"
                     app:layout_constraintEnd_toEndOf="@+id/beer_sweet3" />
 
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/beer_palate_chip_group"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-                    app:chipSpacingHorizontal="15dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_palate">
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_palate_chip_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="단맛"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_palate_chip_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="신맛"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_palate_chip_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="쓴맛"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_palate_chip_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="짠맛"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_palate_chip_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="떫은맛"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                </com.google.android.material.chip.ChipGroup>
-
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/beer_finish_chip_group"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-                    app:chipSpacingHorizontal="15dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_finish">
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_finish_chip_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="곡물"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_finish_chip_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="과일"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_finish_chip_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="꽃"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_finish_chip_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="나무"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_finish_chip_5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="피트"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/beer_finish_chip_6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="아로마"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                </com.google.android.material.chip.ChipGroup>
-
                 <TextView
-                    android:id="@+id/test_txt_tempppp"
+                    android:id="@+id/textView26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="15dp"
-                    android:text="선택 배열"
+                    android:layout_marginBottom="5dp"
+                    android:text="김"
                     android:textColor="@color/font_default"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_nose_chip_group"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="낮음"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet2"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet2" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="높음"
+                    android:textColor="@color/font_default"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet2"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet2" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="유지력"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="맥아"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet3" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="홉"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet6"
+                    app:layout_constraintStart_toStartOf="@+id/textView29"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet6" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="홉"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet9"
+                    app:layout_constraintStart_toStartOf="@+id/textView35"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet9" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="발효"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet7"
+                    app:layout_constraintStart_toStartOf="@+id/textView29"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet7" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+                    app:layout_constraintStart_toStartOf="@+id/textView29"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="발효"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet10"
+                    app:layout_constraintStart_toStartOf="@+id/textView35"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet10" />
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="바디감"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet5" />
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="피니시"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet11"
+                    app:layout_constraintStart_toStartOf="@+id/textView35"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet11" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="탄산감"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet14"
+                    app:layout_constraintStart_toStartOf="@+id/textView37"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet14" />
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="떫은맛"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet15"
+                    app:layout_constraintStart_toStartOf="@+id/textView37"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet15" />
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="맥아"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet8" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="조밀도"
+                    android:textColor="@color/font_default"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet2"
+                    app:layout_constraintStart_toStartOf="@+id/textView23"
+                    app:layout_constraintTop_toTopOf="@+id/beer_sweet2" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:text="거품"
+                    android:textColor="@color/font_default"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view17" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="@color/font_gray"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textSize="14dp"
+                    android:textColor="@color/font_default"
+                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3"
+                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3"
+                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet7" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
