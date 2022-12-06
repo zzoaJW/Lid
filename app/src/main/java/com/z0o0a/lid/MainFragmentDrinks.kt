@@ -2,6 +2,7 @@ package com.z0o0a.lid
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,35 +20,9 @@ class MainFragmentDrinks: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = MainFragmentDrinksBinding.inflate(inflater, container, false)
 
-        // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
-        Thread(Runnable {
-            val db = DrinkDatabase.getInstance(requireContext())
-
-            var drinks = db!!.drinkDao().getAllRecyclerviewData()
-            allDrinkNum = db!!.drinkDao().getDrinkAllNum()
-
-            if (!drinks.isEmpty()) {
-                // 엥 이게 되네?? 하지만 나중에 꼭 쓰레드 밖으로 꺼내자
-                binding.totalDrink.text = "${allDrinkNum}잔의 기록"
-            } else{
-                binding.totalDrink.text = "기록이 없습니다"
-            }
-
-            if (!drinks.isEmpty()){
-                drinks.forEach { drink ->
-                    recyclerviewData.add(drink)
-                }
-            }
-        }).start()
-
-        // 왜 안되지.. 엥 되네? 나중에 리팩토링 ㄱㄱ
-//        binding.totalDrink.text = "${allNum} 잔의 기록"
-//        binding.totalDrink.setText("Life is Drink")
+        getDrinks()
 
         binding.btnPosting.setOnClickListener {
-//            val intent = Intent(context, DrinkPostingName::class.java)
-//            startActivity(intent)
-
             val intent = Intent(context, DrinkPostingName::class.java)
             startActivity(intent)
         }
@@ -61,5 +36,38 @@ class MainFragmentDrinks: Fragment() {
 
 
         return binding.root
+    }
+
+    private fun getDrinks(){
+        val run = Runnable {
+            val db = DrinkDatabase.getInstance(requireContext())
+
+            var drinks = db!!.drinkDao().getAllRecyclerviewData()
+            allDrinkNum = db!!.drinkDao().getDrinkAllNum()
+
+            activity?.runOnUiThread{
+                if (!drinks.isEmpty()) {
+                    binding.totalDrink.text = "${allDrinkNum}잔의 기록"
+                } else{
+                    binding.totalDrink.text = "기록이 없습니다"
+                }
+            }
+
+            if (!drinks.isEmpty()){
+                drinks.forEach { drink ->
+                    recyclerviewData.add(drink)
+                }
+            }
+        }
+
+
+        val th = Thread(run)
+        th.start()
+
+        try {
+            th.join()
+        }catch (e : InterruptedException){
+            Log.d("Drink reyclerview 출력 실패","실패")
+        }
     }
 }

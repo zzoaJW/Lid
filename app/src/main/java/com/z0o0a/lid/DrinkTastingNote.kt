@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.ContentResolver
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -53,11 +54,11 @@ class DrinkTastingNote  : AppCompatActivity() {
                 binding.noteDrinkRegion.text = drink?.drinkRegion
                 binding.noteDrinkPrice.text = drink?.drinkPrice
 
-                // 혹시라도 여기서 에러나면 uri 빌더로 기본이미지 uri랑 비교하자 (DrinkPostingImg.kr 참고)
-                if (drink?.drinkImg != "android.resource://com.z0o0a.lid/drawable/bottle") {
+                // 조건 왜 안되지 ㅠ
+//                if (drink?.drinkImg != BitmapFactory.decodeResource(resources, R.drawable.bottle)) {
                     binding.noteDrinkImg.visibility = View.VISIBLE
-                    binding.noteDrinkImg.setImageURI(Uri.parse(drink?.drinkImg))
-                }
+                    binding.noteDrinkImg.setImageBitmap(drink?.drinkImg)
+//                }
             }
         }).start()
     }

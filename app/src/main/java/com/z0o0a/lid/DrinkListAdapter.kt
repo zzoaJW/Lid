@@ -46,7 +46,7 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
         fun setData(content : DrinkListData, position: Int) {
             this.position = position
             itemDrinkListBinding.itemListDrinkId.text = content.drinkId.toString()
-            itemDrinkListBinding.itemListDrinkImg.setImageURI(Uri.parse(content.drinkImg))
+            itemDrinkListBinding.itemListDrinkImg.setImageBitmap(content.drinkImg)
 
             // 너무 길어지면 ...로 처리
             if (content.drinkEngName.length > 18) {

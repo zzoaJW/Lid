@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -24,7 +25,7 @@ import java.util.*
 class DrinkPostingTextWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextWhiskeyBinding
 
-    var drinkImg = ""
+    var drinkImg : Bitmap? = null
     var drinkEngName = ""
     var drinkKrName = ""
     var drinkType = ""
@@ -225,7 +226,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
     private fun getSingletonValues(){
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
 
-        drinkImg = postingSingleton?.drinkImg.toString()
+        drinkImg = postingSingleton?.drinkImg
         drinkEngName = postingSingleton?.drinkEngName.toString()
         drinkKrName = postingSingleton?.drinkKrName.toString()
         drinkType = postingSingleton?.drinkType.toString()
@@ -233,7 +234,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
     }
 
     private fun setSingletonValuesToUI(){
-        binding.postingWhiskeyImg.setImageURI(Uri.parse(drinkImg))
+        binding.postingWhiskeyImg.setImageBitmap(drinkImg)
         binding.postingWhiskeyEngName.text = drinkEngName
         binding.postingWhiskeyKrName.text = drinkKrName
         binding.postingWhiskeyType.text = drinkType

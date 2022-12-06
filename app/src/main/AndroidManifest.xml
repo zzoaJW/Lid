@@ -4,6 +4,17 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="false"
@@ -35,6 +46,15 @@
         <activity android:name=".DrinkTastingNoteWhiskey"/>
         <activity android:name=".DrinkTastingNoteWine"/>
         <activity android:name=".DrinkTastingNoteBeer"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.z0o0a.lid.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

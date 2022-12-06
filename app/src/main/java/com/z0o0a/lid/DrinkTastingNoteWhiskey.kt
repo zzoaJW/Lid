@@ -50,10 +50,10 @@ class DrinkTastingNoteWhiskey : AppCompatActivity() {
 
             runOnUiThread {
                 // 혹시라도 여기서 에러나면 uri 빌더로 기본이미지 uri랑 비교하자 (DrinkPostingImg.kr 참고)
-                if (drink?.drinkImg != "android.resource://com.z0o0a.lid/drawable/bottle") {
+//                if (drink?.drinkImg != "android.resource://com.z0o0a.lid/drawable/bottle") {
                     binding.noteWhImg.visibility = View.VISIBLE
-                    binding.noteWhImg.setImageURI(Uri.parse(drink!!.drinkImg))
-                }
+                    binding.noteWhImg.setImageBitmap(drink!!.drinkImg)
+//                }
 
                 binding.noteWhEngName.text = drink!!.drinkEngName
                 binding.noteWhKrName.text = drink!!.drinkKrName

@@ -150,7 +150,7 @@ class DrinkPostingText : AppCompatActivity() {
 
         Thread(Runnable {
             var newDrink = Drink(0,
-                postingSingleton?.drinkImg.toString(),
+                postingSingleton?.drinkImg,
                 postingSingleton?.drinkEngName.toString(),
                 postingSingleton?.drinkKrName.toString(),
                 postingSingleton?.drinkType.toString(),

@@ -1,5 +1,6 @@
 package com.z0o0a.lid
 
+import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Drink (
     @PrimaryKey(autoGenerate = true)@ColumnInfo(name = "drinkId") var drinkId :Int, // 고유번호
-    @ColumnInfo(name = "drinkImg") var drinkImg : String, // 이미지
+    @ColumnInfo(name = "drinkImg") var drinkImg : Bitmap?, // 이미지
     @ColumnInfo(name = "drinkEngName") var drinkEngName : String, // 영어 이름
     @ColumnInfo(name = "drinkKrName") var drinkKrName : String, // 한글 이름
     @ColumnInfo(name = "drinkType") var drinkType : String, // 대분류 (위스키/와인/맥주/기타)
@@ -93,7 +94,7 @@ data class DrinkBeer(
 
 data class DrinkListData (
     var drinkId : Int,
-    var drinkImg : String,
+    var drinkImg : Bitmap,
     var drinkEngName : String,
     var drinkKrName : String,
     var drinkType : String,

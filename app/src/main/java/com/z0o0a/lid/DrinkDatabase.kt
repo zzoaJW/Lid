@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
 
-@Database(entities = [Drink::class, DrinkWhiskey::class, DrinkWine::class, DrinkBeer::class], version = 3)
+@Database(entities = [Drink::class, DrinkWhiskey::class, DrinkWine::class, DrinkBeer::class], version = 1)
 @TypeConverters(RoomTypeConverter::class)
 abstract class DrinkDatabase: RoomDatabase() {
     abstract fun drinkDao(): DrinkDao
