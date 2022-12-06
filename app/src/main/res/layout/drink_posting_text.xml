@@ -15,6 +15,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageButton
+                android:id="@+id/btn_drink_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#00ff0000"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back" />
+
             <Button
                 android:id="@+id/btn_finish"
                 android:layout_width="0dp"
@@ -96,7 +109,6 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_drink_price"
@@ -118,10 +130,10 @@
                 android:id="@+id/posting_drink_img"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_drink_back"
                 app:srcCompat="@drawable/bottle" />
 
             <TextView
@@ -139,7 +151,7 @@
                 android:id="@+id/posting_drink_eng_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="영문 술 이름"
+                android:text="English Alcohol Name"
                 android:textColor="@color/font_default"
                 app:layout_constraintBottom_toTopOf="@+id/posting_drink_kr_name"
                 app:layout_constraintStart_toStartOf="@+id/posting_drink_kr_name" />
@@ -204,7 +216,6 @@
                 android:id="@+id/img_drink_price"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="@+id/img_drink_region"
                 app:layout_constraintTop_toBottomOf="@+id/img_drink_region"

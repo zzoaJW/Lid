@@ -36,6 +36,10 @@ class DrinkPostingText : AppCompatActivity() {
         setDrinkImgNameType()
         binding.postingDrinkImg.setImageURI(Uri.parse(drinkImg))
 
+        binding.btnDrinkBack.setOnClickListener {
+            finish()
+        }
+
         binding.btnCancel.setOnClickListener {
             cancelConfirm()
         }

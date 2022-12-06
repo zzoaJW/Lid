@@ -70,12 +70,48 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
             itemView.setOnClickListener {
                 val context=itemView.context
 
-                // 위스키/와인/맥주 넘어가는 화면 다르게하기
-                val intent = Intent( context, DrinkTastingNote::class.java)
-                // 삭제되고 없는 id 넘겨줄려고하면 Toast메시지 띄우기
-                intent.putExtra("drinkId", listData[position].drinkId)
-                Log.d("id넘겨줌", "id는 넣었네")
-                context.startActivity(intent)
+                var isExist = false
+
+                val run = Runnable {
+                    val db = DrinkDatabase.getInstance(context)
+
+                    isExist = db!!.drinkDao().getDrinkExist(listData[position].drinkId)
+                }
+
+                val t = Thread(run)
+                t.start()
+
+                try {
+                    t.join()
+                }catch (e : InterruptedException){
+                    Log.d("Drink 아이템 클릭 실패","실패")
+                }
+
+                if (isExist){
+                    var intent = Intent(context, DrinkTastingNote::class.java)
+
+                    // 위스키/와인/맥주 넘어가는 화면 다르게
+                    if (listData[position].drinkType == "위스키"){ // 위스키
+                        intent = Intent(context, DrinkTastingNoteWhiskey::class.java)
+
+                    }else if (listData[position].drinkType == "와인"){ // 와인
+                        intent = Intent(context, DrinkTastingNoteWine::class.java)
+
+                    }else if (listData[position].drinkType == "맥주"){ // 맥주
+                        intent = Intent(context, DrinkTastingNoteBeer::class.java)
+
+                    }
+
+                    intent.putExtra("drinkId", listData[position].drinkId)
+                    context.startActivity(intent)
+                }else{
+                    // 삭제되고 없는 id 넘겨줄려고하면 Toast메시지 띄우기
+                    Toast.makeText(context, "해당 기록이 없습니다.", Toast.LENGTH_LONG).show()
+                }
+
+
+
+
             }
 
             itemView.elevation = 10F

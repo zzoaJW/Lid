@@ -44,6 +44,8 @@ interface DrinkDao {
     @Query("SELECT drinkId, drinkImg, drinkEngName, drinkKrName, drinkType, drinkRating FROM Drink WHERE drinkPostingDate = :date")
     fun getDateRecyclerviewData(date : String): List<DrinkListData>
 
+    @Query("SELECT EXISTS(SELECT * FROM Drink WHERE drinkId = :drinkId)")
+    fun getDrinkExist(drinkId : Int) : Boolean
 
 
 
@@ -56,6 +58,10 @@ interface DrinkDao {
 
     @Delete
     fun deleteDrinkWhiskey(drinkWhiskey : DrinkWhiskey)
+
+    // recyclerview item 눌러서 테이스팅 노트 화면으로 넘어가서 해당 drinkId의 테이스팅 노트 보여주기
+    @Query("SELECT * FROM DrinkWhiskey WHERE whId = :whId")
+    fun getDrinkWiskey(whId : Long): DrinkWhiskey
 
 
 

@@ -126,6 +126,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
                 binding.txtWhiskeyKeep.visibility = View.INVISIBLE
                 binding.whiskeyKeepDate.visibility = View.VISIBLE
             } else {
+                binding.whiskeyKeepDate.text = "개봉일 선택"
                 binding.txtWhiskeyKeep.visibility = View.VISIBLE
                 binding.whiskeyKeepDate.visibility = View.INVISIBLE
             }
@@ -207,6 +208,9 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         }
 
         whKeepDate = binding.whiskeyKeepDate.text.toString()
+        if (whKeepDate == "개봉일 선택") {
+            whKeepDate = "보관 안함"
+        }
 
         whPostingDate = getCurrentDate()
     }

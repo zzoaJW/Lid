@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lid_background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/note_wh_img"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_btn_back"
+                app:srcCompat="@drawable/bottle" />
+
+            <TextView
+                android:id="@+id/note_wh_eng_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="English Alcohol Name"
+                android:textColor="@color/font_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_img" />
+
+            <TextView
+                android:id="@+id/note_wh_kr_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="한글 술 이름"
+                android:textColor="@color/font_default"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/note_wh_eng_name"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_eng_name" />
+
+            <TextView
+                android:id="@+id/note_wh_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="0.0"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wh_star"
+                app:layout_constraintStart_toEndOf="@+id/img_wh_star"
+                app:layout_constraintTop_toTopOf="@+id/img_wh_star" />
+
+            <TextView
+                android:id="@+id/note_wh_tasting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@color/space_separate_gray"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="20dp"
+                android:text="테이스팅 내용"
+                android:textColor="@color/font_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_finish_layout" />
+
+            <TextView
+                android:id="@+id/note_wh_keep_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="보관 날짜"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wh_keep_date"
+                app:layout_constraintStart_toEndOf="@+id/img_wh_keep_date"
+                app:layout_constraintTop_toTopOf="@+id/img_wh_keep_date" />
+
+            <TextView
+                android:id="@+id/note_wh_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="장소"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wh_place"
+                app:layout_constraintStart_toEndOf="@+id/img_wh_place"
+                app:layout_constraintTop_toTopOf="@+id/img_wh_place" />
+
+            <TextView
+                android:id="@+id/note_wh_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="생산 국가 / 지역"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toTopOf="@+id/img_wh_price"
+                app:layout_constraintStart_toEndOf="@+id/img_wh_region"
+                app:layout_constraintTop_toTopOf="@+id/img_wh_region"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/note_wh_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="가격"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wh_price"
+                app:layout_constraintStart_toEndOf="@+id/img_wh_price"
+                app:layout_constraintTop_toTopOf="@+id/img_wh_price"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/note_wh_posting_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="작성 날짜"
+                android:textColor="@color/font_default"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wh_posting_date"
+                app:layout_constraintStart_toEndOf="@+id/img_wh_posting_date"
+                app:layout_constraintTop_toTopOf="@+id/img_wh_posting_date" />
+
+            <TextView
+                android:id="@+id/note_wh_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="술 종류"
+                android:textColor="@color/font_gray"
+                app:layout_constraintStart_toStartOf="@+id/note_wh_eng_name"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_kr_name" />
+
+            <ImageButton
+                android:id="@+id/note_wh_btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="#00ff0000"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back" />
+
+            <ImageButton
+                android:id="@+id/btn_wh_del"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:background="#00ff0000"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/font_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/note_wh_btn_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/note_wh_btn_back"
+                app:srcCompat="@drawable/delete" />
+
+            <ImageButton
+                android:id="@+id/btn_wh_correct"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00ff0000"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/font_gray"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_wh_del"
+                app:layout_constraintEnd_toStartOf="@+id/btn_wh_del"
+                app:layout_constraintTop_toTopOf="@+id/btn_wh_del"
+                app:srcCompat="@drawable/pencil" />
+
+            <TextView
+                android:id="@+id/img_wh_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="★"
+                android:textColor="@color/lime"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/note_wh_eng_name"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_type" />
+
+            <ImageView
+                android:id="@+id/img_wh_place"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:tint="@color/font_default"
+                app:layout_constraintStart_toStartOf="@+id/img_wh_region"
+                app:layout_constraintTop_toBottomOf="@+id/img_wh_price"
+                app:srcCompat="@drawable/place" />
+
+            <ImageView
+                android:id="@+id/img_wh_posting_date"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="2dp"
+                android:tint="@color/font_default"
+                app:layout_constraintStart_toStartOf="@+id/img_wh_region"
+                app:layout_constraintTop_toBottomOf="@+id/img_wh_place"
+                app:srcCompat="@drawable/pencil" />
+
+            <ImageView
+                android:id="@+id/img_wh_keep_date"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:tint="@color/font_default"
+                app:layout_constraintStart_toStartOf="@+id/img_wh_region"
+                app:layout_constraintTop_toBottomOf="@+id/img_wh_posting_date"
+                app:srcCompat="@drawable/open" />
+
+            <ImageView
+                android:id="@+id/img_wh_price"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:tint="@color/font_default"
+                app:layout_constraintStart_toStartOf="@+id/img_wh_region"
+                app:layout_constraintTop_toBottomOf="@+id/img_wh_region"
+                app:srcCompat="@drawable/won" />
+
+            <ImageView
+                android:id="@+id/img_wh_region"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:tint="@color/font_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_tasting"
+                app:srcCompat="@drawable/world" />
+
+            <View
+                android:id="@+id/view100"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_wh_keep_date" />
+
+            <View
+                android:id="@+id/wh_color_circle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/color_circle"
+                app:layout_constraintBottom_toBottomOf="@+id/img_wh_star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/note_wh_type" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_nose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="50dp"
+                android:text="Nose"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view100001" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_palate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="60dp"
+                android:text="Palate"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_nose_layout" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="60dp"
+                android:text="Finish"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_body" />
+
+            <View
+                android:id="@+id/view100001"
+                android:layout_width="0dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/space_separate_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_wh_star" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_sweet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:text="당도"
+                android:textColor="@color/font_default"
+                android:textSize="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_wh_palate_layout" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_spicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="스파이시"
+                android:textSize="13dp"
+                android:textColor="@color/font_default"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_sweet" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="바디"
+                android:textSize="13dp"
+                android:textColor="@color/font_default"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_spicy" />
+
+            <SeekBar
+                android:id="@+id/note_wh_spicy"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wh_spicy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_note_wh_spicy"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wh_spicy" />
+
+            <SeekBar
+                android:id="@+id/note_wh_body"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wh_body"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/note_wh_spicy"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wh_body" />
+
+            <SeekBar
+                android:id="@+id/note_wh_sweet"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wh_sweet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/note_wh_spicy"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wh_sweet" />
+
+            <LinearLayout
+                android:id="@+id/note_wh_nose_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/note_wh_palate_layout"
+                android:layout_width="346dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_palate"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/note_wh_finish_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_finish"></LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

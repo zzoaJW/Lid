@@ -32,6 +32,9 @@
         <activity android:name=".DrinkPostingGuide"/>
         <activity android:name=".DrinkPostingTextWhiskey"/>
         <activity android:name=".DrinkPostingTextWine"/>
+        <activity android:name=".DrinkTastingNoteWhiskey"/>
+        <activity android:name=".DrinkTastingNoteWine"/>
+        <activity android:name=".DrinkTastingNoteBeer"/>
     </application>
 
 </manifest>

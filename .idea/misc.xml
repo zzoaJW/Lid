@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/btn_down_background.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable/btn_up_background.xml" value="0.1935" />
         <entry key="app/src/main/res/drawable/chip_background.xml" value="0.23" />
+        <entry key="app/src/main/res/drawable/color_circle.xml" value="0.2075" />
         <entry key="app/src/main/res/drawable/drink_spinner.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/edittext_background.xml" value="0.199" />
         <entry key="app/src/main/res/drawable/edittext_background_etc_type.xml" value="0.1" />
@@ -26,13 +27,16 @@
         <entry key="app/src/main/res/layout/drink_posting_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/drink_posting_note_beer.xml" value="0.30738489060174856" />
         <entry key="app/src/main/res/layout/drink_posting_select_note.xml" value="0.15476190476190477" />
-        <entry key="app/src/main/res/layout/drink_posting_text.xml" value="0.26821773485513606" />
+        <entry key="app/src/main/res/layout/drink_posting_text.xml" value="0.23422698974609377" />
         <entry key="app/src/main/res/layout/drink_posting_text_beer.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_posting_text_whiskey.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_posting_text_wine.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_spinner.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_spinner_txt.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/drink_tasting_note.xml" value="0.33997883168301835" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_beer.xml" value="0.15476190476190477" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_whiskey.xml" value="0.17568206787109375" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_wine.xml" value="0.2631506582644693" />
         <entry key="app/src/main/res/layout/item_drink_list.xml" value="0.4006134033203125" />
         <entry key="app/src/main/res/layout/life_is_drink.xml" value="0.335" />
         <entry key="app/src/main/res/layout/main_drinks.xml" value="0.1" />

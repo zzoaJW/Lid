@@ -230,18 +230,18 @@
                 app:layout_constraintStart_toEndOf="@+id/img_whiskey_region"
                 app:layout_constraintTop_toTopOf="@+id/img_whiskey_region" />
 
-    <Button
-        android:id="@+id/btn_whiskey_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:background="#00000000"
-        android:text="short"
-        android:textStyle="bold"
-        android:textColor="@color/font_gray"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_whiskey_back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_whiskey_back" />
+            <Button
+                android:id="@+id/btn_whiskey_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="#00000000"
+                android:text="short"
+                android:textColor="@color/font_gray"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_whiskey_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_whiskey_back" />
 
             <View
                 android:id="@+id/view15"
@@ -293,7 +293,7 @@
                 <View
                     android:id="@+id/view10"
                     android:layout_width="0dp"
-                    android:layout_height="12dp"
+                    android:layout_height="1dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -304,7 +304,7 @@
                 <View
                     android:id="@+id/view14"
                     android:layout_width="0dp"
-                    android:layout_height="12dp"
+                    android:layout_height="1dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -315,7 +315,7 @@
                 <View
                     android:id="@+id/view12"
                     android:layout_width="0dp"
-                    android:layout_height="12dp"
+                    android:layout_height="1dp"
                     android:layout_marginTop="40dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -586,7 +586,6 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/whiskey_spicy" />
 
