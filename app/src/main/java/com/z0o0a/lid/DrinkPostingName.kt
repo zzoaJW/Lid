@@ -76,7 +76,7 @@ class DrinkPostingName : AppCompatActivity() {
             if (binding.radioBtnEtc.isChecked && drinkType=="") {
                 var temp = binding.editTxtEtcType.text.toString()
                 if (temp == "") {
-                    drinkType = "etc."
+                    drinkType = "기타"
                 }else{
                     drinkType = temp
                 }

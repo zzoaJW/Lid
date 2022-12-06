@@ -56,13 +56,11 @@ data class DrinkWine(
     @ColumnInfo(name = "wiCoreColor") var wiCoreColor : String, // (림 변화 True인 경우만 저장) 코어(림 안쪽) 색
     @ColumnInfo(name = "wiTears") var wiTears : Int, // 눈물 점도
 
-    @ColumnInfo(name = "wiNoseIntensity") var wiNoseIntensity : Int, // 향 강도
     @ColumnInfo(name = "wiNose") var wiNose : MutableList<String>, // 향 목록     // List<String>
 
-    @ColumnInfo(name = "wiPalateIntensity") var wiPalateIntensity : Int, // 맛 강도
     @ColumnInfo(name = "wiSweet") var wiSweet : Int, // 당도
     @ColumnInfo(name = "wiAcidity") var wiAcidity : Int, // 산미
-    @ColumnInfo(name = "wiAlcohol") var wiAlcohol : Int, // 알코올
+    @ColumnInfo(name = "wiBody") var wiBody : Int, // 알코올
     @ColumnInfo(name = "wiTannin") var wiTannin : Int, // 탄닌
 )
 

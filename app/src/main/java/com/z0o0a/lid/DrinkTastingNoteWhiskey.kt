@@ -86,7 +86,7 @@ class DrinkTastingNoteWhiskey : AppCompatActivity() {
             runOnUiThread {
 
                 if (whiskeyDrink!!.whColor != ""){
-                    binding.whColorCircle.setBackgroundColor(Color.parseColor(whiskeyDrink!!.whColor))
+                    binding.whColorCircle.background.setTint(Color.parseColor(whiskeyDrink!!.whColor))
                 }else{
                     binding.whColorCircle.visibility = View.GONE
                 }
