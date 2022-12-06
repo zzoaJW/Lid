@@ -307,7 +307,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/wine_sweet8" />
+                    app:layout_constraintTop_toBottomOf="@+id/note_wi_layout" />
 
                 <View
                     android:id="@+id/view3005"
@@ -461,22 +461,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/wine_sweet6" />
 
                 <SeekBar
-                    android:id="@+id/wine_sweet8"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView14"
-                    app:layout_constraintEnd_toEndOf="@+id/wine_sweet4"
-                    app:layout_constraintStart_toStartOf="@+id/wine_sweet4"
-                    app:layout_constraintTop_toTopOf="@+id/textView14" />
-
-                <SeekBar
                     android:id="@+id/wine_sweet10"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
@@ -597,17 +581,6 @@
                     app:layout_constraintStart_toStartOf="@+id/wine_sweet6" />
 
                 <TextView
-                    android:id="@+id/txt_wine_sweet4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="낮음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/wine_sweet7"
-                    app:layout_constraintStart_toStartOf="@+id/wine_sweet7" />
-
-                <TextView
                     android:id="@+id/txt_wine_sweet5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -652,17 +625,6 @@
                     app:layout_constraintEnd_toEndOf="@+id/wine_sweet12" />
 
                 <TextView
-                    android:id="@+id/txt_wine_sweet8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="좁음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/wine_sweet8"
-                    app:layout_constraintStart_toStartOf="@+id/wine_sweet8" />
-
-                <TextView
                     android:id="@+id/txt_wine_sweet15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -683,17 +645,6 @@
                     android:textSize="12dp"
                     app:layout_constraintBottom_toTopOf="@+id/wine_sweet12"
                     app:layout_constraintStart_toStartOf="@+id/wine_sweet12" />
-
-                <TextView
-                    android:id="@+id/txt_wine_sweet10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="넓음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/wine_sweet8"
-                    app:layout_constraintEnd_toEndOf="@+id/wine_sweet8" />
 
                 <TextView
                     android:id="@+id/txt_wine_sweet7"
@@ -755,7 +706,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:text="투명"
+                    android:text="투명도"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet6"
@@ -796,17 +747,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                 <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:text="림 넓이"
-                    android:textColor="@color/font_default"
-                    android:textSize="13dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView13"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-                <TextView
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -822,7 +762,7 @@
                     android:id="@+id/textView18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="산도"
+                    android:text="산미"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet14"
@@ -861,6 +801,77 @@
                     android:textSize="13dp"
                     app:layout_constraintStart_toStartOf="@+id/textView20"
                     app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                <TextView
+                    android:id="@+id/txt_wine_sweet4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="낮음"
+                    android:textColor="@color/font_default"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toTopOf="@+id/wine_sweet7"
+                    app:layout_constraintStart_toStartOf="@+id/wine_sweet7" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/note_wi_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                    tools:layout_editor_absoluteX="-16dp">
+
+                    <SeekBar
+                        android:id="@+id/wine_sweet8"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="3"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView14"
+                        app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="40dp"
+                        android:text="림 넓이"
+                        android:textColor="@color/font_default"
+                        android:textSize="13dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_wine_sweet8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="좁음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/wine_sweet8"
+                        app:layout_constraintStart_toStartOf="@+id/wine_sweet8" />
+
+                    <TextView
+                        android:id="@+id/txt_wine_sweet10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="넓음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/wine_sweet8"
+                        app:layout_constraintEnd_toEndOf="@+id/wine_sweet8" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Switch
                     android:id="@+id/switch1"
