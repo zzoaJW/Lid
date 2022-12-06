@@ -416,7 +416,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Nose"
+                    android:text="Aroma"
                     android:textColor="@color/font_gray"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_beer_nose"
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_nose" />
@@ -426,7 +426,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Aroma"
+                    android:text="Flavor"
                     android:textColor="@color/font_gray"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_beer_palate"
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_palate" />

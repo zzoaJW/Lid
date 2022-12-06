@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lid_background">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,6 +14,70 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/view30093284"
+                android:layout_width="0dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/space_separate_gray"
+                app:layout_constraintTop_toBottomOf="@+id/img_b_star"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_nose5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Appearance"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="276dp" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_nose6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foam"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="330dp" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_nose7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aroma"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="392dp" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_nose8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flavor"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="452dp" />
+
+            <TextView
+                android:id="@+id/txt_note_wh_nose9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MouthFeel"
+                android:textColor="@color/font_default"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="527dp" />
 
             <ImageView
                 android:id="@+id/note_b_img"
@@ -64,7 +129,7 @@
                 android:id="@+id/note_b_tasting"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="700dp"
                 android:background="@color/space_separate_gray"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="20dp"
@@ -252,6 +317,25 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_b_keep_date" />
+
+            <View
+                android:id="@+id/note_b_color_circle_foam"
+                android:layout_width="45dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/color_circle_up"
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_rating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/note_b_type" />
+
+            <View
+                android:id="@+id/note_b_color_beer"
+                android:layout_width="45dp"
+                android:layout_height="22dp"
+                android:background="@drawable/color_circle_down"
+                app:layout_constraintEnd_toEndOf="@+id/note_b_color_circle_foam"
+                app:layout_constraintStart_toStartOf="@+id/note_b_color_circle_foam"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_color_circle_foam" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
