@@ -64,7 +64,7 @@
                 android:id="@+id/note_drink_tasting"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:background="@color/space_separate_gray"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="20dp"
@@ -197,7 +197,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="@+id/imageView6"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -248,7 +248,7 @@
             <View
                 android:id="@+id/view6"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />

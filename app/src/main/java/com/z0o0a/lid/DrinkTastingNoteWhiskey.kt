@@ -79,14 +79,18 @@ class DrinkTastingNoteWhiskey : AppCompatActivity() {
             val whId = db!!.drinkDao().getDrink(drinkId).typeId
             val whiskeyDrink = db!!.drinkDao().getDrinkWiskey(whId)
 
-            val whColor = Color.parseColor(whiskeyDrink!!.whColor)
             val whNoses : MutableList<String> = whiskeyDrink!!.whNose
             val whPalate : MutableList<String> = whiskeyDrink!!.whPalate
             val whFinish : MutableList<String> = whiskeyDrink!!.whFinish
 
             runOnUiThread {
 
-                binding.whColorCircle.setBackgroundColor(whColor)
+                if (whiskeyDrink!!.whColor != ""){
+                    binding.whColorCircle.setBackgroundColor(Color.parseColor(whiskeyDrink!!.whColor))
+                }else{
+                    binding.whColorCircle.visibility = View.GONE
+                }
+
 
                 for (nose in whNoses){
                     var txt = TextView(this)
