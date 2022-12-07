@@ -24,10 +24,10 @@
                 android:layout_marginEnd="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose3"></LinearLayout>
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_nose"></LinearLayout>
 
             <TextView
-                android:id="@+id/txt_note_wh_nose2"
+                android:id="@+id/txt_note_wi_appearance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -40,7 +40,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view200003333" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose3"
+                android:id="@+id/txt_note_wi_nose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -50,10 +50,10 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_wi_4" />
+                app:layout_constraintTop_toBottomOf="@+id/note_wi_rim_area" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose4"
+                android:id="@+id/txt_note_wi_palate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -122,7 +122,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_wi_star" />
 
             <TextView
-                android:id="@+id/note_wi_tasting"
+                android:id="@+id/note_wi_overall_str"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
@@ -133,10 +133,10 @@
                 android:textColor="@color/font_default"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_wi_8" />
+                app:layout_constraintTop_toBottomOf="@+id/note_wi_tannin" />
 
             <TextView
-                android:id="@+id/txt_note_wi_"
+                android:id="@+id/txt_note_wi_clarity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -145,43 +145,43 @@
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose2" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_appearance" />
 
             <TextView
-                android:id="@+id/txt_note_wi_2"
+                android:id="@+id/txt_note_wi_brightness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="표면 밝기"
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_" />
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_clarity"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_clarity" />
 
             <TextView
-                android:id="@+id/txt_note_wi_3"
+                android:id="@+id/txt_note_wi_tear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="눈물 점도"
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_2" />
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_clarity"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_brightness" />
 
             <TextView
-                android:id="@+id/txt_note_wi_4"
+                android:id="@+id/txt_note_wi_rim_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="림 넓이"
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_3" />
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_clarity"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_tear" />
 
             <TextView
-                android:id="@+id/txt_note_wi_5"
+                android:id="@+id/txt_note_wi_sweet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -190,43 +190,43 @@
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose4" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_palate" />
 
             <TextView
-                android:id="@+id/txt_note_wi_6"
+                android:id="@+id/txt_note_wi_acidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="산미"
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_5"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_5" />
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_sweet"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_sweet" />
 
             <TextView
-                android:id="@+id/txt_note_wi_7"
+                android:id="@+id/txt_note_wi_body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="바디"
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_5"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_6" />
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_sweet"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_acidity" />
 
             <TextView
-                android:id="@+id/txt_note_wi_8"
+                android:id="@+id/txt_note_wi_tannin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="탄닌"
                 android:textColor="@color/font_default"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_5"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_7" />
+                app:layout_constraintStart_toStartOf="@+id/txt_note_wi_sweet"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_wi_body" />
 
             <SeekBar
-                android:id="@+id/note_wi_3"
+                android:id="@+id/note_wi_tear"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -236,13 +236,13 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_3"
-                app:layout_constraintEnd_toEndOf="@+id/note_wi_2"
-                app:layout_constraintStart_toStartOf="@+id/note_wi_2"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_3" />
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_tear"
+                app:layout_constraintEnd_toEndOf="@+id/note_wi_brightness"
+                app:layout_constraintStart_toStartOf="@+id/note_wi_brightness"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_tear" />
 
             <SeekBar
-                android:id="@+id/note_wi_4"
+                android:id="@+id/note_wi_rim_area"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -252,79 +252,13 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_4"
-                app:layout_constraintEnd_toEndOf="@+id/note_wi_2"
-                app:layout_constraintStart_toStartOf="@+id/note_wi_2"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_4" />
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_rim_area"
+                app:layout_constraintEnd_toEndOf="@+id/note_wi_brightness"
+                app:layout_constraintStart_toStartOf="@+id/note_wi_brightness"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_rim_area" />
 
             <SeekBar
-                android:id="@+id/note_wi_5"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/chip_background"
-                android:backgroundTint="@color/space_separate_gray"
-                android:max="6"
-                android:progress="3"
-                android:progressTint="@color/font_default"
-                android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wi_5"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_5" />
-
-            <SeekBar
-                android:id="@+id/note_wi_6"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chip_background"
-                android:backgroundTint="@color/space_separate_gray"
-                android:max="6"
-                android:progress="3"
-                android:progressTint="@color/font_default"
-                android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_6"
-                app:layout_constraintEnd_toEndOf="@+id/note_wi_5"
-                app:layout_constraintStart_toStartOf="@+id/note_wi_5"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_6" />
-
-            <SeekBar
-                android:id="@+id/note_wi_7"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chip_background"
-                android:backgroundTint="@color/space_separate_gray"
-                android:max="6"
-                android:progress="3"
-                android:progressTint="@color/font_default"
-                android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_7"
-                app:layout_constraintEnd_toEndOf="@+id/note_wi_5"
-                app:layout_constraintStart_toStartOf="@+id/note_wi_5"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_7" />
-
-            <SeekBar
-                android:id="@+id/note_wi_8"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chip_background"
-                android:backgroundTint="@color/space_separate_gray"
-                android:max="6"
-                android:progress="3"
-                android:progressTint="@color/font_default"
-                android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_8"
-                app:layout_constraintEnd_toEndOf="@+id/note_wi_5"
-                app:layout_constraintStart_toStartOf="@+id/note_wi_5"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_8" />
-
-            <SeekBar
-                android:id="@+id/note_wi_2"
+                android:id="@+id/note_wi_sweet"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -336,13 +270,13 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_2"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_sweet"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wi_2"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_2" />
+                app:layout_constraintStart_toEndOf="@+id/txt_note_wi_sweet"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_sweet" />
 
             <SeekBar
-                android:id="@+id/note_wi_"
+                android:id="@+id/note_wi_acidity"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -352,10 +286,76 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_"
-                app:layout_constraintEnd_toEndOf="@+id/note_wi_2"
-                app:layout_constraintStart_toStartOf="@+id/note_wi_2"
-                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_" />
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_acidity"
+                app:layout_constraintEnd_toEndOf="@+id/note_wi_sweet"
+                app:layout_constraintStart_toStartOf="@+id/note_wi_sweet"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_acidity" />
+
+            <SeekBar
+                android:id="@+id/note_wi_body"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_body"
+                app:layout_constraintEnd_toEndOf="@+id/note_wi_sweet"
+                app:layout_constraintStart_toStartOf="@+id/note_wi_sweet"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_body" />
+
+            <SeekBar
+                android:id="@+id/note_wi_tannin"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_tannin"
+                app:layout_constraintEnd_toEndOf="@+id/note_wi_sweet"
+                app:layout_constraintStart_toStartOf="@+id/note_wi_sweet"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_tannin" />
+
+            <SeekBar
+                android:id="@+id/note_wi_brightness"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_brightness"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_note_wi_brightness"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_brightness" />
+
+            <SeekBar
+                android:id="@+id/note_wi_clarity"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chip_background"
+                android:backgroundTint="@color/space_separate_gray"
+                android:max="6"
+                android:progress="3"
+                android:progressTint="@color/font_default"
+                android:thumbTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_note_wi_clarity"
+                app:layout_constraintEnd_toEndOf="@+id/note_wi_brightness"
+                app:layout_constraintStart_toStartOf="@+id/note_wi_brightness"
+                app:layout_constraintTop_toTopOf="@+id/txt_note_wi_clarity" />
 
             <TextView
                 android:id="@+id/note_wi_keep_date"
@@ -480,7 +480,7 @@
                 android:id="@+id/img_wi_place"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="@+id/img_wi_region"
                 app:layout_constraintTop_toBottomOf="@+id/img_wi_price"
@@ -525,7 +525,7 @@
                 android:layout_marginTop="30dp"
                 android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_wi_tasting"
+                app:layout_constraintTop_toBottomOf="@+id/note_wi_overall_str"
                 app:srcCompat="@drawable/world" />
 
             <View

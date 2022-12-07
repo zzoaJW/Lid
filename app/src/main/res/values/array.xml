@@ -23,4 +23,48 @@
         <item name="whiskey_color_19">#712C1D</item>
         <item name="whiskey_color_20">#421B0A</item>
     </string-array>
+
+    <string-array name="beer_colors">
+        <item name="beer_color_1">#FBE799</item>
+        <item name="beer_color_2">#F9D879</item>
+        <item name="beer_color_3">#F7CB5A</item>
+        <item name="beer_color_4">#F5C142</item>
+        <item name="beer_color_5">#F3B23E</item>
+        <item name="beer_color_6">#F2A83B</item>
+        <item name="beer_color_7">#EE9E38</item>
+        <item name="beer_color_8">#E69134</item>
+        <item name="beer_color_9">#E38932</item>
+        <item name="beer_color_10">#DA7E2E</item>
+        <item name="beer_color_11">#CE752B</item>
+        <item name="beer_color_12">#CB6C28</item>
+        <item name="beer_color_13">#C66326</item>
+        <item name="beer_color_14">#BF5C23</item>
+        <item name="beer_color_15">#B65320</item>
+        <item name="beer_color_16">#B04F1F</item>
+        <item name="beer_color_17">#AC471C</item>
+        <item name="beer_color_18">#A2401A</item>
+        <item name="beer_color_19">#9D3817</item>
+        <item name="beer_color_20">#963516</item>
+        <item name="beer_color_21">#912F14</item>
+        <item name="beer_color_22">#872F13</item>
+        <item name="beer_color_23">#832511</item>
+        <item name="beer_color_24">#801F0F</item>
+        <item name="beer_color_25">#771C0D</item>
+        <item name="beer_color_26">#721B0C</item>
+        <item name="beer_color_27">#6C150B</item>
+        <item name="beer_color_28">#671109</item>
+        <item name="beer_color_29">#621008</item>
+        <item name="beer_color_30">#5B0E07</item>
+        <item name="beer_color_31">#560C07</item>
+        <item name="beer_color_32">#5D0E07</item>
+        <item name="beer_color_33">#500B08</item>
+        <item name="beer_color_34">#4B0908</item>
+        <item name="beer_color_35">#440806</item>
+        <item name="beer_color_36">#420807</item>
+        <item name="beer_color_37">#3C0908</item>
+        <item name="beer_color_38">#390708</item>
+        <item name="beer_color_39">#39080B</item>
+        <item name="beer_color_40">#35080A</item>
+
+    </string-array>
 </resources>

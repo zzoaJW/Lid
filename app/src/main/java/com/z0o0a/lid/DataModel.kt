@@ -50,11 +50,12 @@ data class DrinkWine(
 
     @ColumnInfo(name = "wiClarity") var wiClarity : Int, // 투명도
     @ColumnInfo(name = "wiBrightness") var wiBrightness : Int, // 표면 밝기
-    @ColumnInfo(name = "wiRimVariation") var wiRimVariation : Boolean, // 림 변화
-    @ColumnInfo(name = "wiRimArea") var wiRimArea : String, // (림 변화 True인 경우만 저장) 림 넓이
-    @ColumnInfo(name = "wiRimColor") var wiRimColor : String, // (림 변화 True인 경우만 저장) 림 색
-    @ColumnInfo(name = "wiCoreColor") var wiCoreColor : String, // (림 변화 True인 경우만 저장) 코어(림 안쪽) 색
     @ColumnInfo(name = "wiTears") var wiTears : Int, // 눈물 점도
+
+    @ColumnInfo(name = "wiRimVariation") var wiRimVariation : Boolean, // 림 변화
+    @ColumnInfo(name = "wiRimArea") var wiRimArea : Int, // (림 변화 True인 경우만 저장) 림 넓이
+    @ColumnInfo(name = "wiRimColor") var wiRimColor : String, // (림 변화 True인 경우만 저장) 림 색 // 일단 디폴드 값으로 저장
+    @ColumnInfo(name = "wiCoreColor") var wiCoreColor : String, // (림 변화 True인 경우만 저장) 코어(림 안쪽) 색 // 일단 디폴드 값으로 저장
 
     @ColumnInfo(name = "wiNose") var wiNose : MutableList<String>, // 향 목록     // List<String>
 
@@ -73,7 +74,7 @@ data class DrinkBeer(
     @ColumnInfo(name = "bClarity") var bClarity : Int, // 투명도
     @ColumnInfo(name = "bHeadColor") var bHeadColor : String, // 거품 색
     @ColumnInfo(name = "bHeadRetention") var bHeadRetention : Int, // 거품 유지력
-    @ColumnInfo(name = "bDensity") var bDensity : Int, // 거품 조밀도
+    @ColumnInfo(name = "bHeadDensity") var bHeadDensity : Int, // 거품 조밀도
 
     @ColumnInfo(name = "bAromaMalt") var bAromaMalt : Int, // 향-맥아
     @ColumnInfo(name = "bAromaHops") var bAromaHops : Int, // 향-홉

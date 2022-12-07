@@ -96,6 +96,9 @@ interface DrinkDao {
     @Query("SELECT * FROM DrinkWine")
     fun getDrinkWineAll(): List<DrinkWine>
 
+    @Query("SELECT * FROM DrinkWine WHERE wiId = :wiId")
+    fun getDrinkWine(wiId : Long): DrinkWine
+
 
 
 
@@ -118,4 +121,7 @@ interface DrinkDao {
 
     @Query("SELECT * FROM DrinkBeer")
     fun getDrinkBeerAll(): List<DrinkBeer>
+
+    @Query("SELECT * FROM DrinkBeer WHERE bId = :bId")
+    fun getDrinkBeer(bId : Long): DrinkBeer
 }

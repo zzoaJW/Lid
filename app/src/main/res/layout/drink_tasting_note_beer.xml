@@ -25,7 +25,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose5"
+                android:id="@+id/txt_note_b_appearance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view30093284" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose6"
+                android:id="@+id/txt_note_b_nose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -48,10 +48,10 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_" />
+                app:layout_constraintTop_toBottomOf="@+id/note_b_clarity" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose7"
+                android:id="@+id/txt_note_b_aroma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -61,10 +61,10 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_3" />
+                app:layout_constraintTop_toBottomOf="@+id/note_b_head_density" />
 
             <SeekBar
-                android:id="@+id/note_b_"
+                android:id="@+id/note_b_clarity"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -78,11 +78,11 @@
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wh_sweet2"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose5" />
+                app:layout_constraintStart_toEndOf="@+id/txt_note_b_clarity"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_b_appearance" />
 
             <SeekBar
-                android:id="@+id/note_b_2"
+                android:id="@+id/note_b_head_retention"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -96,11 +96,11 @@
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wh_sweet3"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose6" />
+                app:layout_constraintStart_toEndOf="@+id/txt_note_b_head_retention"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_b_nose" />
 
             <SeekBar
-                android:id="@+id/note_b_3"
+                android:id="@+id/note_b_head_density"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -112,12 +112,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_2"
-                app:layout_constraintStart_toStartOf="@+id/note_b_2"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_2" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_head_retention"
+                app:layout_constraintStart_toStartOf="@+id/note_b_head_retention"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_head_retention" />
 
             <SeekBar
-                android:id="@+id/note_b_4"
+                android:id="@+id/note_b_aroma_malt"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -131,11 +131,11 @@
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wh_sweet5"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose7" />
+                app:layout_constraintStart_toEndOf="@+id/txt_note_b_aroma_malt"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_b_aroma" />
 
             <SeekBar
-                android:id="@+id/note_b_5"
+                android:id="@+id/note_b_aroma_hops"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -146,12 +146,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_4"
-                app:layout_constraintStart_toStartOf="@+id/note_b_4"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_4" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_aroma_malt"
+                app:layout_constraintStart_toStartOf="@+id/note_b_aroma_malt"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_aroma_malt" />
 
             <SeekBar
-                android:id="@+id/note_b_6"
+                android:id="@+id/note_b_aroma_fermentation"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -162,12 +162,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_4"
-                app:layout_constraintStart_toStartOf="@+id/note_b_4"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_5" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_aroma_malt"
+                app:layout_constraintStart_toStartOf="@+id/note_b_aroma_malt"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_aroma_hops" />
 
             <SeekBar
-                android:id="@+id/note_b_7"
+                android:id="@+id/note_b_flavor_malt"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -178,12 +178,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_10"
-                app:layout_constraintStart_toStartOf="@+id/note_b_10"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose8" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_flavor_finish"
+                app:layout_constraintStart_toStartOf="@+id/note_b_flavor_finish"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_b_flavor" />
 
             <SeekBar
-                android:id="@+id/note_b_8"
+                android:id="@+id/note_b_flavor_hops"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -194,12 +194,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_10"
-                app:layout_constraintStart_toStartOf="@+id/note_b_10"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_7" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_flavor_finish"
+                app:layout_constraintStart_toStartOf="@+id/note_b_flavor_finish"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_flavor_malt" />
 
             <SeekBar
-                android:id="@+id/note_b_9"
+                android:id="@+id/note_b_flavor_fermentation"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -210,12 +210,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_10"
-                app:layout_constraintStart_toStartOf="@+id/note_b_10"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_8" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_flavor_finish"
+                app:layout_constraintStart_toStartOf="@+id/note_b_flavor_finish"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_flavor_hops" />
 
             <SeekBar
-                android:id="@+id/note_b_10"
+                android:id="@+id/note_b_flavor_finish"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -229,11 +229,11 @@
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wh_sweet12"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_9" />
+                app:layout_constraintStart_toEndOf="@+id/txt_note_b_flavor_finish"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_flavor_fermentation" />
 
             <SeekBar
-                android:id="@+id/note_b_11"
+                android:id="@+id/note_b_body"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -247,11 +247,11 @@
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/txt_note_wh_sweet13"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_nose9" />
+                app:layout_constraintStart_toEndOf="@+id/txt_note_b_body"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_b_mouthfeel" />
 
             <SeekBar
-                android:id="@+id/note_b_12"
+                android:id="@+id/note_b_carbonation"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -262,12 +262,12 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_11"
-                app:layout_constraintStart_toStartOf="@+id/note_b_11"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_11" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_body"
+                app:layout_constraintStart_toStartOf="@+id/note_b_body"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_body" />
 
             <SeekBar
-                android:id="@+id/note_b_13"
+                android:id="@+id/note_b_astringent"
                 style="@style/Widget.AppCompat.SeekBar.Discrete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -278,172 +278,172 @@
                 android:progress="3"
                 android:progressTint="@color/font_default"
                 android:thumbTint="#00000000"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_11"
-                app:layout_constraintStart_toStartOf="@+id/note_b_11"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_12" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_body"
+                app:layout_constraintStart_toStartOf="@+id/note_b_body"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_carbonation" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet2"
+                android:id="@+id/txt_note_b_clarity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="당도"
+                android:text="투명도"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_"
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_clarity"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/note_b_" />
+                app:layout_constraintTop_toTopOf="@+id/note_b_clarity" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet3"
+                android:id="@+id/txt_note_b_head_retention"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="당도"
+                android:text="유지력"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_2"
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_head_retention"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/note_b_2" />
+                app:layout_constraintTop_toTopOf="@+id/note_b_head_retention" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet4"
+                android:id="@+id/txt_note_b_head_density"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="조밀도"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_3"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet3"
-                app:layout_constraintTop_toTopOf="@+id/note_b_3" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_head_density"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_head_retention"
+                app:layout_constraintTop_toTopOf="@+id/note_b_head_density" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet5"
+                android:id="@+id/txt_note_b_aroma_malt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="당도"
+                android:text="맥아"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_4"
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_aroma_malt"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/note_b_4" />
+                app:layout_constraintTop_toTopOf="@+id/note_b_aroma_malt" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet6"
+                android:id="@+id/txt_note_b_aroma_hops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="홉"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_5"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet5"
-                app:layout_constraintTop_toTopOf="@+id/note_b_5" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_aroma_hops"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_aroma_malt"
+                app:layout_constraintTop_toTopOf="@+id/note_b_aroma_hops" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet7"
+                android:id="@+id/txt_note_b_aroma_fermentation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="발효"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_6"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet5"
-                app:layout_constraintTop_toTopOf="@+id/note_b_6" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_aroma_fermentation"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_aroma_malt"
+                app:layout_constraintTop_toTopOf="@+id/note_b_aroma_fermentation" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet8"
+                android:id="@+id/txt_note_b_aroma_other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="기타"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView10"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet5"
-                app:layout_constraintTop_toTopOf="@+id/textView10" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_aroma_other"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_aroma_malt"
+                app:layout_constraintTop_toTopOf="@+id/note_b_aroma_other" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet9"
+                android:id="@+id/txt_note_b_flavor_malt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="당도"
+                android:text="맥아"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_7"
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_flavor_malt"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/note_b_7"
+                app:layout_constraintTop_toTopOf="@+id/note_b_flavor_malt"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet10"
+                android:id="@+id/txt_note_b_flavor_hops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="홉"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_8"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet9"
-                app:layout_constraintTop_toTopOf="@+id/note_b_8" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_flavor_hops"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_flavor_malt"
+                app:layout_constraintTop_toTopOf="@+id/note_b_flavor_hops" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet11"
+                android:id="@+id/txt_note_b_flavor_fermentation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="발효"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_9"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet9"
-                app:layout_constraintTop_toTopOf="@+id/note_b_9" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_flavor_fermentation"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_flavor_malt"
+                app:layout_constraintTop_toTopOf="@+id/note_b_flavor_fermentation" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet12"
+                android:id="@+id/txt_note_b_flavor_finish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="피니시"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_10"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet9"
-                app:layout_constraintTop_toTopOf="@+id/note_b_10" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_flavor_finish"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_flavor_malt"
+                app:layout_constraintTop_toTopOf="@+id/note_b_flavor_finish" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet13"
+                android:id="@+id/txt_note_b_body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="당도"
+                android:text="바디감"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_11"
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_body"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/note_b_11" />
+                app:layout_constraintTop_toTopOf="@+id/note_b_body" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet14"
+                android:id="@+id/txt_note_b_carbonation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="탄산감"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_12"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet13"
-                app:layout_constraintTop_toTopOf="@+id/note_b_12" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_carbonation"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_body"
+                app:layout_constraintTop_toTopOf="@+id/note_b_carbonation" />
 
             <TextView
-                android:id="@+id/txt_note_wh_sweet15"
+                android:id="@+id/txt_note_b_astringent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="당도"
+                android:text="떫은맛"
                 android:textColor="@color/font_default"
                 android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_13"
-                app:layout_constraintStart_toStartOf="@+id/txt_note_wh_sweet13"
-                app:layout_constraintTop_toTopOf="@+id/note_b_13" />
+                app:layout_constraintBottom_toBottomOf="@+id/note_b_astringent"
+                app:layout_constraintStart_toStartOf="@+id/txt_note_b_body"
+                app:layout_constraintTop_toTopOf="@+id/note_b_astringent" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose8"
+                android:id="@+id/txt_note_b_flavor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -453,19 +453,20 @@
                 android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_note_wh_sweet8" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_note_b_aroma_other" />
 
             <TextView
-                android:id="@+id/txt_note_wh_nose9"
+                android:id="@+id/txt_note_b_mouthfeel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="60dp"
                 android:text="MouthFeel"
                 android:textColor="@color/font_default"
                 android:textSize="16dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_10"
-                tools:layout_editor_absoluteX="30dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_flavor_finish" />
 
             <ImageView
                 android:id="@+id/note_b_img"
@@ -514,7 +515,7 @@
                 app:layout_constraintTop_toTopOf="@+id/img_b_star" />
 
             <TextView
-                android:id="@+id/note_b_tasting"
+                android:id="@+id/note_b_overall_str"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
@@ -525,7 +526,7 @@
                 android:textColor="@color/font_default"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_13" />
+                app:layout_constraintTop_toBottomOf="@+id/note_b_astringent" />
 
             <TextView
                 android:id="@+id/note_b_keep_date"
@@ -695,7 +696,7 @@
                 android:layout_marginTop="30dp"
                 android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_tasting"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_overall_str"
                 app:srcCompat="@drawable/world" />
 
             <View
@@ -712,12 +713,12 @@
                 android:layout_height="22dp"
                 android:layout_marginEnd="50dp"
                 android:background="@drawable/color_circle_up"
-                app:layout_constraintBottom_toBottomOf="@+id/note_b_rating"
+                app:layout_constraintBottom_toTopOf="@+id/note_b_rating"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/note_b_type" />
 
             <View
-                android:id="@+id/note_b_color_beer"
+                android:id="@+id/note_b_color_circle_beer"
                 android:layout_width="45dp"
                 android:layout_height="22dp"
                 android:background="@drawable/color_circle_down"
@@ -726,16 +727,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/note_b_color_circle_foam" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/note_b_aroma_other"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text=""
                 android:textSize="14dp"
                 android:textColor="@color/font_default"
-                app:layout_constraintEnd_toEndOf="@+id/note_b_4"
-                app:layout_constraintStart_toStartOf="@+id/note_b_4"
-                app:layout_constraintTop_toBottomOf="@+id/note_b_6" />
+                app:layout_constraintEnd_toEndOf="@+id/note_b_aroma_malt"
+                app:layout_constraintStart_toStartOf="@+id/note_b_aroma_malt"
+                app:layout_constraintTop_toBottomOf="@+id/note_b_aroma_fermentation" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

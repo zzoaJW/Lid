@@ -6,7 +6,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -69,17 +68,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         }
 
         binding.btnWhiskeyColor.setOnClickListener {
-            MaterialColorPickerDialog
-                .Builder(this) // Pass Activity Instance
-                .setTitle("") // Dialog 제목
-                .setColorShape(ColorShape.SQAURE) // 컬러칩 모양
-                .setColors(resources.getStringArray(R.array.whiskey_colors)) // 컬러 구성
-//                .setDefaultColor("#FCEE97") // Pass Default Color
-                .setColorListener { color, colorHex ->
-                    binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
-                    whColors = colorHex
-                }
-                .show()
+            showColorDialog()
         }
 
         binding.whiskeyNoseChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
@@ -111,15 +100,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
 
 
         binding.btnWhiskeyDetail.setOnClickListener {
-            if (binding.detailLayout.visibility == View.VISIBLE) {
-                binding.detailLayout.visibility = View.GONE
-
-                binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#E0F14E"))
-            } else{
-                binding.detailLayout.visibility = View.VISIBLE
-
-                binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#CDCDCD"))
-            }
+            hideWhDetail()
         }
 
         binding.switchWhiskeyKeep.setOnClickListener {
@@ -128,8 +109,8 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
                 binding.whiskeyKeepDate.visibility = View.VISIBLE
             } else {
                 binding.whiskeyKeepDate.text = "개봉일 선택"
-                binding.txtWhiskeyKeep.visibility = View.VISIBLE
                 binding.whiskeyKeepDate.visibility = View.INVISIBLE
+                binding.txtWhiskeyKeep.visibility = View.VISIBLE
             }
         }
 
@@ -179,6 +160,32 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
             .show()
     }
 
+    private fun hideWhDetail(){
+        if (binding.detailLayout.visibility == View.VISIBLE) {
+            binding.detailLayout.visibility = View.GONE
+
+            binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#E0F14E"))
+        } else{
+            binding.detailLayout.visibility = View.VISIBLE
+
+            binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#CDCDCD"))
+        }
+    }
+
+    private fun showColorDialog(){
+        MaterialColorPickerDialog
+            .Builder(this) // Pass Activity Instance
+            .setTitle("") // Dialog 제목
+            .setColorShape(ColorShape.SQAURE) // 컬러칩 모양
+            .setColors(resources.getStringArray(R.array.whiskey_colors)) // 컬러 구성
+//                .setDefaultColor("#FCEE97") // Pass Default Color
+            .setColorListener { color, colorHex ->
+                binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
+                whColors = colorHex
+            }
+            .show()
+    }
+
     private fun getCharacters(){
         whCharSweet = binding.whiskeySweet.progress
         whCharSpicy = binding.whiskeySpicy.progress
@@ -216,11 +223,10 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
         whPostingDate = getCurrentDate()
     }
 
-    fun getCurrentDate():String{
-        val now =  System.currentTimeMillis()
-        val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
+    fun getCurrentDate(): String {
+        val now = System.currentTimeMillis()
 
-        return simpleDateFormat
+        return SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
     }
 
     private fun getSingletonValues(){
@@ -270,8 +276,6 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
     }
 
     private fun saveDrink(){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
-
         Thread(Runnable {
             var newDrink = Drink(0,
                 drinkImg,

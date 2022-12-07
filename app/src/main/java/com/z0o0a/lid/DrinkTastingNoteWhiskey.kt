@@ -18,7 +18,7 @@ import com.z0o0a.lid.databinding.DrinkTastingNoteWhiskeyBinding
 class DrinkTastingNoteWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkTastingNoteWhiskeyBinding
 
-    var drinkId = 0
+    private var drinkId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,10 +134,10 @@ class DrinkTastingNoteWhiskey : AppCompatActivity() {
                     val db = DrinkDatabase.getInstance(applicationContext)
                     // 위스키 id 받아오기 (위스키 삭제를 위해)
                     val whId = db!!.drinkDao().getDrink(drinkId).typeId
-                    val wiskeyDrink = db!!.drinkDao().getDrinkWiskey(whId)
+                    val whiskeyDrink = db!!.drinkDao().getDrinkWiskey(whId)
 
                     // 위스키 삭제
-                    db!!.drinkDao().deleteDrinkWhiskey(wiskeyDrink)
+                    db!!.drinkDao().deleteDrinkWhiskey(whiskeyDrink)
 
                     val drink = db!!.drinkDao().getDrink(drinkId)
                     // drink 삭제

@@ -454,7 +454,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txt_beer_appearance" />
 
                 <Button
-                    android:id="@+id/btn_beer_color2"
+                    android:id="@+id/btn_head_color"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
                     android:layout_marginStart="30dp"
@@ -499,7 +499,7 @@
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/txt_post_b_head_retention"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_beer_color2" />
+                    app:layout_constraintTop_toBottomOf="@+id/btn_head_color" />
 
                 <SeekBar
                     android:id="@+id/post_b_aroma_malt"
