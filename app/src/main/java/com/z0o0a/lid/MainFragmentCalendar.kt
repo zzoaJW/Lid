@@ -2,6 +2,7 @@ package com.z0o0a.lid
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +10,10 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.databinding.MainFragmentCalendarBinding
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class MainFragmentCalendar: Fragment() {
     private lateinit var binding: MainFragmentCalendarBinding
@@ -23,25 +26,10 @@ class MainFragmentCalendar: Fragment() {
         binding = MainFragmentCalendarBinding.inflate(inflater, container, false)
 
         // 초기 세팅
-        val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("MM월 dd일")
-        val formatted = current.format(formatter)
-        binding.calendarFocusDate.setText(formatted)
-        val formatter2 = DateTimeFormatter.ofPattern("yyyy.MM.dd")
-        val formatted2 = current.format(formatter2)
+        var today = getCurrentDate()
+        binding.calendarFocusDate.text = today
 
-        Thread(Runnable {
-            val db = DrinkDatabase.getInstance(requireContext())
-
-            var drinks = db!!.drinkDao().getDateRecyclerviewData(formatted2)
-
-            if (!drinks.isEmpty()){
-                drinks.forEach { drink ->
-                    // 이미지 전달하는 방법 찾으면 수정하기
-                    recyclerviewData.add(drink)
-                }
-            }
-        }).start()
+        showDrinks(today)
 
         adapter = DrinkListAdapter()
         adapter!!.listData = recyclerviewData
@@ -53,31 +41,51 @@ class MainFragmentCalendar: Fragment() {
         binding.calendarView.setOnDateChangeListener { calendarView, y, m, d ->
             // 선택 날짜 보여주기
             var focusDate = "${m+1}월 ${d}일"
-            binding.calendarFocusDate.setText(focusDate)
+            binding.calendarFocusDate.text = focusDate
 
             // 선택 날짜에 쓴 노트 보여주기
             var SearchDate = "${y}.${m+1}.${d}"
-            recyclerviewData.clear()
-            // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
-            Thread(Runnable {
-                val db = DrinkDatabase.getInstance(requireContext())
 
-                var drinks = db!!.drinkDao().getDateRecyclerviewData(SearchDate)
-
-                if (!drinks.isEmpty()){
-                    drinks.forEach { drink ->
-                        // 이미지 전달하는 방법 찾으면 수정하기
-                        recyclerviewData.add(drink)
-                    }
-                }
-            }).start()
+            showDrinks(SearchDate)
 
             adapter!!.notifyDataSetChanged()
         }
 
-
-
-
         return binding.root
+    }
+
+    private fun showDrinks(date : String){
+        recyclerviewData.clear()
+
+        val run = Runnable {
+            val db = DrinkDatabase.getInstance(requireContext())
+
+            var drinks = db!!.drinkDao().getDateRecyclerviewData(date)
+
+            if (drinks.isNotEmpty()){
+                drinks.forEach { drink ->
+                    recyclerviewData.add(drink)
+                }
+            }
+        }
+
+        val th = Thread(run)
+        th.start()
+
+        try {
+            th.join()
+        }catch (e : InterruptedException){
+            Log.d("Drink 리스트 실패","예외 발생")
+        }
+
+    }
+
+    fun getCurrentDate(): String {
+        val now = System.currentTimeMillis()
+        val y = SimpleDateFormat("yyyy", Locale.KOREAN).format(now).toInt()
+        val m = SimpleDateFormat("MM", Locale.KOREAN).format(now).toInt()
+        val d = SimpleDateFormat("dd", Locale.KOREAN).format(now).toInt()
+
+        return "${y}.${m}.${d}"
     }
 }

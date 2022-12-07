@@ -225,8 +225,11 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
 
     fun getCurrentDate(): String {
         val now = System.currentTimeMillis()
+        val y = SimpleDateFormat("yyyy", Locale.KOREAN).format(now).toInt()
+        val m = SimpleDateFormat("MM", Locale.KOREAN).format(now).toInt()
+        val d = SimpleDateFormat("dd", Locale.KOREAN).format(now).toInt()
 
-        return SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
+        return "${y}.${m}.${d}"
     }
 
     private fun getSingletonValues(){
