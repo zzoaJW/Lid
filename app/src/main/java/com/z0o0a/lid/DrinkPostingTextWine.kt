@@ -20,6 +20,8 @@ import java.util.*
 class DrinkPostingTextWine : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextWineBinding
 
+    var wiShort = false
+
     var drinkImg : Bitmap? = null
     var drinkEngName = ""
     var drinkKrName = ""
@@ -141,12 +143,12 @@ class DrinkPostingTextWine : AppCompatActivity() {
 
     private fun hideDetail(){
         if (binding.wineDetailLayout.visibility == View.VISIBLE) {
+            wiShort = true
             binding.wineDetailLayout.visibility = View.GONE
-
             binding.btnWineDetail.setTextColor(Color.parseColor("#E0F14E"))
         } else{
+            wiShort = false
             binding.wineDetailLayout.visibility = View.VISIBLE
-
             binding.btnWineDetail.setTextColor(Color.parseColor("#CDCDCD"))
         }
     }
@@ -230,6 +232,7 @@ class DrinkPostingTextWine : AppCompatActivity() {
     private fun saveWine() {
         val run : Runnable = Runnable {
             var drinkWine = DrinkWine(0,
+                wiShort,
                 wiType,
                 wiClarity,
                 wiBrightness,

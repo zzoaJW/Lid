@@ -38,9 +38,9 @@
         <entry key="app/src/main/res/layout/drink_spinner.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_spinner_txt.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/drink_tasting_note.xml" value="0.33997883168301835" />
-        <entry key="app/src/main/res/layout/drink_tasting_note_beer.xml" value="0.29334259033203125" />
-        <entry key="app/src/main/res/layout/drink_tasting_note_whiskey.xml" value="0.28066802978515626" />
-        <entry key="app/src/main/res/layout/drink_tasting_note_wine.xml" value="0.22650604248046877" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_beer.xml" value="0.35398230088495575" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_whiskey.xml" value="0.24131011962890628" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_wine.xml" value="0.18897552490234376" />
         <entry key="app/src/main/res/layout/item_drink_list.xml" value="0.4006134033203125" />
         <entry key="app/src/main/res/layout/life_is_drink.xml" value="0.335" />
         <entry key="app/src/main/res/layout/main_drinks.xml" value="0.1" />

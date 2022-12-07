@@ -23,6 +23,8 @@ import java.util.*
 class DrinkPostingTextBeer : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextBeerBinding
 
+    var bShort = false
+
     var drinkImg : Bitmap? = null
     var drinkEngName = ""
     var drinkKrName = ""
@@ -157,12 +159,12 @@ class DrinkPostingTextBeer : AppCompatActivity() {
 
     private fun hideDetail(){
         if (binding.beerDetailLayout.visibility == View.VISIBLE) {
+            bShort = true
             binding.beerDetailLayout.visibility = View.GONE
-
             binding.btnBeerDetail.setTextColor(Color.parseColor("#E0F14E"))
         } else{
+            bShort = false
             binding.beerDetailLayout.visibility = View.VISIBLE
-
             binding.btnBeerDetail.setTextColor(Color.parseColor("#CDCDCD"))
         }
     }
@@ -263,6 +265,7 @@ class DrinkPostingTextBeer : AppCompatActivity() {
     private fun saveBeer() {
         val run : Runnable = Runnable {
             var drinkBeer = DrinkBeer(0,
+                bShort,
                 bType,
                 bColor,
                 bClarity,

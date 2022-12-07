@@ -31,6 +31,8 @@ class DrinkTastingNoteWhiskey : AppCompatActivity() {
         setDrink()
         setDrinkWhiskey()
 
+
+
         binding.btnWhDel.setOnClickListener {
             delConfirm()
         }
@@ -79,47 +81,55 @@ class DrinkTastingNoteWhiskey : AppCompatActivity() {
             val whId = db!!.drinkDao().getDrink(drinkId).typeId
             val whiskeyDrink = db!!.drinkDao().getDrinkWiskey(whId)
 
-            val whNoses : MutableList<String> = whiskeyDrink!!.whNose
-            val whPalate : MutableList<String> = whiskeyDrink!!.whPalate
-            val whFinish : MutableList<String> = whiskeyDrink!!.whFinish
-
-            runOnUiThread {
-
-                if (whiskeyDrink!!.whColor != ""){
-                    binding.whColorCircle.background.setTint(Color.parseColor(whiskeyDrink!!.whColor))
-                }else{
+            if (whiskeyDrink.whShort) {
+                runOnUiThread {
                     binding.whColorCircle.visibility = View.GONE
+                    binding.noteWhDetailLayout.visibility = View.GONE
                 }
+            } else {
+
+                val whNoses: MutableList<String> = whiskeyDrink!!.whNose
+                val whPalate: MutableList<String> = whiskeyDrink!!.whPalate
+                val whFinish: MutableList<String> = whiskeyDrink!!.whFinish
+
+                runOnUiThread {
+
+                    if (whiskeyDrink!!.whColor != "") {
+                        binding.whColorCircle.background.setTint(Color.parseColor(whiskeyDrink!!.whColor))
+                    } else {
+                        binding.whColorCircle.visibility = View.GONE
+                    }
 
 
-                for (nose in whNoses){
-                    var txt = TextView(this)
-                    txt.text = nose + "  "
-                    txt.setTextColor(Color.parseColor("#323232"))
-                    txt.textSize = 14f
-                    binding.noteWhNoseLayout.addView(txt)
+                    for (nose in whNoses) {
+                        var txt = TextView(this)
+                        txt.text = nose + "  "
+                        txt.setTextColor(Color.parseColor("#323232"))
+                        txt.textSize = 14f
+                        binding.noteWhNoseLayout.addView(txt)
+                    }
+
+                    for (palate in whPalate) {
+                        var txt = TextView(this)
+                        txt.text = palate + "  "
+                        txt.setTextColor(Color.parseColor("#323232"))
+                        txt.textSize = 14f
+                        binding.noteWhPalateLayout.addView(txt)
+                    }
+
+                    for (finish in whFinish) {
+                        var txt = TextView(this)
+                        txt.text = finish + "  "
+                        txt.setTextColor(Color.parseColor("#323232"))
+                        txt.textSize = 14f
+                        binding.noteWhFinishLayout.addView(txt)
+                    }
+
+                    binding.noteWhSweet.progress = whiskeyDrink!!.whSweet
+                    binding.noteWhSpicy.progress = whiskeyDrink!!.whSpicy
+                    binding.noteWhBody.progress = whiskeyDrink!!.whBody
+
                 }
-
-                for (palate in whPalate){
-                    var txt = TextView(this)
-                    txt.text = palate + "  "
-                    txt.setTextColor(Color.parseColor("#323232"))
-                    txt.textSize = 14f
-                    binding.noteWhPalateLayout.addView(txt)
-                }
-
-                for (finish in whFinish){
-                    var txt = TextView(this)
-                    txt.text = finish + "  "
-                    txt.setTextColor(Color.parseColor("#323232"))
-                    txt.textSize = 14f
-                    binding.noteWhFinishLayout.addView(txt)
-                }
-
-                binding.noteWhSweet.progress = whiskeyDrink!!.whSweet
-                binding.noteWhSpicy.progress = whiskeyDrink!!.whSpicy
-                binding.noteWhBody.progress = whiskeyDrink!!.whBody
-
             }
         }).start()
     }

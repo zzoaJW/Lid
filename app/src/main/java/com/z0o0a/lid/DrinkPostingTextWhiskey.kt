@@ -24,6 +24,8 @@ import java.util.*
 class DrinkPostingTextWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextWhiskeyBinding
 
+    var whShort = false
+
     var drinkImg : Bitmap? = null
     var drinkEngName = ""
     var drinkKrName = ""
@@ -162,12 +164,12 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
 
     private fun hideWhDetail(){
         if (binding.detailLayout.visibility == View.VISIBLE) {
+            whShort = true
             binding.detailLayout.visibility = View.GONE
-
             binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#E0F14E"))
         } else{
+            whShort = false
             binding.detailLayout.visibility = View.VISIBLE
-
             binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#CDCDCD"))
         }
     }
@@ -252,6 +254,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
     private fun saveWhiskey(){
         val run : Runnable = Runnable {
             var drinkWhiskey = DrinkWhiskey(0,
+                whShort,
                 whType,
                 whColors,
                 whNoses,

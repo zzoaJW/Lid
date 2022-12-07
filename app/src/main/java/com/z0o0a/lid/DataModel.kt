@@ -27,6 +27,7 @@ data class Drink (
 @Entity
 data class DrinkWhiskey(
     @PrimaryKey(autoGenerate = true)@ColumnInfo(name = "whId") var whId : Int, // 고유번호
+    @ColumnInfo(name = "whShort") var whShort : Boolean, // Detail 작성 안함
     @ColumnInfo(name = "whType") var whType : String, // 소분류 (일단 다 -로 저장)
 
     @ColumnInfo(name = "whColor") var whColor : String, // 색 Appearoance
@@ -46,6 +47,7 @@ data class DrinkWhiskey(
 @Entity
 data class DrinkWine(
     @PrimaryKey(autoGenerate = true)@ColumnInfo(name = "wiId") var wiId : Int, // 고유번호
+    @ColumnInfo(name = "wiShort") var wiShort : Boolean, // Detail 작성 안함
     @ColumnInfo(name = "wiType") var wiType : String, // 소분류 (일단 다 -로 저장)
 
     @ColumnInfo(name = "wiClarity") var wiClarity : Int, // 투명도
@@ -68,6 +70,7 @@ data class DrinkWine(
 @Entity
 data class DrinkBeer(
     @PrimaryKey(autoGenerate = true)@ColumnInfo(name = "bId") var bId : Int, // 고유번호
+    @ColumnInfo(name = "bShort") var bShort : Boolean, // Detail 작성 안함
     @ColumnInfo(name = "bType") var bType : String, // 소분류 (일단 다 -로 저장)
 
     @ColumnInfo(name = "bColor") var bColor : String, // 색 Appearance

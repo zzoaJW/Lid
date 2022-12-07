@@ -70,39 +70,47 @@ class DrinkTastingNoteBeer : AppCompatActivity() {
             val bId = db!!.drinkDao().getDrink(drinkId).typeId
             val bDrink = db!!.drinkDao().getDrinkBeer(bId)
 
-            runOnUiThread {
-
-                if (bDrink!!.bHeadColor != ""){
-                    binding.noteBColorCircleFoam.background.setTint(Color.parseColor(bDrink!!.bHeadColor))
-                }else{
-                    binding.noteBColorCircleFoam.visibility = View.INVISIBLE
+            if (bDrink.bShort) {
+                runOnUiThread {
+                    binding.noteBColorCircleBeer.visibility = View.GONE
+                    binding.noteBColorCircleFoam.visibility = View.GONE
+                    binding.noteBDetailLayout.visibility = View.GONE
                 }
+            } else {
+                runOnUiThread {
 
-                if (bDrink!!.bColor != ""){
-                    binding.noteBColorCircleBeer.background.setTint(Color.parseColor(bDrink!!.bColor))
-                }else{
-                    binding.noteBColorCircleBeer.visibility = View.INVISIBLE
+                    if (bDrink!!.bHeadColor != "") {
+                        binding.noteBColorCircleFoam.background.setTint(Color.parseColor(bDrink!!.bHeadColor))
+                    } else {
+                        binding.noteBColorCircleFoam.visibility = View.INVISIBLE
+                    }
+
+                    if (bDrink!!.bColor != "") {
+                        binding.noteBColorCircleBeer.background.setTint(Color.parseColor(bDrink!!.bColor))
+                    } else {
+                        binding.noteBColorCircleBeer.visibility = View.INVISIBLE
+                    }
+
+                    binding.noteBClarity.progress = bDrink!!.bClarity
+
+                    binding.noteBHeadRetention.progress = bDrink!!.bHeadRetention
+                    binding.noteBHeadDensity.progress = bDrink!!.bHeadDensity
+
+                    binding.noteBAromaMalt.progress = bDrink!!.bAromaMalt
+                    binding.noteBAromaHops.progress = bDrink!!.bAromaHops
+                    binding.noteBAromaFermentation.progress = bDrink!!.bAromaFermentation
+                    binding.noteBAromaOther.text = bDrink!!.bAromaOther
+
+                    binding.noteBFlavorMalt.progress = bDrink!!.bFlavorMalt
+                    binding.noteBFlavorHops.progress = bDrink!!.bFlavorHops
+                    binding.noteBFlavorFermentation.progress = bDrink!!.bFlavorFermentation
+                    binding.noteBFlavorFinish.progress = bDrink!!.bFlavorFinish
+
+                    binding.noteBBody.progress = bDrink!!.bBody
+                    binding.noteBCarbonation.progress = bDrink!!.bCarbonation
+                    binding.noteBAstringent.progress = bDrink!!.bAstringent
+
                 }
-
-                binding.noteBClarity.progress = bDrink!!.bClarity
-
-                binding.noteBHeadRetention.progress = bDrink!!.bHeadRetention
-                binding.noteBHeadDensity.progress = bDrink!!.bHeadDensity
-
-                binding.noteBAromaMalt.progress = bDrink!!.bAromaMalt
-                binding.noteBAromaHops.progress = bDrink!!.bAromaHops
-                binding.noteBAromaFermentation.progress = bDrink!!.bAromaFermentation
-                binding.noteBAromaOther.text = bDrink!!.bAromaOther
-
-                binding.noteBFlavorMalt.progress = bDrink!!.bFlavorMalt
-                binding.noteBFlavorHops.progress = bDrink!!.bFlavorHops
-                binding.noteBFlavorFermentation.progress = bDrink!!.bFlavorFermentation
-                binding.noteBFlavorFinish.progress = bDrink!!.bFlavorFinish
-
-                binding.noteBBody.progress = bDrink!!.bBody
-                binding.noteBCarbonation.progress = bDrink!!.bCarbonation
-                binding.noteBAstringent.progress = bDrink!!.bAstringent
-
             }
         }).start()
     }

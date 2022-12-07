@@ -71,35 +71,41 @@ class DrinkTastingNoteWine : AppCompatActivity() {
             val wiId = db!!.drinkDao().getDrink(drinkId).typeId
             val wineDrink = db!!.drinkDao().getDrinkWine(wiId)
 
-            val wiNoses : MutableList<String> = wineDrink!!.wiNose
-
-            runOnUiThread {
-                binding.noteWiClarity.progress = wineDrink!!.wiClarity
-                binding.noteWiBrightness.progress = wineDrink!!.wiBrightness
-                binding.noteWiTear.progress = wineDrink!!.wiTears
-                if(wineDrink!!.wiRimVariation){
-                    binding.noteWiRimArea.progress = wineDrink!!.wiRimArea
-                } else{
-                    binding.noteWiRimArea.visibility = View.GONE
-                    binding.txtNoteWiRimArea.visibility = View.GONE
-
-                    // TODO : 방법 찾기
-                    // binding.txtNoteWiNose.TopMargins = 60
+            if (wineDrink.wiShort) {
+                runOnUiThread {
+                    binding.noteWineDetailLayout.visibility = View.GONE
                 }
+            } else {
+                val wiNoses: MutableList<String> = wineDrink!!.wiNose
 
-                for (nose in wiNoses){
-                    var txt = TextView(this)
-                    txt.text = nose + "  "
-                    txt.setTextColor(Color.parseColor("#323232"))
-                    txt.textSize = 14f
-                    binding.noteWiNoseLayout.addView(txt)
+                runOnUiThread {
+                    binding.noteWiClarity.progress = wineDrink!!.wiClarity
+                    binding.noteWiBrightness.progress = wineDrink!!.wiBrightness
+                    binding.noteWiTear.progress = wineDrink!!.wiTears
+                    if (wineDrink!!.wiRimVariation) {
+                        binding.noteWiRimArea.progress = wineDrink!!.wiRimArea
+                    } else {
+                        binding.noteWiRimArea.visibility = View.GONE
+                        binding.txtNoteWiRimArea.visibility = View.GONE
+
+                        // TODO : 방법 찾기
+                        // binding.txtNoteWiNose.TopMargins = 60
+                    }
+
+                    for (nose in wiNoses) {
+                        var txt = TextView(this)
+                        txt.text = nose + "  "
+                        txt.setTextColor(Color.parseColor("#323232"))
+                        txt.textSize = 14f
+                        binding.noteWiNoseLayout.addView(txt)
+                    }
+
+                    binding.noteWiSweet.progress = wineDrink!!.wiSweet
+                    binding.noteWiAcidity.progress = wineDrink!!.wiAcidity
+                    binding.noteWiBody.progress = wineDrink!!.wiBody
+                    binding.noteWiTannin.progress = wineDrink!!.wiTannin
+
                 }
-
-                binding.noteWiSweet.progress = wineDrink!!.wiSweet
-                binding.noteWiAcidity.progress = wineDrink!!.wiAcidity
-                binding.noteWiBody.progress = wineDrink!!.wiBody
-                binding.noteWiTannin.progress = wineDrink!!.wiTannin
-
             }
         }).start()
     }
