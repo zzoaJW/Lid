@@ -30,7 +30,7 @@
                 app:srcCompat="@drawable/back" />
 
             <TextView
-                android:id="@+id/txt_beer_tasting_note"
+                android:id="@+id/txt_post_b_overall_str"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -40,10 +40,10 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beer_ratingBar" />
+                app:layout_constraintTop_toBottomOf="@+id/post_b_ratingBar" />
 
             <EditText
-                android:id="@+id/beer_tasting_note"
+                android:id="@+id/post_b_overall_str"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="300dp"
@@ -57,7 +57,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_beer_tasting_note" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_post_b_overall_str" />
 
             <EditText
                 android:id="@+id/beer_place"
@@ -86,7 +86,7 @@
                 app:srcCompat="@drawable/place" />
 
             <RatingBar
-                android:id="@+id/beer_ratingBar"
+                android:id="@+id/post_b_ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -207,7 +207,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beer_tasting_note"
+                app:layout_constraintTop_toBottomOf="@+id/post_b_overall_str"
                 app:srcCompat="@drawable/world" />
 
             <EditText
@@ -295,7 +295,7 @@
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet2" />
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_head_density" />
 
                 <View
                     android:id="@+id/view17"
@@ -305,7 +305,7 @@
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet4" />
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_clarity" />
 
                 <View
                     android:id="@+id/view2004"
@@ -315,7 +315,7 @@
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet11" />
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_flavor_finish" />
 
                 <View
                     android:id="@+id/view2003"
@@ -326,7 +326,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_aroma_other" />
 
                 <View
                     android:id="@+id/view2005"
@@ -337,7 +337,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet15" />
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_astringent" />
 
                 <TextView
                     android:id="@+id/txt_beer_appearance"
@@ -353,7 +353,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/txt_beer_nose"
+                    android:id="@+id/txt_beer_aroma"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -366,7 +366,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view2002" />
 
                 <TextView
-                    android:id="@+id/txt_beer_palate"
+                    android:id="@+id/txt_beer_flavor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -379,7 +379,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view2003" />
 
                 <TextView
-                    android:id="@+id/txt_beer_finish"
+                    android:id="@+id/txt_beer_mouthfeel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -402,44 +402,44 @@
                     app:layout_constraintStart_toEndOf="@+id/txt_beer_appearance" />
 
                 <TextView
-                    android:id="@+id/txt_beer_appearance3"
+                    android:id="@+id/txt_beer_head2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Beer Foam"
+                    android:text="Beer Head"
                     android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
-                    app:layout_constraintStart_toEndOf="@+id/textView21" />
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_head"
+                    app:layout_constraintStart_toEndOf="@+id/txt_beer_head" />
 
                 <TextView
-                    android:id="@+id/txt_beer_nose2"
+                    android:id="@+id/txt_beer_aroma2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Aroma"
                     android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_nose"
-                    app:layout_constraintStart_toEndOf="@+id/txt_beer_nose" />
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_aroma"
+                    app:layout_constraintStart_toEndOf="@+id/txt_beer_aroma" />
 
                 <TextView
-                    android:id="@+id/txt_beer_palate2"
+                    android:id="@+id/txt_beer_flavor2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Flavor"
                     android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_palate"
-                    app:layout_constraintStart_toEndOf="@+id/txt_beer_palate" />
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_flavor"
+                    app:layout_constraintStart_toEndOf="@+id/txt_beer_flavor" />
 
                 <TextView
-                    android:id="@+id/txt_beer_finish2"
+                    android:id="@+id/txt_beer_mouthfeel2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Mouthfeel"
                     android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_finish"
-                    app:layout_constraintStart_toEndOf="@+id/txt_beer_finish" />
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_beer_mouthfeel"
+                    app:layout_constraintStart_toEndOf="@+id/txt_beer_mouthfeel" />
 
                 <Button
                     android:id="@+id/btn_beer_color"
@@ -463,10 +463,10 @@
                     android:text="select"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_head" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet4"
+                    android:id="@+id/post_b_clarity"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -480,11 +480,11 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView17"
+                    app:layout_constraintStart_toEndOf="@+id/txt_post_b_clarity"
                     app:layout_constraintTop_toBottomOf="@+id/btn_beer_color" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet"
+                    android:id="@+id/post_b_head_retention"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -498,11 +498,11 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView23"
+                    app:layout_constraintStart_toEndOf="@+id/txt_post_b_head_retention"
                     app:layout_constraintTop_toBottomOf="@+id/btn_beer_color2" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet3"
+                    android:id="@+id/post_b_aroma_malt"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -516,11 +516,11 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView29"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_nose" />
+                    app:layout_constraintStart_toEndOf="@+id/txt_post_b_aroma_malt"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_aroma" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet6"
+                    android:id="@+id/post_b_aroma_hop"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -531,12 +531,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet3" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_aroma_malt" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet7"
+                    android:id="@+id/post_b_aroma_fermentation"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -547,12 +547,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet6" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_aroma_hop" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet8"
+                    android:id="@+id/post_b_flavor_malt"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -563,12 +563,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_palate" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_flavor" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet9"
+                    android:id="@+id/post_b_flavor_hop"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -579,12 +579,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet8" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_flavor_malt" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet10"
+                    android:id="@+id/post_b_flavor_fermentation"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -595,12 +595,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet9" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_flavor_hop" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet11"
+                    android:id="@+id/post_b_flavor_finish"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -614,11 +614,11 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView39"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet10" />
+                    app:layout_constraintStart_toEndOf="@+id/txt_post_b_flavor_finish"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_flavor_fermentation" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet5"
+                    android:id="@+id/post_b_body"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -632,11 +632,11 @@
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView37"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_finish" />
+                    app:layout_constraintStart_toEndOf="@+id/txt_post_b_body"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_beer_mouthfeel" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet14"
+                    android:id="@+id/post_b_carbonation"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -647,12 +647,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet5"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet5"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet5" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_body"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_body"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_body" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet15"
+                    android:id="@+id/post_b_astringent"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -663,12 +663,12 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet5"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet5"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet14" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_body"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_body"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_carbonation" />
 
                 <SeekBar
-                    android:id="@+id/beer_sweet2"
+                    android:id="@+id/post_b_head_density"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -679,457 +679,457 @@
                     android:progress="3"
                     android:progressTint="#00000000"
                     android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_head_retention"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_head_retention"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_head_retention" />
 
                 <TextView
-                    android:id="@+id/txt_beer_sweet"
+                    android:id="@+id/txt_post_b_clarity1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="깨끗"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet4"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet4" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_clarity"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_clarity" />
 
                 <TextView
-                    android:id="@+id/txt_beer_sweet3"
+                    android:id="@+id/txt_post_b_clarity2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="탁함"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet4"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet4" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_clarity"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_clarity" />
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/txt_post_b_clarity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="투명도"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet4"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_clarity"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet4" />
+                    app:layout_constraintTop_toTopOf="@+id/post_b_clarity" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/txt_post_b_head_retention1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="짧음"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_head_retention"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_head_retention" />
 
                 <TextView
-                    android:id="@+id/textView41"
+                    android:id="@+id/txt_post_b_aroma_malt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet3"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_aroma_malt" />
 
                 <TextView
-                    android:id="@+id/textView34"
+                    android:id="@+id/txt_post_b_flavor_malt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet8"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet8" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_malt"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_malt" />
 
                 <TextView
-                    android:id="@+id/textView48"
+                    android:id="@+id/txt_post_b_flavor_hop1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet9"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet9" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_hop"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_hop" />
 
                 <TextView
-                    android:id="@+id/textView49"
+                    android:id="@+id/txt_post_b_flavor_hop2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet9"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet9" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_hop"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_hop" />
 
                 <TextView
-                    android:id="@+id/textView50"
+                    android:id="@+id/txt_post_b_flavor_fermentation1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet10"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet10" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_fermentation"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_fermentation" />
 
                 <TextView
-                    android:id="@+id/textView52"
+                    android:id="@+id/txt_post_b_flavor_finish1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet11"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet11" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_flavor_finish" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/txt_post_b_flavor_finish2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet11"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet11" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_finish" />
 
                 <TextView
-                    android:id="@+id/textView54"
+                    android:id="@+id/txt_post_b_body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="가벼움"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet5"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet5" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_body"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_body" />
 
                 <TextView
-                    android:id="@+id/textView55"
+                    android:id="@+id/txt_post_b_body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="무거움"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet5"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet5" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_body"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_body" />
 
                 <TextView
-                    android:id="@+id/textView56"
+                    android:id="@+id/txt_post_b_carbonation1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet14"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet14" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_carbonation"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_carbonation" />
 
                 <TextView
-                    android:id="@+id/textView57"
+                    android:id="@+id/txt_post_b_carbonation2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet14"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet14" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_carbonation"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_carbonation" />
 
                 <TextView
-                    android:id="@+id/textView58"
+                    android:id="@+id/txt_post_b_astringent1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet15"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet15" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_astringent"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_astringent" />
 
                 <TextView
-                    android:id="@+id/textView59"
+                    android:id="@+id/txt_post_b_astringent2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet15"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet15" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_astringent"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_astringent" />
 
                 <TextView
-                    android:id="@+id/textView51"
+                    android:id="@+id/txt_post_b_flavor_fermentation2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet10"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet10" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_fermentation"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_fermentation" />
 
                 <TextView
-                    android:id="@+id/textView47"
+                    android:id="@+id/txt_post_b_flavor_malt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet8"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet8" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_flavor_malt"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_flavor_malt" />
 
                 <TextView
-                    android:id="@+id/textView43"
+                    android:id="@+id/txt_post_b_aroma_hop1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet6"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet6" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_aroma_hop"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_aroma_hop" />
 
                 <TextView
-                    android:id="@+id/textView45"
+                    android:id="@+id/txt_post_b_aroma_fermentation2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet7"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet7" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_aroma_fermentation"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_fermentation" />
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/txt_post_b_aroma_fermentation1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="약함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet7"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet7" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_aroma_fermentation"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_aroma_fermentation" />
 
                 <TextView
-                    android:id="@+id/textView44"
+                    android:id="@+id/txt_post_b_aroma_hop2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet6"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet6" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_aroma_hop"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_hop" />
 
                 <TextView
-                    android:id="@+id/textView42"
+                    android:id="@+id/txt_post_b_aroma_malt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="강함"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet3"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_malt" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/txt_post_b_head_retention2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="김"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_head_retention"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_head_retention" />
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/txt_post_b_head_density_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="낮음"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet2"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet2" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_head_density"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_head_density" />
 
                 <TextView
-                    android:id="@+id/textView28"
+                    android:id="@+id/txt_post_b_head_density2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="높음"
                     android:textColor="@color/font_default"
                     android:textSize="13dp"
-                    app:layout_constraintBottom_toTopOf="@+id/beer_sweet2"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet2" />
+                    app:layout_constraintBottom_toTopOf="@+id/post_b_head_density"
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_head_density" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/txt_post_b_head_retention"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="유지력"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_head_retention"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet" />
+                    app:layout_constraintTop_toTopOf="@+id/post_b_head_retention" />
 
                 <TextView
-                    android:id="@+id/textView29"
+                    android:id="@+id/txt_post_b_aroma_malt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="맥아"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet3"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_aroma_malt"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet3" />
+                    app:layout_constraintTop_toTopOf="@+id/post_b_aroma_malt" />
 
                 <TextView
-                    android:id="@+id/textView30"
+                    android:id="@+id/txt_post_b_aroma_hop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="홉"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet6"
-                    app:layout_constraintStart_toStartOf="@+id/textView29"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet6" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_aroma_hop"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_aroma_malt"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_aroma_hop" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/txt_post_b_flavor_hop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="홉"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet9"
-                    app:layout_constraintStart_toStartOf="@+id/textView35"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet9" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_flavor_hop"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_flavor_malt"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_flavor_hop" />
 
                 <TextView
-                    android:id="@+id/textView36"
+                    android:id="@+id/txt_post_b_aroma_fermentation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="발효"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet7"
-                    app:layout_constraintStart_toStartOf="@+id/textView29"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet7" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_aroma_fermentation"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_aroma_malt"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_aroma_fermentation" />
 
                 <TextView
-                    android:id="@+id/textView33"
+                    android:id="@+id/txt_post_b_aroma_other"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="기타"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
-                    app:layout_constraintStart_toStartOf="@+id/textView29"
-                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_aroma_other"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_aroma_malt"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_aroma_other" />
 
                 <TextView
-                    android:id="@+id/textView32"
+                    android:id="@+id/txt_post_b_flavor_fermentation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="발효"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet10"
-                    app:layout_constraintStart_toStartOf="@+id/textView35"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet10" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_flavor_fermentation"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_flavor_malt"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_flavor_fermentation" />
 
                 <TextView
-                    android:id="@+id/textView37"
+                    android:id="@+id/txt_post_b_body"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="바디감"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet5"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_body"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet5" />
+                    app:layout_constraintTop_toTopOf="@+id/post_b_body" />
 
                 <TextView
-                    android:id="@+id/textView39"
+                    android:id="@+id/txt_post_b_flavor_finish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="피니시"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet11"
-                    app:layout_constraintStart_toStartOf="@+id/textView35"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet11" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_flavor_finish"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_flavor_malt"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_flavor_finish" />
 
                 <TextView
-                    android:id="@+id/textView38"
+                    android:id="@+id/txt_post_b_carbonation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="탄산감"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet14"
-                    app:layout_constraintStart_toStartOf="@+id/textView37"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet14" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_carbonation"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_body"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_carbonation" />
 
                 <TextView
-                    android:id="@+id/textView40"
+                    android:id="@+id/txt_post_b_astringent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="떫은맛"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet15"
-                    app:layout_constraintStart_toStartOf="@+id/textView37"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet15" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_astringent"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_body"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_astringent" />
 
                 <TextView
-                    android:id="@+id/textView35"
+                    android:id="@+id/txt_post_b_flavor_malt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="맥아"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet8"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_flavor_malt"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet8" />
+                    app:layout_constraintTop_toTopOf="@+id/post_b_flavor_malt" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/txt_post_b_head_density"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="조밀도"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/beer_sweet2"
-                    app:layout_constraintStart_toStartOf="@+id/textView23"
-                    app:layout_constraintTop_toTopOf="@+id/beer_sweet2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/post_b_head_density"
+                    app:layout_constraintStart_toStartOf="@+id/txt_post_b_head_retention"
+                    app:layout_constraintTop_toTopOf="@+id/post_b_head_density" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/txt_beer_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
@@ -1142,7 +1142,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view17" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/post_b_aroma_other"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
@@ -1151,9 +1151,9 @@
                     android:text=""
                     android:textSize="14dp"
                     android:textColor="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/beer_sweet3"
-                    app:layout_constraintStart_toStartOf="@+id/beer_sweet3"
-                    app:layout_constraintTop_toBottomOf="@+id/beer_sweet7" />
+                    app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintStart_toStartOf="@+id/post_b_aroma_malt"
+                    app:layout_constraintTop_toBottomOf="@+id/post_b_aroma_fermentation" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,11 +34,11 @@
         <entry key="app/src/main/res/layout/drink_posting_text.xml" value="0.23422698974609377" />
         <entry key="app/src/main/res/layout/drink_posting_text_beer.xml" value="0.14087066650390623" />
         <entry key="app/src/main/res/layout/drink_posting_text_whiskey.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/drink_posting_text_wine.xml" value="0.10228271484375001" />
+        <entry key="app/src/main/res/layout/drink_posting_text_wine.xml" value="0.38302307128906254" />
         <entry key="app/src/main/res/layout/drink_spinner.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drink_spinner_txt.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/drink_tasting_note.xml" value="0.33997883168301835" />
-        <entry key="app/src/main/res/layout/drink_tasting_note_beer.xml" value="0.2053872053872054" />
+        <entry key="app/src/main/res/layout/drink_tasting_note_beer.xml" value="0.17613525390625" />
         <entry key="app/src/main/res/layout/drink_tasting_note_whiskey.xml" value="0.28066802978515626" />
         <entry key="app/src/main/res/layout/drink_tasting_note_wine.xml" value="0.23413848876953128" />
         <entry key="app/src/main/res/layout/item_drink_list.xml" value="0.4006134033203125" />

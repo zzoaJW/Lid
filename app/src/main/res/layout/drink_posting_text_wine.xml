@@ -458,7 +458,7 @@
                     android:thumbTint="@color/font_default"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView11"
-                    app:layout_constraintTop_toBottomOf="@+id/wine_sweet6" />
+                    app:layout_constraintTop_toBottomOf="@+id/note_wi_clarity" />
 
                 <SeekBar
                     android:id="@+id/wine_sweet10"
@@ -527,7 +527,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/wine_sweet11" />
 
                 <SeekBar
-                    android:id="@+id/wine_sweet6"
+                    android:id="@+id/note_wi_clarity"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -570,15 +570,15 @@
                     app:layout_constraintStart_toStartOf="@+id/wine_sweet10" />
 
                 <TextView
-                    android:id="@+id/txt_wine_sweet"
+                    android:id="@+id/txt_note_wi_clarity1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="깨끗"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/wine_sweet6"
-                    app:layout_constraintStart_toStartOf="@+id/wine_sweet6" />
+                    app:layout_constraintBottom_toTopOf="@+id/note_wi_clarity"
+                    app:layout_constraintStart_toStartOf="@+id/note_wi_clarity" />
 
                 <TextView
                     android:id="@+id/txt_wine_sweet5"
@@ -658,15 +658,15 @@
                     app:layout_constraintStart_toStartOf="@+id/wine_sweet4" />
 
                 <TextView
-                    android:id="@+id/txt_wine_sweet3"
+                    android:id="@+id/txt_note_wi_clarity2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:text="탁함"
                     android:textColor="@color/font_default"
                     android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/wine_sweet6"
-                    app:layout_constraintEnd_toEndOf="@+id/wine_sweet6" />
+                    app:layout_constraintBottom_toTopOf="@+id/note_wi_clarity"
+                    app:layout_constraintEnd_toEndOf="@+id/note_wi_clarity" />
 
                 <TextView
                     android:id="@+id/txt_wine_heavy1"
@@ -702,16 +702,16 @@
                     app:layout_constraintEnd_toEndOf="@+id/wine_sweet11" />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/txt_note_wi_clarity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="투명도"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/wine_sweet6"
+                    app:layout_constraintBottom_toBottomOf="@+id/note_wi_clarity"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/wine_sweet6" />
+                    app:layout_constraintTop_toTopOf="@+id/note_wi_clarity" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -721,7 +721,7 @@
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet4"
-                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toStartOf="@+id/txt_note_wi_clarity"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet4" />
 
                 <TextView
@@ -732,7 +732,7 @@
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="@+id/wine_sweet7"
-                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toStartOf="@+id/txt_note_wi_clarity"
                     app:layout_constraintTop_toTopOf="@+id/wine_sweet7" />
 
                 <TextView
@@ -743,7 +743,7 @@
                     android:text="림 변화"
                     android:textColor="@color/font_default"
                     android:textSize="14dp"
-                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintStart_toStartOf="@+id/txt_note_wi_clarity"
                     app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                 <TextView
@@ -817,7 +817,7 @@
                     android:id="@+id/note_wi_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                    app:layout_constraintTop_toBottomOf="@+id/switch1"
                     tools:layout_editor_absoluteX="-16dp">
 
                     <SeekBar
