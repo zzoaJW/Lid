@@ -27,7 +27,9 @@ class MainFragmentCalendar: Fragment() {
 
         // 초기 세팅
         var today = getCurrentDate()
-        binding.calendarFocusDate.text = today
+
+        val ymd : List<String> = today.split(".")
+        binding.calendarFocusDate.text = "${ymd[1]}월 ${ymd[2]}일"
 
         showDrinks(today)
 

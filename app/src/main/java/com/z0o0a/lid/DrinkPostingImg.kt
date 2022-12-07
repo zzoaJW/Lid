@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.z0o0a.lid.databinding.DrinkPostingImgBinding
@@ -25,11 +26,14 @@ class DrinkPostingImg : AppCompatActivity() {
     private var drinkImgUri : Uri? = null
     private var drinkImgBitmap : Bitmap? = null
 
+    private val cameraPermissionList = arrayOf(Manifest.permission.CAMERA)
+
     private val permissionList = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
     private val checkPermission = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
         result.forEach {
             if(!it.value) {
-                Toast.makeText(applicationContext, "권한 동의 필요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
+                finish()
             }
         }
     }
@@ -40,12 +44,18 @@ class DrinkPostingImg : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.btnGetImg.setOnClickListener {
-            // 권한 허용 안받아도되네..?
-//            checkPermission.launch(permissionList)
+        checkPermission.launch(cameraPermissionList)
+        checkPermission.launch(permissionList)
 
+        binding.btnGetImg.setOnClickListener {
             openGalleryForImage()
             onActivityResult(1000,1000, intent)
+        }
+
+        binding.btnGetCamera.setOnClickListener {
+            val intent= Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+            cameraActivityResult.launch(intent)
         }
 
         binding.btnNext2.setOnClickListener {
@@ -53,24 +63,8 @@ class DrinkPostingImg : AppCompatActivity() {
                 drinkImgBitmap = BitmapFactory.decodeResource(resources, R.drawable.bottle)
 
             } else{
-                // 비트맵으로 변환
-                try {
-                    drinkImgBitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                        ImageDecoder.decodeBitmap(
-                            ImageDecoder.createSource(
-                                contentResolver,
-                                drinkImgUri!!
-                            )
-                        )
-                    } else {
-                        MediaStore.Images.Media.getBitmap(contentResolver, drinkImgUri)
-                    }
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
+                setPostingSingleton(drinkImgBitmap)
             }
-
-            setPostingSingleton(drinkImgBitmap)
 
             // 다음 화면 ㄱㄱ
             setIntentFromType()
@@ -121,6 +115,27 @@ class DrinkPostingImg : AppCompatActivity() {
             binding.textView5.visibility = View.INVISIBLE
         }
     }
+
+    private val cameraActivityResult: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()){
+
+        if(it.resultCode == RESULT_OK && it.data != null){
+            //값 담기
+            val extras = it.data!!.extras
+
+            //bitmap으로 타입 변경
+            drinkImgBitmap = extras?.get("data") as Bitmap
+
+            //화면에 보여주기
+            binding.galleyPic.setImageBitmap(drinkImgBitmap) // handle chosen image
+            binding.textView5.visibility = View.INVISIBLE
+        }
+    }
+
+
+
+
+
 
     private fun setIntentFromType(){
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)

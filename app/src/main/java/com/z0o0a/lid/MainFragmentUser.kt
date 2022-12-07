@@ -57,12 +57,11 @@ class MainFragmentUser: Fragment() {
         }
 
         binding.btnLid.setOnClickListener {
-            // TODO : 개발 다 하고 이거 지우고 아래로 바꾸기
-            var intent = Intent(context, LifeIsDrink::class.java)
-            startActivity(intent)
-
-//            var intent = Intent(context, OpenLicenseList::class.java)
+//            var intent = Intent(context, LifeIsDrink::class.java)
 //            startActivity(intent)
+
+            var intent = Intent(context, OpenLicenseList::class.java)
+            startActivity(intent)
         }
 
         binding.btnDeveloperLetter.setOnClickListener {

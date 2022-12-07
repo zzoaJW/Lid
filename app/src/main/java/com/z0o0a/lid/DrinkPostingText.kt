@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -18,7 +19,7 @@ import java.util.*
 class DrinkPostingText : AppCompatActivity() {
     private lateinit var binding: DrinkPostingTextBinding
 
-    var drinkImg : String = ""
+    var drinkImg : Bitmap? = null
     var drinkRating : Float = 0F
     var drinkRegion : String = ""
     var drinkPrice : String = ""
@@ -34,7 +35,6 @@ class DrinkPostingText : AppCompatActivity() {
         setContentView(view)
 
         setDrinkImgNameType()
-        binding.postingDrinkImg.setImageURI(Uri.parse(drinkImg))
 
         binding.btnDrinkBack.setOnClickListener {
             finish()
@@ -103,7 +103,7 @@ class DrinkPostingText : AppCompatActivity() {
             val cal = Calendar.getInstance()    //캘린더뷰 만들기
             val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                 dateString = "${year}.${month+1}.${dayOfMonth}"
-                binding.btnDrinkDate.setText(dateString)
+                binding.btnDrinkDate.text = dateString
             }
             DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
         }
@@ -131,15 +131,18 @@ class DrinkPostingText : AppCompatActivity() {
 
     fun getCurrentDate():String{
         val now =  System.currentTimeMillis()
-        val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.KOREAN).format(now)
+        val y = SimpleDateFormat("yyyy", Locale.KOREAN).format(now).toInt()
+        val m = SimpleDateFormat("MM", Locale.KOREAN).format(now).toInt()
+        val d = SimpleDateFormat("dd", Locale.KOREAN).format(now).toInt()
 
-        return simpleDateFormat
+        return "${y}.${m}.${d}"
     }
 
     fun setDrinkImgNameType(){
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
 
-        drinkImg = postingSingleton?.drinkImg.toString()
+        drinkImg = postingSingleton?.drinkImg
+        binding.postingDrinkImg.setImageBitmap(drinkImg)
         binding.postingDrinkEngName.text = postingSingleton?.drinkEngName.toString()
         binding.postingDrinkKrName.text = postingSingleton?.drinkKrName.toString()
         binding.postingDrinkType.text = postingSingleton?.drinkType.toString()

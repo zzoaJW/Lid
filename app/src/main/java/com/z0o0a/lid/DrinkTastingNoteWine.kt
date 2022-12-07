@@ -87,9 +87,6 @@ class DrinkTastingNoteWine : AppCompatActivity() {
                     } else {
                         binding.noteWiRimArea.visibility = View.GONE
                         binding.txtNoteWiRimArea.visibility = View.GONE
-
-                        // TODO : 방법 찾기
-                        // binding.txtNoteWiNose.TopMargins = 60
                     }
 
                     for (nose in wiNoses) {
