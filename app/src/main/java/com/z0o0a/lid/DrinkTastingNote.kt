@@ -43,21 +43,21 @@ class DrinkTastingNote  : AppCompatActivity() {
             val drink = db!!.drinkDao().getDrink(drinkId)
 
             runOnUiThread {
-                binding.noteDrinkEngName.text = drink?.drinkEngName
-                binding.noteDrinkKrName.text = drink?.drinkKrName
-                binding.noteDrinkType.text = drink?.drinkType
-                binding.noteDrinkRating.text = drink?.drinkRating.toString()
-                binding.noteDrinkTasting.text = drink?.drinkOverallStr
-                binding.noteDrinkKeepDate.text = drink?.drinkKeepDate
-                binding.noteDrinkPlace.text = drink?.drinkPlace
-                binding.noteDrinkPostingDate.text = drink?.drinkPostingDate
-                binding.noteDrinkRegion.text = drink?.drinkRegion
-                binding.noteDrinkPrice.text = drink?.drinkPrice
+                binding.noteDrinkEngName.text = drink.drinkEngName
+                binding.noteDrinkKrName.text = drink.drinkKrName
+                binding.noteDrinkType.text = drink.drinkType
+                binding.noteDrinkRating.text = drink.drinkRating.toString()
+                binding.noteDrinkTasting.text = drink.drinkOverallStr
+                binding.noteDrinkKeepDate.text = drink.drinkKeepDate
+                binding.noteDrinkPlace.text = drink.drinkPlace
+                binding.noteDrinkPostingDate.text = drink.drinkPostingDate
+                binding.noteDrinkRegion.text = drink.drinkRegion
+                binding.noteDrinkPrice.text = drink.drinkPrice
 
                 // 조건 왜 안되지 ㅠ
 //                if (drink?.drinkImg != BitmapFactory.decodeResource(resources, R.drawable.bottle)) {
                     binding.noteDrinkImg.visibility = View.VISIBLE
-                    binding.noteDrinkImg.setImageBitmap(drink?.drinkImg)
+                    binding.noteDrinkImg.setImageBitmap(drink.drinkImg)
 //                }
             }
         }).start()

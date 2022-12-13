@@ -672,7 +672,7 @@
                 android:id="@+id/img_b_place"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:tint="@color/font_default"
                 app:layout_constraintStart_toStartOf="@+id/img_b_region"
                 app:layout_constraintTop_toBottomOf="@+id/img_b_price"
