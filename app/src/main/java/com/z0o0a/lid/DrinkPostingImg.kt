@@ -62,9 +62,8 @@ class DrinkPostingImg : AppCompatActivity() {
             if (drinkImgBitmap == null){ // 갤러리에서 사진 안가져온 경우
                 drinkImgBitmap = BitmapFactory.decodeResource(resources, R.drawable.bottle)
 
-            } else{
-                setPostingSingleton(drinkImgBitmap)
             }
+            setPostingSingleton(drinkImgBitmap)
 
             // 다음 화면 ㄱㄱ
             setIntentFromType()
