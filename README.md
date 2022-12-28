@@ -2,8 +2,8 @@
   
 Android Studio (Kotlin)  
   
-[Google Play](https://play.google.com/store/apps/details?id=com.z0o0a.lid) : https://play.google.com/store/apps/details?id=com.z0o0a.lid  
-[ONE Store](https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000766515) : https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000766515  
+Google Play : https://play.google.com/store/apps/details?id=com.z0o0a.lid  
+ONE Store : https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000766515  
   
   
 Life is Drink! 🪸  
