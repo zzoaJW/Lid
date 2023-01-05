@@ -7,3 +7,6 @@ ONE Store : https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=000076
   
   
 Life is Drink! 🪸  
+
+[출시 후 회고]
+[[Android 프로젝트] LiD 회고](https://blog.naver.com/zoooa16/222955403493)
