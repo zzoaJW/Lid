@@ -65,4 +65,8 @@ dependencies {
 
     // ColorPicker
     implementation 'com.github.Dhaval2404:ColorPicker:2.3'
+
+    // Lottie
+    implementation "com.airbnb.android:lottie:5.2.0"
+
 }
