@@ -2,7 +2,6 @@ package com.z0o0a.lid
 
 import android.Manifest
 import android.app.Activity
-import android.content.ContentResolver
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -17,6 +16,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.z0o0a.lid.databinding.DrinkPostingImgBinding
+import com.z0o0a.lid.model.PostingDrinkSingleton
 import java.io.IOException
 
 

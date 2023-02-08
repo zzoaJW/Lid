@@ -2,7 +2,6 @@ package com.z0o0a.lid
 
 import android.graphics.Color
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.data.RadarData
@@ -10,6 +9,7 @@ import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.z0o0a.lid.databinding.LifeIsDrinkBinding
+import com.z0o0a.lid.repository.DrinkDatabase
 
 class LifeIsDrink : AppCompatActivity() {
     private lateinit var binding: LifeIsDrinkBinding

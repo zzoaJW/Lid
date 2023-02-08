@@ -1,17 +1,15 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.z0o0a.lid.*
 import com.z0o0a.lid.databinding.ItemDrinkListBinding
-import java.lang.Exception
+import com.z0o0a.lid.repository.DrinkDatabase
 
 class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
     private lateinit var itemDrinkListBinding: ItemDrinkListBinding

@@ -1,15 +1,12 @@
 package com.z0o0a.lid
 
 import android.app.AlertDialog
-import android.content.ContentResolver
 import android.content.DialogInterface
-import android.content.Intent
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.z0o0a.lid.databinding.DrinkTastingNoteBinding
+import com.z0o0a.lid.repository.DrinkDatabase
 
 class DrinkTastingNote  : AppCompatActivity() {
     private lateinit var binding: DrinkTastingNoteBinding

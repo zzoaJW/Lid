@@ -1,4 +1,4 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.repository
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

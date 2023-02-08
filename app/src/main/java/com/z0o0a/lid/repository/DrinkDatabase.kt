@@ -1,10 +1,11 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.repository
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.z0o0a.lid.*
 
 
 @Database(entities = [Drink::class, DrinkWhiskey::class, DrinkWine::class, DrinkBeer::class], version = 3)

@@ -17,6 +17,8 @@ import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkPostingTextWhiskeyBinding
+import com.z0o0a.lid.model.PostingDrinkSingleton
+import com.z0o0a.lid.repository.DrinkDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -3,17 +3,12 @@ package com.z0o0a.lid
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.graphics.Color
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.marginLeft
-import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkTastingNoteWhiskeyBinding
+import com.z0o0a.lid.repository.DrinkDatabase
 
 class DrinkTastingNoteWhiskey : AppCompatActivity() {
     private lateinit var binding: DrinkTastingNoteWhiskeyBinding

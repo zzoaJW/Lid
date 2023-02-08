@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.z0o0a.lid.adapter.DrinkListAdapter
 import com.z0o0a.lid.databinding.MainFragmentDrinksBinding
+import com.z0o0a.lid.repository.DrinkDatabase
 
 class MainFragmentDrinks: Fragment() {
     private lateinit var binding: MainFragmentDrinksBinding

@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputFilter
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.z0o0a.lid.databinding.DrinkPostingNameBinding
+import com.z0o0a.lid.model.PostingDrinkSingleton
 import java.util.regex.Pattern
 
 class DrinkPostingName : AppCompatActivity() {

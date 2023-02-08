@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkPostingTextWineBinding
+import com.z0o0a.lid.model.PostingDrinkSingleton
+import com.z0o0a.lid.repository.DrinkDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 

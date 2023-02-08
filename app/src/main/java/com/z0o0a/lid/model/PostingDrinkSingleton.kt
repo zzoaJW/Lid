@@ -1,4 +1,4 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.model
 
 import android.content.Context
 import android.graphics.Bitmap

@@ -1,6 +1,7 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.repository
 
 import androidx.room.*
+import com.z0o0a.lid.*
 
 @Dao
 interface DrinkDao {
