@@ -5,7 +5,7 @@ Life is Drink! 🪸
 
 [개인 프로젝트]  
 개발 툴/언어 : Android Studio (Kotlin)  
-라이브러리/기술 : Firebase (Crashlystic, fcm), Room, RecyclerView, Singleton Pattern, MPAndroidChart, ColorPicker, BottomNavigation, CalendarView 등
+라이브러리/기술 : Firebase (Crashlystic, FCM), Room, RecyclerView, Singleton Pattern, MPAndroidChart, ColorPicker, BottomNavigation, CalendarView 등
   
 [마켓 출시] v1.1.0  
 Google Play : https://play.google.com/store/apps/details?id=com.z0o0a.lid  
