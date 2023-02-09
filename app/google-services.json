@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "923268538880",
+    "project_id": "lifeisdrink-53bb1",
+    "storage_bucket": "lifeisdrink-53bb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923268538880:android:2a9793e06ffba617962ee5",
+        "android_client_info": {
+          "package_name": "com.z0o0a.lid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923268538880-d0frqo05lvcigvoj13sbbhsgjovojcek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.z0o0a.lid",
+            "certificate_hash": "ffc00a0346b809287780d373266cda328d6257a3"
+          }
+        },
+        {
+          "client_id": "923268538880-2out98b0ou0mk39250true5qjg3um288.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBawNnoWOWCtImk3frybJPgm6WXCqVMWl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923268538880-2out98b0ou0mk39250true5qjg3um288.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
