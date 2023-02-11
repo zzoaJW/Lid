@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.adapter.DrinkListAdapter
@@ -44,22 +45,37 @@ class MainFragmentDrinks: Fragment() {
         val run = Runnable {
             val db = DrinkDatabase.getInstance(requireContext())
 
-            var drinks = db!!.drinkDao().getAllRecyclerviewData()
-            allDrinkNum = db!!.drinkDao().getDrinkAllNum()
+            try {
+                var drinks = db!!.drinkDao().getAllRecyclerviewData()
+                allDrinkNum = db!!.drinkDao().getDrinkAllNum()
 
-            activity?.runOnUiThread{
-                if (!drinks.isEmpty()) {
-                    binding.totalDrink.text = "${allDrinkNum}잔의 기록"
-                } else{
-                    binding.totalDrink.text = "기록이 없습니다"
+                activity?.runOnUiThread{
+                    if (!drinks.isEmpty()) {
+                        binding.totalDrink.text = "${allDrinkNum}잔의 기록"
+                    } else{
+                        binding.totalDrink.text = "기록이 없습니다"
+                    }
+                }
+
+                if (!drinks.isEmpty()){
+                    drinks.forEach { drink ->
+                        recyclerviewData.add(drink)
+                    }
+                }
+            }catch (e:NullPointerException){
+                Log.d("(Null 예외)노트 개수", db!!.drinkDao().getDrinkCount().toString())
+
+                activity?.runOnUiThread {
+                    Toast.makeText(activity?.applicationContext, "이미지 오류 : 노트 불러오기를 실패했습니다. 관리자에 문의해주세요.", Toast.LENGTH_LONG).show()
+                }
+            }catch (e:Exception){
+                Log.d("(예외)노트 개수", db!!.drinkDao().getDrinkCount().toString())
+
+                activity?.runOnUiThread {
+                    Toast.makeText(activity?.applicationContext, "노트 불러오기를 실패했습니다. 관리자에 문의해주세요.", Toast.LENGTH_LONG).show()
                 }
             }
 
-            if (!drinks.isEmpty()){
-                drinks.forEach { drink ->
-                    recyclerviewData.add(drink)
-                }
-            }
         }
 
 

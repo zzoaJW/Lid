@@ -48,6 +48,10 @@ interface DrinkDao {
     @Query("SELECT EXISTS(SELECT * FROM Drink WHERE drinkId = :drinkId)")
     fun getDrinkExist(drinkId : Int) : Boolean
 
+    // TypeConverter의 byteArraytoBitmap에서 NullPointerException 발생하는거 잡기 위한 쿼리
+    @Query("SELECT COUNT(drinkId)  FROM Drink")
+    fun getDrinkCount(): Int
+
 
 
     // Whiskey Dao
