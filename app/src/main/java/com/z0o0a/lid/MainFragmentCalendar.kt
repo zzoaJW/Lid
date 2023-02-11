@@ -34,6 +34,7 @@ class MainFragmentCalendar: Fragment() {
 
         showDrinks(today)
 
+        // 노트 불러오는 과정에서 예외 발생해서 recyclerviewData가 없는 경우 처리
         if(!recyclerviewData.isNullOrEmpty()){
             adapter = DrinkListAdapter()
             adapter!!.listData = recyclerviewData
