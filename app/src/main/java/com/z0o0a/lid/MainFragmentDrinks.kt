@@ -30,12 +30,12 @@ class MainFragmentDrinks: Fragment() {
             startActivity(intent)
         }
 
-
-        adapter = DrinkListAdapter()
-        adapter!!.listData = recyclerviewData
-        binding.drinksRecyclerview.adapter = adapter
-        binding.drinksRecyclerview.layoutManager = LinearLayoutManager(activity)
-//        binding.drinksRecyclerview.setHasFixedSize(true)
+        if(!recyclerviewData.isNullOrEmpty()){
+            adapter = DrinkListAdapter()
+            adapter!!.listData = recyclerviewData
+            binding.drinksRecyclerview.adapter = adapter
+            binding.drinksRecyclerview.layoutManager = LinearLayoutManager(activity)
+        }
 
 
         return binding.root

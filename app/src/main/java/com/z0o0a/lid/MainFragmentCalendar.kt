@@ -34,11 +34,12 @@ class MainFragmentCalendar: Fragment() {
 
         showDrinks(today)
 
-        adapter = DrinkListAdapter()
-        adapter!!.listData = recyclerviewData
-        binding.focusDateDrinksRecyclerview.adapter = adapter
-        binding.focusDateDrinksRecyclerview.layoutManager = LinearLayoutManager(activity)
-//        binding.focusDateDrinksRecyclerview.setHasFixedSize(true)
+        if(!recyclerviewData.isNullOrEmpty()){
+            adapter = DrinkListAdapter()
+            adapter!!.listData = recyclerviewData
+            binding.focusDateDrinksRecyclerview.adapter = adapter
+            binding.focusDateDrinksRecyclerview.layoutManager = LinearLayoutManager(activity)
+        }
 
         // 날짜 누를때마다 바꿔주기
         binding.calendarView.setOnDateChangeListener { calendarView, y, m, d ->
