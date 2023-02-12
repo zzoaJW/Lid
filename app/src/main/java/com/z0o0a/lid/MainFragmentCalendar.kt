@@ -52,8 +52,9 @@ class MainFragmentCalendar: Fragment() {
             var SearchDate = "${y}.${m+1}.${d}"
 
             showDrinks(SearchDate)
-
-            adapter!!.notifyDataSetChanged()
+            if(!recyclerviewData.isNullOrEmpty()){
+                adapter!!.notifyDataSetChanged()
+            }
         }
 
         return binding.root
