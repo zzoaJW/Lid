@@ -1,14 +1,13 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.messaging.FirebaseMessaging
+import androidx.databinding.DataBindingUtil
+import com.z0o0a.lid.MainActivity
+import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.SplashBinding
 
 class Splash : AppCompatActivity() {
@@ -16,9 +15,8 @@ class Splash : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SplashBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding = DataBindingUtil.setContentView(this, R.layout.splash)
+        binding.lifecycleOwner = this
 
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
