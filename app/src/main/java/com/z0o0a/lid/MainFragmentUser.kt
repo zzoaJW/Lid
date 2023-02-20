@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.data.*
 import com.z0o0a.lid.databinding.MainFragmentUserBinding
 import com.z0o0a.lid.repository.DrinkDatabase
+import com.z0o0a.lid.view.OpenLicenseList
+import com.z0o0a.lid.view.UserLetter
 
 
 class MainFragmentUser: Fragment() {

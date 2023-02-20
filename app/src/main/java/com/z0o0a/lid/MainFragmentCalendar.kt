@@ -53,7 +53,12 @@ class MainFragmentCalendar: Fragment() {
 
             showDrinks(SearchDate)
             if(!recyclerviewData.isNullOrEmpty()){
-                adapter!!.notifyDataSetChanged()
+                // NullPointException 임시 디버깅
+//                adapter!!.notifyDataSetChanged()
+                adapter = DrinkListAdapter()
+                adapter!!.listData = recyclerviewData
+                binding.focusDateDrinksRecyclerview.adapter = adapter
+                binding.focusDateDrinksRecyclerview.layoutManager = LinearLayoutManager(activity)
             }
         }
 

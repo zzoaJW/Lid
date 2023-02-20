@@ -37,11 +37,10 @@
         <activity android:name=".DrinkPostingName"/>
         <activity android:name=".DrinkPostingText"/>
         <activity android:name=".DrinkPostingImg"/>
-        <activity android:name=".LifeIsDrink"/>
         <activity android:name=".DrinkTastingNote"/>
-        <activity android:name=".UserLetter"/>
+        <activity android:name=".view.UserLetter"/>
         <activity android:name=".DrinkPostingTextBeer"/>
-        <activity android:name=".OpenLicenseList"/>
+        <activity android:name=".view.OpenLicenseList"/>
         <activity android:name=".DrinkPostingGuide"/>
         <activity android:name=".DrinkPostingTextWhiskey"/>
         <activity android:name=".DrinkPostingTextWine"/>
