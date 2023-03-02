@@ -49,12 +49,17 @@ class MainFragmentCalendar: Fragment() {
             binding.calendarFocusDate.text = focusDate
 
             // 선택 날짜에 쓴 노트 보여주기
-            var SearchDate = "${y}.${m+1}.${d}"
+            var searchDate = "${y}.${m+1}.${d}"
 
-            showDrinks(SearchDate)
+            showDrinks(searchDate)
             if(!recyclerviewData.isNullOrEmpty()){
                 // NullPointException 임시 디버깅
 //                adapter!!.notifyDataSetChanged()
+                adapter = DrinkListAdapter()
+                adapter!!.listData = recyclerviewData
+                binding.focusDateDrinksRecyclerview.adapter = adapter
+                binding.focusDateDrinksRecyclerview.layoutManager = LinearLayoutManager(activity)
+            } else if(recyclerviewData.isEmpty()){
                 adapter = DrinkListAdapter()
                 adapter!!.listData = recyclerviewData
                 binding.focusDateDrinksRecyclerview.adapter = adapter
