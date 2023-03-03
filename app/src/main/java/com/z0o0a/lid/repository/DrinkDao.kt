@@ -1,5 +1,6 @@
 package com.z0o0a.lid.repository
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.z0o0a.lid.*
 
@@ -37,13 +38,21 @@ interface DrinkDao {
     @Query("SELECT * FROM Drink WHERE drinkId = :drinkId")
     fun getDrink(drinkId : Int): Drink
 
-    // reyclerview에 뿌릴때 필요한 정보들 가져오기
+    // 모든 drink의 reyclerview 리스트 데이터
     @Query("SELECT drinkId, drinkImg, drinkEngName, drinkKrName, drinkType, drinkRating  FROM Drink")
     fun getAllRecyclerviewData(): List<DrinkListData>
 
-    // 캘린더에서 날짜별로 recyclerview에 뿌릴때 필요한 정보들 가져오기
+    // 모든 drink의 reyclerview 리스트 데이터 LiveData로 가져오기
+    @Query("SELECT drinkId, drinkImg, drinkEngName, drinkKrName, drinkType, drinkRating  FROM Drink")
+    fun getAllRecyclerviewLiveData(): LiveData<List<DrinkListData>>
+
+    // 날짜별 recyclerview 리스트 데이터
     @Query("SELECT drinkId, drinkImg, drinkEngName, drinkKrName, drinkType, drinkRating FROM Drink WHERE drinkPostingDate = :date")
     fun getDateRecyclerviewData(date : String): List<DrinkListData>
+
+    // 날짜별 recyclerview 리스트 데이터 LiveData로 가져오기
+    @Query("SELECT drinkId, drinkImg, drinkEngName, drinkKrName, drinkType, drinkRating FROM Drink WHERE drinkPostingDate = :date")
+    fun getDateRecyclerviewLiveData(date : String): LiveData<List<DrinkListData>>
 
     @Query("SELECT EXISTS(SELECT * FROM Drink WHERE drinkId = :drinkId)")
     fun getDrinkExist(drinkId : Int) : Boolean

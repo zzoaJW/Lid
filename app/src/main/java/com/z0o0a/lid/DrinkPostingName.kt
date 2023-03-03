@@ -6,22 +6,23 @@ import android.text.InputFilter
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.z0o0a.lid.databinding.DrinkPostingNameBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
+import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.regex.Pattern
 
 class DrinkPostingName : AppCompatActivity() {
-    private lateinit var binding: DrinkPostingNameBinding
-
-    var drinkEngName = ""
-    var drinkKrName = ""
-    var drinkType = ""
+    private lateinit var vm: DrinkPostingVM
+    private lateinit var binding : DrinkPostingNameBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DrinkPostingNameBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_name)
+        vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
+        binding.vm = vm
+        binding.lifecycleOwner = this
 
         var filterEngNumSpace = InputFilter { source, start, end, dest, dstart, dend ->
             /*
@@ -32,14 +33,14 @@ class DrinkPostingName : AppCompatActivity() {
                 4. 정규식 패턴 ^[0-9] : 숫자 허용
                 5. 정규식 패턴 ^[ ] or ^[\\s] : 공백 허용
             */
-            val ps = Pattern.compile("^[a-zA-Z0-9'\\s]+$")
+            val ps = Pattern.compile("^[a-zA-Z0-9'_\\-\\s]+$")
             if (!ps.matcher(source).matches()) {
                 ""
             } else source
         }
 
         var filterKrNumSpace = InputFilter { source, start, end, dest, dstart, dend ->
-            val ps = Pattern.compile("^[ㄱ-ㅣ가-힣0-9'\\s]+$")
+            val ps = Pattern.compile("^[ㄱ-ㅣ가-힣0-9'_\\-\\s]+$")
             if (!ps.matcher(source).matches()) {
                 ""
             } else source
@@ -48,49 +49,10 @@ class DrinkPostingName : AppCompatActivity() {
         binding.inputDrinkEngName.filters = arrayOf(filterEngNumSpace)
         binding.inputDrinkKrName.filters = arrayOf(filterKrNumSpace)
 
-
-        binding.radioGroupDrinkType.setOnCheckedChangeListener { radioGroup, radioButtonid ->
-            when(radioButtonid){
-                R.id.radio_btn_wiskey -> {
-                    binding.editTxtEtcType.visibility = View.INVISIBLE
-                    drinkType = "위스키"
-                }
-                R.id.radio_btn_wine -> {
-                    binding.editTxtEtcType.visibility = View.INVISIBLE
-                    drinkType = "와인"
-                }
-                R.id.radio_btn_beer -> {
-                    binding.editTxtEtcType.visibility = View.INVISIBLE
-                    drinkType = "맥주"
-                }
-                R.id.radio_btn_etc -> {
-                    binding.editTxtEtcType.visibility = View.VISIBLE
-                    drinkType = ""
-                }
-            }
-        }
-
         binding.btnNext.setOnClickListener {
-            drinkEngName = binding.inputDrinkEngName.text.toString()
-            drinkKrName = binding.inputDrinkKrName.text.toString()
-            if (binding.radioBtnEtc.isChecked && drinkType=="") {
-                var temp = binding.editTxtEtcType.text.toString()
-                if (temp == "") {
-                    drinkType = "기타"
-                }else{
-                    drinkType = temp
-                }
-            }
-
-            setPostingSingleton(drinkEngName, drinkKrName, drinkType)
-
-            if (binding.radioBtnEtc.isChecked){
-                drinkType = binding.radioBtnEtc.text.toString()
-            }
-
-            if(drinkEngName == "" && drinkKrName == ""){
+            if(vm.drinkEngName.value == "" && vm.drinkKrName.value == ""){
                 Toast.makeText(this, "이름을 작성해주세요.", Toast.LENGTH_SHORT).show()
-            }else if (drinkType == ""){
+            }else if (vm.drinkType == ""){
                 Toast.makeText(this, "종류를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }else{
                 intent = Intent(this, DrinkPostingImg::class.java)
@@ -101,13 +63,5 @@ class DrinkPostingName : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             finish()
         }
-    }
-
-    fun setPostingSingleton(engName:String, krName:String, type:String){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
-
-        postingSingleton?.drinkEngName = engName
-        postingSingleton?.drinkKrName = krName
-        postingSingleton?.drinkType = type
     }
 }
