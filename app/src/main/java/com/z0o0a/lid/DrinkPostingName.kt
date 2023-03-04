@@ -50,9 +50,9 @@ class DrinkPostingName : AppCompatActivity() {
         binding.inputDrinkKrName.filters = arrayOf(filterKrNumSpace)
 
         binding.btnNext.setOnClickListener {
-            if(vm.drinkEngName.value == "" && vm.drinkKrName.value == ""){
+            if(vm.drink.value!!.drinkEngName == "" && vm.drink.value!!.drinkKrName == ""){
                 Toast.makeText(this, "이름을 작성해주세요.", Toast.LENGTH_SHORT).show()
-            }else if (vm.drinkType == ""){
+            }else if (vm.drink.value!!.drinkType == ""){
                 Toast.makeText(this, "종류를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }else{
                 intent = Intent(this, DrinkPostingImg::class.java)
