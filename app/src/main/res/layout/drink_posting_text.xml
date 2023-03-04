@@ -214,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:background="#00ff0000"
-                    android:text="개봉일 선택"
+                    android:text="@={vm.drink.drinkKeepDate}"
                     android:textColor="@color/font_default"
                     android:textSize="15sp"
                     android:visibility="invisible"

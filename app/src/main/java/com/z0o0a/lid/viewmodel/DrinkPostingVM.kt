@@ -25,10 +25,12 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     val drinkWine = MutableLiveData<DrinkWine>()
     val drinkBeer = MutableLiveData<DrinkBeer>()
 
+    val keepDateChecked = MutableLiveData<Boolean>()
+
 
     init {
         drink.value = Drink(0,null, "", "", "", 0L, "",
-                             0f, "", "", "", "", "")
+                             0f, "", "", "개봉일 선택", "", "")
         drinkWhiskey.value = DrinkWhiskey(0, false, "-", "", arrayListOf(), arrayListOf(),
                                    3, 3, 3, arrayListOf())
         drinkWine.value = DrinkWine(0, false, "-", 0, 0, 0, false,
@@ -37,6 +39,7 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
                                       3, 3, 3, "", 3, 3, 3,
                                       3, 3, 3, 3)
 
+        keepDateChecked.value = false
     }
 
     fun setDrinkType(drinkType : Int){
@@ -54,11 +57,8 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     }
 
     // 개봉일 선택 날짜 visible
+    // view에서 visible 처리
     fun setKeepDateVisible(checked : Boolean){
-        if (checked) {
-            // 개봉일 보이게
-        }else {
-            // 안보이게
-        }
+        keepDateChecked.value = checked
     }
 }
