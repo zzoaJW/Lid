@@ -34,8 +34,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".DrinkPostingName"/>
-        <activity android:name=".DrinkPostingText"/>
+        <activity android:name=".view.DrinkPostingName"/>
+        <activity android:name=".view.DrinkPostingText"/>
         <activity android:name=".DrinkPostingImg"/>
         <activity android:name=".DrinkTastingNote"/>
         <activity android:name=".view.UserLetter"/>
