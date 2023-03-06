@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.adapter.DrinkListAdapter
 import com.z0o0a.lid.databinding.MainFragmentDrinksBinding
 import com.z0o0a.lid.repository.DrinkDatabase
+import com.z0o0a.lid.view.DrinkPostingName
 
 class MainFragmentDrinks: Fragment() {
     private lateinit var binding: MainFragmentDrinksBinding
