@@ -144,7 +144,6 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btn_drink_back"
-                    app:srcCompat="@drawable/bottle"
                     imageBitmap="@{vm.drink.drinkImg}"/>
 
                 <TextView
