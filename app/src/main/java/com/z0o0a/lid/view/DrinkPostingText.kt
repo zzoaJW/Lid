@@ -90,20 +90,21 @@ class DrinkPostingText : AppCompatActivity() {
     }
 
     private fun saveDrink(){
-        when(vm.drink.value!!.drinkType){
-            "위스키" -> {
-                vm.insertDrinkWhiskey()
-                vm.insertDrink()
-            }
-            "와인" -> {
-                vm.insertDrinkWine()
-                vm.insertDrink()
-            }
-            "맥주" -> {
-                vm.insertDrinkBeer()
-                vm.insertDrink()
-            }
-            else -> vm.insertDrink()
-        }
+        vm.insertDrink()
+//        when(vm.drink.value!!.drinkType){
+//            "위스키" -> {
+//                vm.insertDrinkWhiskey()
+//                vm.insertDrink()
+//            }
+//            "와인" -> {
+//                vm.insertDrinkWine()
+//                vm.insertDrink()
+//            }
+//            "맥주" -> {
+//                vm.insertDrinkBeer()
+//                vm.insertDrink()
+//            }
+//            else -> vm.insertDrink()
+//        }
     }
 }

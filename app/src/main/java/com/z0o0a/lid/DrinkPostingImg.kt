@@ -15,13 +15,17 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.z0o0a.lid.databinding.DrinkPostingImgBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.view.DrinkPostingText
+import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.io.IOException
 
 
 class DrinkPostingImg : AppCompatActivity() {
+    private lateinit var vm: DrinkPostingVM
     private lateinit var binding: DrinkPostingImgBinding
 
     private var drinkImgUri : Uri? = null
@@ -41,9 +45,15 @@ class DrinkPostingImg : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DrinkPostingImgBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_img)
+        vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
+        binding.vm = vm
+        binding.lifecycleOwner = this
+
+        // TODO (1) 권한 확인 제대로
+        // TODO (2) 촬영 화질 높이기
+        // TODO (3) 이미지 선택
+        // TODO (4) 이미지 선택 안했을때 null로 저장하되 나중에 NullPoint예외 안나오게하는 방법 찾기 (예외 발생 안하고 기본 이미지 불러오는 방법)
 
         checkPermission.launch(cameraPermissionList)
         checkPermission.launch(permissionList)
@@ -67,7 +77,7 @@ class DrinkPostingImg : AppCompatActivity() {
             setPostingSingleton(drinkImgBitmap)
 
             // 다음 화면 ㄱㄱ
-            setIntentFromType()
+            goPostingTextPerType()
         }
 
         binding.btnBack2.setOnClickListener {
@@ -132,12 +142,7 @@ class DrinkPostingImg : AppCompatActivity() {
         }
     }
 
-
-
-
-
-
-    private fun setIntentFromType(){
+    private fun goPostingTextPerType(){
         val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
 
         var whichType = postingSingleton!!.drinkType
