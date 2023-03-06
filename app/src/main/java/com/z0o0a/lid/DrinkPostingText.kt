@@ -50,7 +50,7 @@ class DrinkPostingText : AppCompatActivity() {
                 intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }catch (e:Exception){
-                Toast.makeText(this, "저장이 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "저장에 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 
