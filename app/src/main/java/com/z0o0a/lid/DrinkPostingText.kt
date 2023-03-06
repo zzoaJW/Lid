@@ -50,8 +50,7 @@ class DrinkPostingText : AppCompatActivity() {
                 intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }catch (e:Exception){
-                val expt = "Exception : ${e.message}, Cause : ${e.cause}"
-                Firebase.crashlytics.log(expt)
+                Toast.makeText(this, "저장이 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 

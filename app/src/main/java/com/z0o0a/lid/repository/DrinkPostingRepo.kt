@@ -1,6 +1,8 @@
 package com.z0o0a.lid.repository
 
 import android.app.Application
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import com.z0o0a.lid.Drink
 import com.z0o0a.lid.DrinkBeer
 import com.z0o0a.lid.DrinkWhiskey
@@ -16,7 +18,10 @@ class DrinkPostingRepo(application: Application) {
                 drinkDao.insertDrink(drink)
             })
             thread.start()
-        } catch (e : Exception){e.printStackTrace()}
+        } catch (e : Exception){
+            val expt = "[Room Insert Error] Exception : ${e.message}, Cause : ${e.cause}"
+            Firebase.crashlytics.log(expt)
+        }
     }
 
     fun insertDrinkWhiskey(drinkWhiskey : DrinkWhiskey): Long{
@@ -26,7 +31,10 @@ class DrinkPostingRepo(application: Application) {
                 whiskeyId = drinkDao.insertDrinkWhiskey(drinkWhiskey)
             })
             thread.start()
-        } catch (e : Exception){e.printStackTrace()}
+        } catch (e : Exception){
+            val expt = "[Room Insert Error] Exception : ${e.message}, Cause : ${e.cause}"
+            Firebase.crashlytics.log(expt)
+        }
 
         return whiskeyId
     }
@@ -38,7 +46,10 @@ class DrinkPostingRepo(application: Application) {
                 wineId = drinkDao.insertDrinkWine(drinkWine)
             })
             thread.start()
-        } catch (e : Exception){e.printStackTrace()}
+        } catch (e : Exception){
+            val expt = "[Room Insert Error] Exception : ${e.message}, Cause : ${e.cause}"
+            Firebase.crashlytics.log(expt)
+        }
 
         return wineId
     }
@@ -50,8 +61,23 @@ class DrinkPostingRepo(application: Application) {
                 beerId = drinkDao.insertDrinkBeer(drinkBeer)
             })
             thread.start()
-        } catch (e : Exception){e.printStackTrace()}
+        } catch (e : Exception){
+            val expt = "[Room Insert Error] Exception : ${e.message}, Cause : ${e.cause}"
+            Firebase.crashlytics.log(expt)
+        }
 
         return beerId
+    }
+
+    fun deleteDrink(drink:Drink){
+        try {
+            val thread = Thread(Runnable {
+                drinkDao.deleteDrink(drink)
+            })
+            thread.start()
+        } catch (e : Exception){
+            val expt = "[Room Delete Error] Exception : ${e.message}, Cause : ${e.cause}"
+            Firebase.crashlytics.log(expt)
+        }
     }
 }
