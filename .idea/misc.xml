@@ -32,7 +32,7 @@
         <entry key="app/src/main/res/layout/drink_posting_name.xml" value="0.25" />
         <entry key="app/src/main/res/layout/drink_posting_note_beer.xml" value="0.30738489060174856" />
         <entry key="app/src/main/res/layout/drink_posting_select_note.xml" value="0.15476190476190477" />
-        <entry key="app/src/main/res/layout/drink_posting_text.xml" value="0.24718475341796878" />
+        <entry key="app/src/main/res/layout/drink_posting_text.xml" value="0.165" />
         <entry key="app/src/main/res/layout/drink_posting_text_beer.xml" value="0.32271575927734375" />
         <entry key="app/src/main/res/layout/drink_posting_text_whiskey.xml" value="0.3156326293945313" />
         <entry key="app/src/main/res/layout/drink_posting_text_wine.xml" value="0.1" />

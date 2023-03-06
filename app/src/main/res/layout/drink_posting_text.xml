@@ -129,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:numStars="5"
+                    android:rating="@={vm.drink.drinkRating}"
                     android:progressBackgroundTint="@color/font_gray"
                     android:progressTint="@color/lime"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -150,7 +151,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:text="한글 술 이름"
+                    android:text="@={vm.drink.drinkKrName}"
                     android:textColor="@color/font_default"
                     app:layout_constraintBottom_toBottomOf="@+id/posting_drink_img"
                     app:layout_constraintStart_toEndOf="@+id/posting_drink_img"
@@ -160,7 +161,7 @@
                     android:id="@+id/posting_drink_eng_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="English Alcohol Name"
+                    android:text="@={vm.drink.drinkEngName}"
                     android:textColor="@color/font_default"
                     app:layout_constraintBottom_toTopOf="@+id/posting_drink_kr_name"
                     app:layout_constraintStart_toStartOf="@+id/posting_drink_kr_name" />
@@ -170,7 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:text="술 종류"
+                    android:text="@={vm.drink.drinkType}"
                     android:textSize="12dp"
                     android:textColor="@color/font_gray"
                     app:layout_constraintStart_toStartOf="@+id/posting_drink_kr_name"
@@ -279,17 +280,6 @@
                     app:layout_constraintBottom_toBottomOf="@+id/img_drink_region"
                     app:layout_constraintStart_toEndOf="@+id/img_drink_region"
                     app:layout_constraintTop_toTopOf="@+id/img_drink_region" />
-
-                <Button
-                    android:id="@+id/btn_drink_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="Button"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/drink_tasting_note" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

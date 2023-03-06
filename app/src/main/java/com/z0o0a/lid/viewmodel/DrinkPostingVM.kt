@@ -30,7 +30,7 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
 
     init {
         drink.value = Drink(0,null, "", "", "", 0L, "",
-                             0f, "", "", "개봉일 선택", "", "")
+                             5f, "", "", "개봉일 선택", "", "")
         drinkWhiskey.value = DrinkWhiskey(0, false, "-", "", arrayListOf(), arrayListOf(),
                                    3, 3, 3, arrayListOf())
         drinkWine.value = DrinkWine(0, false, "-", 0, 0, 0, false,

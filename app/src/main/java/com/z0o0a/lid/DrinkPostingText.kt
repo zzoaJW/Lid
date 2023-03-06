@@ -10,64 +10,39 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.z0o0a.lid.databinding.DrinkPostingTextBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.repository.DrinkDatabase
+import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.text.SimpleDateFormat
 import java.util.*
 
 class DrinkPostingText : AppCompatActivity() {
+    private lateinit var vm: DrinkPostingVM
     private lateinit var binding: DrinkPostingTextBinding
-
-    var drinkImg : Bitmap? = null
-    var drinkRating : Float = 0F
-    var drinkRegion : String = ""
-    var drinkPrice : String = ""
-    var drinkOverallStrRating : String = ""
-    var drinkKeepDate : String = ""
-    var drinkPlace : String = ""
-    var drinkPostingDate : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DrinkPostingTextBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_text)
+        vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
+        binding.vm = vm
+        binding.lifecycleOwner = this
 
-        setDrinkImgNameType()
+        // TODO : 이미지 넣기
 
         binding.btnDrinkBack.setOnClickListener {
             finish()
         }
 
         binding.btnCancel.setOnClickListener {
-            cancelConfirm()
+            showConfirmDialog()
         }
 
         binding.btnFinish.setOnClickListener {
-            drinkRating = binding.drinkRatingBar.rating
-            drinkOverallStrRating = binding.drinkTastingNote.text.toString()
-            if (drinkOverallStrRating == "") {
-                drinkOverallStrRating = "-"
-            }
-            drinkKeepDate = binding.drinkKeepDate.text.toString()
-            if (drinkKeepDate == "개봉일 선택") {
-                drinkKeepDate = "-"
-            }
-            drinkPlace = binding.drinkPlace.text.toString()
-            if (drinkPlace == "") {
-                drinkPlace = "-"
-            }
-            drinkRegion = binding.drinkRegion.text.toString()
-            if (drinkRegion == "") {
-                drinkRegion = "-"
-            }
-            drinkPrice = binding.drinkPrice.text.toString()
-            if (drinkPrice == "") {
-                drinkPrice = "-"
-            }
-            drinkPostingDate = binding.btnDrinkDate.text.toString()
-            saveDrink(drinkOverallStrRating, drinkRating, drinkRegion, drinkPrice, drinkKeepDate, drinkPlace, drinkPostingDate)
+            // TODO : drink 저장 (실패하는 경우 예외처리)
+            saveDrink()
 
             Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
@@ -76,98 +51,71 @@ class DrinkPostingText : AppCompatActivity() {
         }
 
         binding.switchDrinkKeep.setOnClickListener {
-            if (binding.txtDrinkKeep.isVisible) {
-                binding.txtDrinkKeep.visibility = View.INVISIBLE
-                binding.drinkKeepDate.visibility = View.VISIBLE
-            } else {
-                binding.txtDrinkKeep.visibility = View.VISIBLE
-                binding.drinkKeepDate.visibility = View.INVISIBLE
-            }
+            setDatePickerVisible()
         }
 
         binding.drinkKeepDate.setOnClickListener {
-            var dateString = ""
-
-            val cal = Calendar.getInstance()    //캘린더뷰 만들기
-            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                dateString = "${year}.${month+1}.${dayOfMonth}"
-                binding.drinkKeepDate.setText(dateString)
-            }
-            DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+            showDatePickerDialog()
         }
-
-        binding.btnDrinkDate.text = getCurrentDate()
-        binding.btnDrinkDate.setOnClickListener {
-            var dateString = ""
-
-            val cal = Calendar.getInstance()    //캘린더뷰 만들기
-            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                dateString = "${year}.${month+1}.${dayOfMonth}"
-                binding.btnDrinkDate.text = dateString
-            }
-            DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
-        }
-
-
     }
 
-    fun cancelConfirm(){
+    private fun showConfirmDialog(){
         AlertDialog.Builder(this)
             .setTitle("작성을 취소하시겠습니까?")
-            .setPositiveButton("네", object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
-                }
-            })
-            .setNegativeButton("아니오", object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    dialog.dismiss()
-                }
-            })
+            .setPositiveButton("네") { _, _ ->
+                intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+            }
+            .setNegativeButton("아니오") { dialog, _ ->
+                dialog.dismiss()
+            }
             .create()
             .show()
     }
 
-    fun getCurrentDate():String{
-        val now =  System.currentTimeMillis()
-        val y = SimpleDateFormat("yyyy", Locale.KOREAN).format(now).toInt()
-        val m = SimpleDateFormat("MM", Locale.KOREAN).format(now).toInt()
-        val d = SimpleDateFormat("dd", Locale.KOREAN).format(now).toInt()
-
-        return "${y}.${m}.${d}"
+    private fun setDatePickerVisible(){
+        if (binding.txtDrinkKeep.isVisible) {
+            binding.txtDrinkKeep.visibility = View.INVISIBLE
+            binding.drinkKeepDate.visibility = View.VISIBLE
+        } else {
+            binding.txtDrinkKeep.visibility = View.VISIBLE
+            binding.drinkKeepDate.visibility = View.INVISIBLE
+        }
     }
 
-    fun setDrinkImgNameType(){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
-
-        drinkImg = postingSingleton?.drinkImg
-        binding.postingDrinkImg.setImageBitmap(drinkImg)
-        binding.postingDrinkEngName.text = postingSingleton?.drinkEngName.toString()
-        binding.postingDrinkKrName.text = postingSingleton?.drinkKrName.toString()
-        binding.postingDrinkType.text = postingSingleton?.drinkType.toString()
+    private fun showDatePickerDialog(){
+        val cal = Calendar.getInstance()    //캘린더뷰 만들기
+        val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
+            val dateString = "${year}.${month+1}.${dayOfMonth}"
+            binding.drinkKeepDate.text = dateString
+        }
+        DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
     }
 
-    fun saveDrink(overallStrRating : String, rating : Float, drinkRegion : String, drinkPrice : String, keepDate : String, place : String, postingDate : String){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
+    private fun saveDrink(){
 
-        Thread(Runnable {
-            var newDrink = Drink(0,
-                postingSingleton?.drinkImg,
-                postingSingleton?.drinkEngName.toString(),
-                postingSingleton?.drinkKrName.toString(),
-                postingSingleton?.drinkType.toString(),
-                0,
-                overallStrRating,
-                rating,
-                drinkRegion,
-                drinkPrice,
-                keepDate,
-                place,
-                postingDate)
-
-            val db = DrinkDatabase.getInstance(applicationContext)
-            db!!.drinkDao().insertDrink(newDrink)
-        }).start()
     }
+
+//    fun saveDrink(overallStrRating : String, rating : Float, drinkRegion : String, drinkPrice : String, keepDate : String, place : String, postingDate : String){
+//        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
+//
+//        Thread(Runnable {
+//            var newDrink = Drink(0,
+//                postingSingleton?.drinkImg,
+//                postingSingleton?.drinkEngName.toString(),
+//                postingSingleton?.drinkKrName.toString(),
+//                postingSingleton?.drinkType.toString(),
+//                0,
+//                overallStrRating,
+//                rating,
+//                drinkRegion,
+//                drinkPrice,
+//                keepDate,
+//                place,
+//                postingDate)
+//
+//            val db = DrinkDatabase.getInstance(applicationContext)
+//            db!!.drinkDao().insertDrink(newDrink)
+//        }).start()
+//    }
 }
