@@ -7,12 +7,8 @@ import com.z0o0a.lid.DrinkWhiskey
 import com.z0o0a.lid.DrinkWine
 
 class DrinkPostingRepo(application: Application) {
-    private val drinkDao : DrinkDao
-
-    init {
-        val drinkDatabase = DrinkDatabase.getInstance(application)!!
-        drinkDao = drinkDatabase.drinkDao()
-    }
+    val drinkDatabase = DrinkDatabase.getInstance(application)!!
+    private val drinkDao : DrinkDao = drinkDatabase.drinkDao()
 
     fun insert(drink: Drink){
         try {

@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import com.z0o0a.lid.databinding.DrinkPostingTextBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.repository.DrinkDatabase
@@ -41,13 +43,16 @@ class DrinkPostingText : AppCompatActivity() {
         }
 
         binding.btnFinish.setOnClickListener {
-            // TODO : drink 저장 (실패하는 경우 예외처리)
-            saveDrink()
+            try{
+                saveDrink()
+                Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
-            Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
-
-            intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+                intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }catch (e:Exception){
+                val expt = "Exception : ${e.message}, Cause : ${e.cause}"
+                Firebase.crashlytics.log(expt)
+            }
         }
 
         binding.switchDrinkKeep.setOnClickListener {
@@ -93,29 +98,20 @@ class DrinkPostingText : AppCompatActivity() {
     }
 
     private fun saveDrink(){
-
+        when(vm.drink.value!!.drinkType){
+            "위스키" -> {
+                vm.insertDrinkWhiskey()
+                vm.insertDrink()
+            }
+            "와인" -> {
+                vm.insertDrinkWine()
+                vm.insertDrink()
+            }
+            "맥주" -> {
+                vm.insertDrinkBeer()
+                vm.insertDrink()
+            }
+            else -> vm.insertDrink()
+        }
     }
-
-//    fun saveDrink(overallStrRating : String, rating : Float, drinkRegion : String, drinkPrice : String, keepDate : String, place : String, postingDate : String){
-//        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
-//
-//        Thread(Runnable {
-//            var newDrink = Drink(0,
-//                postingSingleton?.drinkImg,
-//                postingSingleton?.drinkEngName.toString(),
-//                postingSingleton?.drinkKrName.toString(),
-//                postingSingleton?.drinkType.toString(),
-//                0,
-//                overallStrRating,
-//                rating,
-//                drinkRegion,
-//                drinkPrice,
-//                keepDate,
-//                place,
-//                postingDate)
-//
-//            val db = DrinkDatabase.getInstance(applicationContext)
-//            db!!.drinkDao().insertDrink(newDrink)
-//        }).start()
-//    }
 }

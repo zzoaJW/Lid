@@ -10,6 +10,7 @@ import com.z0o0a.lid.Drink
 import com.z0o0a.lid.DrinkBeer
 import com.z0o0a.lid.DrinkWhiskey
 import com.z0o0a.lid.DrinkWine
+import com.z0o0a.lid.repository.DrinkPostingRepo
 
 class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     // [ 이름 페이지 ]
@@ -25,8 +26,7 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     val drinkWine = MutableLiveData<DrinkWine>()
     val drinkBeer = MutableLiveData<DrinkBeer>()
 
-    val keepDateChecked = MutableLiveData<Boolean>()
-
+    private val postingRepo = DrinkPostingRepo(application)
 
     init {
         drink.value = Drink(0,null, "", "", "", 0L, "",
@@ -38,8 +38,6 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
         drinkBeer.value = DrinkBeer(0, false, "-", "", 3, "", 3, 3,
                                       3, 3, 3, "", 3, 3, 3,
                                       3, 3, 3, 3)
-
-        keepDateChecked.value = false
     }
 
     fun setDrinkType(drinkType : Int){
@@ -52,13 +50,19 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun checkNameType(){
-
+    fun insertDrink(){
+        postingRepo.insert(drink.value!!)
     }
 
-    // 개봉일 선택 날짜 visible
-    // view에서 visible 처리
-    fun setKeepDateVisible(checked : Boolean){
-        keepDateChecked.value = checked
+    fun insertDrinkWhiskey(){
+        drink.value!!.typeId = postingRepo.insertDrinkWhiskey(drinkWhiskey.value!!)
+    }
+
+    fun insertDrinkWine(){
+        drink.value!!.typeId = postingRepo.insertDrinkWine(drinkWine.value!!)
+    }
+
+    fun insertDrinkBeer(){
+        drink.value!!.typeId = postingRepo.insertDrinkBeer(drinkBeer.value!!)
     }
 }
