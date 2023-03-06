@@ -1,10 +1,8 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.view
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -12,13 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.google.firebase.crashlytics.ktx.crashlytics
-import com.google.firebase.ktx.Firebase
+import com.z0o0a.lid.MainActivity
+import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingTextBinding
-import com.z0o0a.lid.model.PostingDrinkSingleton
-import com.z0o0a.lid.repository.DrinkDatabase
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
-import java.text.SimpleDateFormat
 import java.util.*
 
 class DrinkPostingText : AppCompatActivity() {

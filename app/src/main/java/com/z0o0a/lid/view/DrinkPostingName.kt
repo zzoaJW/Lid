@@ -1,15 +1,15 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputFilter
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.z0o0a.lid.DrinkPostingImg
+import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingNameBinding
-import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.regex.Pattern
 
