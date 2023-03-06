@@ -27,8 +27,6 @@ class DrinkPostingText : AppCompatActivity() {
         binding.vm = vm
         binding.lifecycleOwner = this
 
-        // TODO : 이미지 넣기
-
         binding.btnDrinkBack.setOnClickListener {
             finish()
         }
