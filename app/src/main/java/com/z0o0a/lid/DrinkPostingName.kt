@@ -24,35 +24,13 @@ class DrinkPostingName : AppCompatActivity() {
         binding.vm = vm
         binding.lifecycleOwner = this
 
-        var filterEngNumSpace = InputFilter { source, start, end, dest, dstart, dend ->
-            /*
-                [요약 설명]
-                1. 정규식 패턴 ^[a-z] : 영어 소문자 허용
-                2. 정규식 패턴 ^[A-Z] : 영어 대문자 허용
-                3. 정규식 패턴 ^[ㄱ-ㅣ가-힣] : 한글 허용
-                4. 정규식 패턴 ^[0-9] : 숫자 허용
-                5. 정규식 패턴 ^[ ] or ^[\\s] : 공백 허용
-            */
-            val ps = Pattern.compile("^[a-zA-Z0-9'_\\-\\s]+$")
-            if (!ps.matcher(source).matches()) {
-                ""
-            } else source
-        }
-
-        var filterKrNumSpace = InputFilter { source, start, end, dest, dstart, dend ->
-            val ps = Pattern.compile("^[ㄱ-ㅣ가-힣0-9'_\\-\\s]+$")
-            if (!ps.matcher(source).matches()) {
-                ""
-            } else source
-        }
-
-        binding.inputDrinkEngName.filters = arrayOf(filterEngNumSpace)
-        binding.inputDrinkKrName.filters = arrayOf(filterKrNumSpace)
+        setEngNameFilter()
+        setKrNameFilter()
 
         binding.btnNext.setOnClickListener {
-            if(vm.drink.value!!.drinkEngName == "" && vm.drink.value!!.drinkKrName == ""){
+            if(vm.drink.value!!.drinkEngName == "" && vm.drink.value!!.drinkKrName == ""){  // 이름 null
                 Toast.makeText(this, "이름을 작성해주세요.", Toast.LENGTH_SHORT).show()
-            }else if (vm.drink.value!!.drinkType == ""){
+            }else if (vm.drink.value!!.drinkType == ""){  // 타입 null
                 Toast.makeText(this, "종류를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }else{
                 intent = Intent(this, DrinkPostingImg::class.java)
@@ -63,5 +41,36 @@ class DrinkPostingName : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             finish()
         }
+    }
+
+    private fun setEngNameFilter(){
+        /*
+            [정규식 패턴 요약]
+            1. ^[a-z] : 영어 소문자 허용
+            2. ^[A-Z] : 영어 대문자 허용
+            3. ^[ㄱ-ㅣ가-힣] : 한글 허용
+            4. ^[0-9] : 숫자 허용
+            5. ^[ ] or ^[\\s] : 공백 허용
+        */
+
+        val engNameFilter = InputFilter { source, start, end, dest, dstart, dend ->
+            val ps = Pattern.compile("^[a-zA-Z0-9'_\\-\\s]+$")
+
+            if (!ps.matcher(source).matches()) { "" }
+            else source
+        }
+
+        binding.inputDrinkEngName.filters = arrayOf(engNameFilter)
+    }
+
+    private fun setKrNameFilter(){
+        val krNameFilter = InputFilter { source, start, end, dest, dstart, dend ->
+            val ps = Pattern.compile("^[ㄱ-ㅣ가-힣0-9'_\\-\\s]+$")
+
+            if (!ps.matcher(source).matches()) { "" }
+            else source
+        }
+
+        binding.inputDrinkKrName.filters = arrayOf(krNameFilter)
     }
 }
