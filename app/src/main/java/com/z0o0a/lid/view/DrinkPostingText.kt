@@ -3,6 +3,7 @@ package com.z0o0a.lid.view
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -26,6 +27,8 @@ class DrinkPostingText : AppCompatActivity() {
         vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
         binding.vm = vm
         binding.lifecycleOwner = this
+
+        setDrinkImg()
 
         binding.btnDrinkBack.setOnClickListener {
             finish()
@@ -53,6 +56,16 @@ class DrinkPostingText : AppCompatActivity() {
 
         binding.drinkKeepDate.setOnClickListener {
             showDatePickerDialog()
+        }
+    }
+
+    private fun setDrinkImg(){
+        val drinkImg = vm.drink.value!!.drinkImg
+
+        if(drinkImg == null){
+            binding.postingDrinkImg.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.bottle))
+        }else{
+            binding.postingDrinkImg.setImageBitmap(drinkImg)
         }
     }
 
