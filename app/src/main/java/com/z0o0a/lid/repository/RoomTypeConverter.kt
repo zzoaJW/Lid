@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
 import com.google.gson.Gson
+import com.z0o0a.lid.R
 import java.io.ByteArrayOutputStream
 
 class RoomTypeConverter {
@@ -20,14 +21,23 @@ class RoomTypeConverter {
     // Bitmap -> ByteArray 변환
     @TypeConverter
     fun bitmaptoByteArray(bitmap : Bitmap) : ByteArray{
-        val outputStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-        return outputStream.toByteArray()
+        if (bitmap == null){
+            return byteArrayOf()
+        }else{
+            val outputStream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+
+            return outputStream.toByteArray()
+        }
     }
 
     // ByteArray -> Bitmap 변환
     @TypeConverter
-    fun byteArraytoBitmap(bytes : ByteArray) : Bitmap {
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+    fun byteArraytoBitmap(bytes : ByteArray) : Bitmap? {
+        if (bytes.isEmpty()){
+            return null
+        }else{
+            return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+        }
     }
 }
