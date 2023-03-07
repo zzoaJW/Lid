@@ -24,16 +24,6 @@ class DrinkPostingImg : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         // TODO (1) 권한 확인
-        // TODO (2-1) 기본 카메라 촬영
-        // TODO (2-2) 촬영 화질 높이기
-        // TODO (2-3) 촬영한 사진 가져오기 [Repo -> (VM ->) View]
-        // TODO (2-4) 촬영한 사진 가져오면 imageView 바꾸기 [View]
-        // TODO (3-1) 갤러리에서 이미지 선택 [Repo -> (VM ->) View]
-        // TODO (3-2) 갤러리에서 이미지 가져오면 imageView 바꾸기 [View]
-        // TODO (3-3) 이미지 크롭 기능 (보류)
-        // TODO (3-4) 이미지 선택 안하고 저장 후 불러올때 NullPoint예외 처리 -> typeConverter에서 처리함
-
-        // TODO (1) 권한 확인
         vm.getPermissionRequestResult().observe(this) { result ->
             val cameraPermission = Manifest.permission.CAMERA
             val galleryPermission = Manifest.permission.READ_EXTERNAL_STORAGE
