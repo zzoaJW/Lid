@@ -1,16 +1,16 @@
 package com.z0o0a.lid.viewmodel
 
+import android.Manifest
 import android.app.Application
-import android.graphics.Bitmap
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.room.ColumnInfo
 import com.z0o0a.lid.Drink
 import com.z0o0a.lid.DrinkBeer
 import com.z0o0a.lid.DrinkWhiskey
 import com.z0o0a.lid.DrinkWine
 import com.z0o0a.lid.repository.DrinkPostingRepo
+import com.z0o0a.lid.repository.ReqPermissionCameraGallery
 
 class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     // [ 이름 페이지 ]
@@ -28,6 +28,10 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
 
     private val postingRepo = DrinkPostingRepo(application)
 
+    private val reqPermissionCameraGallery = ReqPermissionCameraGallery(application)
+    private val permissionRequestResult = MutableLiveData<Map<String, Boolean>>()
+
+
     init {
         drink.value = Drink(0,null, "", "", "", 0L, "",
                              5f, "", "", "개봉일 선택", "", "")
@@ -38,6 +42,24 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
         drinkBeer.value = DrinkBeer(0, false, "-", "", 3, "", 3, 3,
                                       3, 3, 3, "", 3, 3, 3,
                                       3, 3, 3, 3)
+    }
+
+    fun requestCameraPermission() {
+        reqPermissionCameraGallery.reqCameraPermission { granted ->
+            val cameraPermission = Manifest.permission.CAMERA
+            permissionRequestResult.value = mapOf(cameraPermission to granted)
+        }
+    }
+
+    fun requestGalleryPermission() {
+        reqPermissionCameraGallery.reqGalleryPermission { granted ->
+            val galleryPermission = Manifest.permission.READ_EXTERNAL_STORAGE
+            permissionRequestResult.value = mapOf(galleryPermission to granted)
+        }
+    }
+
+    fun getPermissionRequestResult(): MutableLiveData<Map<String, Boolean>> {
+        return permissionRequestResult
     }
 
     fun setDrinkType(drinkType : Int){

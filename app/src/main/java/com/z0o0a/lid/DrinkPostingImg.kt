@@ -1,47 +1,20 @@
 package com.z0o0a.lid
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.ImageDecoder
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
-import android.view.View
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.z0o0a.lid.databinding.DrinkPostingImgBinding
-import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.view.DrinkPostingText
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
-import java.io.IOException
 
 
 class DrinkPostingImg : AppCompatActivity() {
     private lateinit var vm: DrinkPostingVM
     private lateinit var binding: DrinkPostingImgBinding
-
-    private var drinkImgUri : Uri? = null
-    private var drinkImgBitmap : Bitmap? = null
-
-    private val cameraPermissionList = arrayOf(Manifest.permission.CAMERA)
-
-    private val permissionList = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-    private val checkPermission = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
-        result.forEach {
-            if(!it.value) {
-                Toast.makeText(applicationContext, "권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,33 +23,46 @@ class DrinkPostingImg : AppCompatActivity() {
         binding.vm = vm
         binding.lifecycleOwner = this
 
-        // TODO (1) 권한 확인 제대로
-        // TODO (2) 촬영 화질 높이기
-        // TODO (3) 이미지 선택
-        // TODO (4) 이미지 선택 안했을때 null로 저장하되 나중에 NullPoint예외 안나오게하는 방법 찾기 (예외 발생 안하고 기본 이미지 불러오는 방법)
+        // TODO (1) 권한 확인
+        // TODO (2-1) 기본 카메라 촬영
+        // TODO (2-2) 촬영 화질 높이기
+        // TODO (2-3) 촬영한 사진 가져오기 [Repo -> (VM ->) View]
+        // TODO (2-4) 촬영한 사진 가져오면 imageView 바꾸기 [View]
+        // TODO (3-1) 갤러리에서 이미지 선택 [Repo -> (VM ->) View]
+        // TODO (3-2) 갤러리에서 이미지 가져오면 imageView 바꾸기 [View]
+        // TODO (3-3) 이미지 크롭 기능 (보류)
+        // TODO (3-4) 이미지 선택 안하고 저장 후 불러올때 NullPoint예외 처리 -> typeConverter에서 처리함
 
-        checkPermission.launch(cameraPermissionList)
-        checkPermission.launch(permissionList)
+        // TODO (1) 권한 확인
+        vm.getPermissionRequestResult().observe(this) { result ->
+            val cameraPermission = Manifest.permission.CAMERA
+            val galleryPermission = Manifest.permission.READ_EXTERNAL_STORAGE
 
-        binding.btnGetImg.setOnClickListener {
-            openGalleryForImage()
-            onActivityResult(1000,1000, intent)
+            if (result[cameraPermission] != true) {
+                Toast.makeText(applicationContext, "카메라 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
+            }
+            if (result[galleryPermission] != true) {
+                Toast.makeText(applicationContext, "갤러리 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        binding.btnGetCamera.setOnClickListener {
-            val intent= Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        vm.requestCameraPermission()
+        vm.requestGalleryPermission()
 
-            cameraActivityResult.launch(intent)
+
+        binding.btnGetCamera.setOnClickListener {
+            // TODO (2-1) 기본 카메라 촬영
+            // TODO (2-2) 촬영 화질 높이기
+            // TODO (2-3) 촬영한 사진 가져오기 [Repo -> (VM ->) View]
+            // TODO (2-4) 촬영한 사진 가져오면 imageView 바꾸기 [View]
+        }
+
+        binding.btnGetImg.setOnClickListener {
+            // TODO (3-1) 갤러리에서 이미지 선택 [Repo -> (VM ->) View]
+            // TODO (3-2) 갤러리에서 이미지 가져오면 imageView 바꾸기 [View]
         }
 
         binding.btnNext2.setOnClickListener {
-            if (drinkImgBitmap == null){ // 갤러리에서 사진 안가져온 경우
-                drinkImgBitmap = BitmapFactory.decodeResource(resources, R.drawable.bottle)
-
-            }
-            setPostingSingleton(drinkImgBitmap)
-
-            // 다음 화면 ㄱㄱ
             goPostingTextPerType()
         }
 
@@ -85,75 +71,16 @@ class DrinkPostingImg : AppCompatActivity() {
         }
     }
 
-    // 싱글톤에 img 넣기
-    private fun setPostingSingleton(img:Bitmap?){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
-
-        postingSingleton!!.drinkImg = img
-    }
-
-    // 갤러리 열기
-    private fun openGalleryForImage() {
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-        intent.type = "image/*"
-        startActivityForResult(intent, 1000)
-    }
-
-    // 갤러리 열고 받아온 이미지 처리
-    // 사진 띄우기
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == 1000){
-            drinkImgUri = data!!.data!!
-
-            try {
-                drinkImgBitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    ImageDecoder.decodeBitmap(
-                        ImageDecoder.createSource(
-                            contentResolver,
-                            drinkImgUri!!
-                        )
-                    )
-                } else {
-                    MediaStore.Images.Media.getBitmap(contentResolver, drinkImgUri)
-                }
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-
-            binding.galleyPic.setImageBitmap(drinkImgBitmap) // handle chosen image
-            binding.textView5.visibility = View.INVISIBLE
-        }
-    }
-
-    private val cameraActivityResult: ActivityResultLauncher<Intent> = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()){
-
-        if(it.resultCode == RESULT_OK && it.data != null){
-            //값 담기
-            val extras = it.data!!.extras
-
-            //bitmap으로 타입 변경
-            drinkImgBitmap = extras?.get("data") as Bitmap
-
-            //화면에 보여주기
-            binding.galleyPic.setImageBitmap(drinkImgBitmap) // handle chosen image
-            binding.textView5.visibility = View.INVISIBLE
-        }
-    }
-
     private fun goPostingTextPerType(){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
+        var drinkType = vm.drink.value!!.drinkType
 
-        var whichType = postingSingleton!!.drinkType
-
-        if (whichType == "위스키"){
+        if (drinkType == "위스키"){
             intent = Intent(this, DrinkPostingTextWhiskey::class.java)
             startActivity(intent)
-        }else if (whichType == "와인"){
+        }else if (drinkType == "와인"){
             intent = Intent(this, DrinkPostingTextWine::class.java)
             startActivity(intent)
-        }else if (whichType == "맥주"){
+        }else if (drinkType == "맥주"){
             intent = Intent(this, DrinkPostingTextBeer::class.java)
             startActivity(intent)
         }else{
