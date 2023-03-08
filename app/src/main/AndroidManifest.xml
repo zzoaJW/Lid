@@ -34,19 +34,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".view.DrinkPostingTitle"/>
-        <activity android:name=".view.DrinkPostingDetail"/>
-        <activity android:name=".DrinkPostingMedia"/>
-        <activity android:name=".DrinkTastingNote"/>
-        <activity android:name=".view.UserLetter"/>
+        <activity android:name=".view.DrinkPostingHost"/>
+
         <activity android:name=".DrinkPostingDetailBeer"/>
-        <activity android:name=".view.OpenLicenseList"/>
         <activity android:name=".DrinkPostingGuide"/>
         <activity android:name=".DrinkPostingDetailWhiskey"/>
         <activity android:name=".DrinkPostingDetailWine"/>
+
         <activity android:name=".DrinkTastingNoteWhiskey"/>
         <activity android:name=".DrinkTastingNoteWine"/>
         <activity android:name=".DrinkTastingNoteBeer"/>
+        <activity android:name=".view.OpenLicenseList"/>
+        <activity android:name=".DrinkTastingNote"/>
+        <activity android:name=".view.UserLetter"/>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.z0o0a.lid.fileprovider"
