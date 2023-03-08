@@ -17,7 +17,7 @@ import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.*
 
-class DrinkPostingText : AppCompatActivity() {
+class DrinkPostingDetail : AppCompatActivity() {
     private lateinit var vm: DrinkPostingVM
     private lateinit var binding: DrinkPostingDetailBinding
 

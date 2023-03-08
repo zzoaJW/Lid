@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.z0o0a.lid.databinding.DrinkPostingMediaBinding
-import com.z0o0a.lid.view.DrinkPostingText
+import com.z0o0a.lid.view.DrinkPostingDetail
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 
 
@@ -74,7 +74,7 @@ class DrinkPostingMedia : AppCompatActivity() {
             intent = Intent(this, DrinkPostingDetailBeer::class.java)
             startActivity(intent)
         }else{
-            intent = Intent(this, DrinkPostingText::class.java)
+            intent = Intent(this, DrinkPostingDetail::class.java)
             startActivity(intent)
         }
     }
