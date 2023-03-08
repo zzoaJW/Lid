@@ -1,38 +1,43 @@
 package com.z0o0a.lid
 
 import android.Manifest
-import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.z0o0a.lid.databinding.DrinkPostingMediaBinding
-import com.z0o0a.lid.view.DrinkPostingDetail
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 
 
-class DrinkPostingMedia : AppCompatActivity() {
-    private lateinit var vm: DrinkPostingVM
+class DrinkPostingMedia : Fragment() {
     private lateinit var binding: DrinkPostingMediaBinding
+    private val vm: DrinkPostingVM by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_media)
-        vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DrinkPostingMediaBinding.inflate(layoutInflater)
         binding.vm = vm
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = requireActivity()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
 
         // TODO (1) 권한 확인
-        vm.getPermissionRequestResult().observe(this) { result ->
+        vm.getPermissionRequestResult().observe(viewLifecycleOwner) { result ->
             val cameraPermission = Manifest.permission.CAMERA
             val galleryPermission = Manifest.permission.READ_EXTERNAL_STORAGE
 
             if (result[cameraPermission] != true) {
-                Toast.makeText(applicationContext, "카메라 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "카메라 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
             }
             if (result[galleryPermission] != true) {
-                Toast.makeText(applicationContext, "갤러리 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "갤러리 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -52,31 +57,28 @@ class DrinkPostingMedia : AppCompatActivity() {
             // TODO (3-2) 갤러리에서 이미지 가져오면 imageView 바꾸기 [View]
         }
 
+        binding.btnBack2.setOnClickListener {
+            findNavController().navigate(R.id.drinkPostingTitle)
+        }
+
         binding.btnNext2.setOnClickListener {
             goPostingTextPerType()
         }
-
-        binding.btnBack2.setOnClickListener {
-            finish()
-        }
     }
 
-    private fun goPostingTextPerType(){
-        var drinkType = vm.drink.value!!.drinkType
 
-        if (drinkType == "위스키"){
-            intent = Intent(this, DrinkPostingDetailWhiskey::class.java)
-            startActivity(intent)
-        }else if (drinkType == "와인"){
-            intent = Intent(this, DrinkPostingDetailWine::class.java)
-            startActivity(intent)
-        }else if (drinkType == "맥주"){
-            intent = Intent(this, DrinkPostingDetailBeer::class.java)
-            startActivity(intent)
-        }else{
-            intent = Intent(this, DrinkPostingDetail::class.java)
-            startActivity(intent)
-        }
+    private fun goPostingTextPerType(){
+//        var drinkType = vm.drink.value!!.drinkType
+//
+//        if (drinkType == "위스키"){
+//            findNavController().navigate(R.id.drink_posting_detail_whiskey)
+//        }else if (drinkType == "와인"){
+//            findNavController().navigate(R.id.drink_posting_detail_wine)
+//        }else if (drinkType == "맥주"){
+//            findNavController().navigate(R.id.drink_posting_detail_beer)
+//        }else{
+            findNavController().navigate(R.id.drinkPostingDetail)
+//        }
     }
 
 }

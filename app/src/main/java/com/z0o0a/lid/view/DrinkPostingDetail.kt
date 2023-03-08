@@ -5,33 +5,38 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.z0o0a.lid.MainActivity
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.*
 
-class DrinkPostingDetail : AppCompatActivity() {
-    private lateinit var vm: DrinkPostingVM
+class DrinkPostingDetail : Fragment() {
     private lateinit var binding: DrinkPostingDetailBinding
+    private val vm: DrinkPostingVM by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_detail)
-        vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DrinkPostingDetailBinding.inflate(layoutInflater)
         binding.vm = vm
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = requireActivity()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setDrinkImg()
 
         binding.btnDrinkBack.setOnClickListener {
-            finish()
+            findNavController().navigate(R.id.drinkPostingMedia)
         }
 
         binding.btnCancel.setOnClickListener {
@@ -41,12 +46,12 @@ class DrinkPostingDetail : AppCompatActivity() {
         binding.btnFinish.setOnClickListener {
             try{
                 saveDrink()
-                Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
-                intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
             }catch (e:Exception){
-                Toast.makeText(this, "저장에 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "저장에 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -57,6 +62,7 @@ class DrinkPostingDetail : AppCompatActivity() {
         binding.drinkKeepDate.setOnClickListener {
             showDatePickerDialog()
         }
+
     }
 
     private fun setDrinkImg(){
@@ -70,10 +76,10 @@ class DrinkPostingDetail : AppCompatActivity() {
     }
 
     private fun showConfirmDialog(){
-        AlertDialog.Builder(this)
+        AlertDialog.Builder(requireContext())
             .setTitle("작성을 취소하시겠습니까?")
             .setPositiveButton("네") { _, _ ->
-                intent = Intent(applicationContext, MainActivity::class.java)
+                val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
             }
             .setNegativeButton("아니오") { dialog, _ ->
@@ -99,7 +105,7 @@ class DrinkPostingDetail : AppCompatActivity() {
             val dateString = "${year}.${month+1}.${dayOfMonth}"
             binding.drinkKeepDate.text = dateString
         }
-        DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+        DatePickerDialog(requireContext(), dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
     }
 
     private fun saveDrink(){

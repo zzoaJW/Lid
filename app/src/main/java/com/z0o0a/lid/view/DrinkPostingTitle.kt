@@ -1,45 +1,48 @@
 package com.z0o0a.lid.view
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.InputFilter
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
-import com.z0o0a.lid.DrinkPostingMedia
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingTitleBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.regex.Pattern
 
-class DrinkPostingTitle : AppCompatActivity() {
-    private lateinit var vm: DrinkPostingVM
+class DrinkPostingTitle : Fragment() {
     private lateinit var binding : DrinkPostingTitleBinding
+    private val vm: DrinkPostingVM by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_title)
-        vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DrinkPostingTitleBinding.inflate(layoutInflater)
         binding.vm = vm
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = requireActivity()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setEngNameFilter()
         setKrNameFilter()
 
         binding.btnNext.setOnClickListener {
             if(vm.drink.value!!.drinkEngName == "" && vm.drink.value!!.drinkKrName == ""){  // 이름 null
-                Toast.makeText(this, "이름을 작성해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "이름을 작성해주세요.", Toast.LENGTH_SHORT).show()
             }else if (vm.drink.value!!.drinkType == ""){  // 타입 null
-                Toast.makeText(this, "종류를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "종류를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }else{
-                intent = Intent(this, DrinkPostingMedia::class.java)
-                startActivity(intent)
+                findNavController().navigate(R.id.drinkPostingMedia)
             }
         }
 
         binding.btnBack.setOnClickListener {
-            finish()
+            activity?.finish()
         }
     }
 
