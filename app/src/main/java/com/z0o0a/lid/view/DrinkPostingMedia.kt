@@ -1,4 +1,4 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.view
 
 import android.Manifest
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingMediaBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 
