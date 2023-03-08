@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/drinkPostingMedia"
-        android:name="com.z0o0a.lid.DrinkPostingMedia"
+        android:name="com.z0o0a.lid.view.DrinkPostingMedia"
         android:label="drink_posting_media"
         tools:layout="@layout/drink_posting_media">
         <action
