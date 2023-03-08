@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.adapter.DrinkListAdapter
 import com.z0o0a.lid.databinding.MainFragmentDrinksBinding
 import com.z0o0a.lid.repository.DrinkDatabase
+import com.z0o0a.lid.view.DrinkPostingHost
 import com.z0o0a.lid.view.DrinkPostingTitle
 
 class MainFragmentDrinks: Fragment() {
@@ -27,7 +28,7 @@ class MainFragmentDrinks: Fragment() {
         getDrinks()
 
         binding.btnPosting.setOnClickListener {
-            val intent = Intent(context, DrinkPostingTitle::class.java)
+            val intent = Intent(context, DrinkPostingHost::class.java)
             startActivity(intent)
         }
 
