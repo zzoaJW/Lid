@@ -34,16 +34,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name=".view.DrinkPostingName"/>
+        <activity android:name=".view.DrinkPostingTitle"/>
         <activity android:name=".view.DrinkPostingText"/>
-        <activity android:name=".DrinkPostingImg"/>
+        <activity android:name=".DrinkPostingMedia"/>
         <activity android:name=".DrinkTastingNote"/>
         <activity android:name=".view.UserLetter"/>
-        <activity android:name=".DrinkPostingTextBeer"/>
+        <activity android:name=".DrinkPostingDetailBeer"/>
         <activity android:name=".view.OpenLicenseList"/>
         <activity android:name=".DrinkPostingGuide"/>
-        <activity android:name=".DrinkPostingTextWhiskey"/>
-        <activity android:name=".DrinkPostingTextWine"/>
+        <activity android:name=".DrinkPostingDetailWhiskey"/>
+        <activity android:name=".DrinkPostingDetailWine"/>
         <activity android:name=".DrinkTastingNoteWhiskey"/>
         <activity android:name=".DrinkTastingNoteWine"/>
         <activity android:name=".DrinkTastingNoteBeer"/>

@@ -13,14 +13,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.google.android.material.chip.Chip
-import com.z0o0a.lid.databinding.DrinkPostingTextWineBinding
+import com.z0o0a.lid.databinding.DrinkPostingDetailWineBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.repository.DrinkDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DrinkPostingTextWine : AppCompatActivity() {
-    private lateinit var binding: DrinkPostingTextWineBinding
+class DrinkPostingDetailWine : AppCompatActivity() {
+    private lateinit var binding: DrinkPostingDetailWineBinding
 
     var wiShort = false
 
@@ -58,7 +58,7 @@ class DrinkPostingTextWine : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DrinkPostingTextWineBinding.inflate(layoutInflater)
+        binding = DrinkPostingDetailWineBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

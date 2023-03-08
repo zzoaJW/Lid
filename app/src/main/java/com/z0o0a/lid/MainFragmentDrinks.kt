@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.adapter.DrinkListAdapter
 import com.z0o0a.lid.databinding.MainFragmentDrinksBinding
 import com.z0o0a.lid.repository.DrinkDatabase
-import com.z0o0a.lid.view.DrinkPostingName
+import com.z0o0a.lid.view.DrinkPostingTitle
 
 class MainFragmentDrinks: Fragment() {
     private lateinit var binding: MainFragmentDrinksBinding
@@ -27,7 +27,7 @@ class MainFragmentDrinks: Fragment() {
         getDrinks()
 
         binding.btnPosting.setOnClickListener {
-            val intent = Intent(context, DrinkPostingName::class.java)
+            val intent = Intent(context, DrinkPostingTitle::class.java)
             startActivity(intent)
         }
 

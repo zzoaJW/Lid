@@ -16,15 +16,15 @@ import androidx.core.view.isVisible
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.google.android.material.chip.Chip
-import com.z0o0a.lid.databinding.DrinkPostingTextWhiskeyBinding
+import com.z0o0a.lid.databinding.DrinkPostingDetailWhiskeyBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.repository.DrinkDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class DrinkPostingTextWhiskey : AppCompatActivity() {
-    private lateinit var binding: DrinkPostingTextWhiskeyBinding
+class DrinkPostingDetailWhiskey : AppCompatActivity() {
+    private lateinit var binding: DrinkPostingDetailWhiskeyBinding
 
     var whShort = false
 
@@ -56,7 +56,7 @@ class DrinkPostingTextWhiskey : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DrinkPostingTextWhiskeyBinding.inflate(layoutInflater)
+        binding = DrinkPostingDetailWhiskeyBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

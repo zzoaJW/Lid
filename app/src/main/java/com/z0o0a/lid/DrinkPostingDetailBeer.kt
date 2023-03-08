@@ -15,14 +15,14 @@ import androidx.core.graphics.toColorInt
 import androidx.core.view.isVisible
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
-import com.z0o0a.lid.databinding.DrinkPostingTextBeerBinding
+import com.z0o0a.lid.databinding.DrinkPostingDetailBeerBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.repository.DrinkDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DrinkPostingTextBeer : AppCompatActivity() {
-    private lateinit var binding: DrinkPostingTextBeerBinding
+class DrinkPostingDetailBeer : AppCompatActivity() {
+    private lateinit var binding: DrinkPostingDetailBeerBinding
 
     var bShort = false
 
@@ -66,7 +66,7 @@ class DrinkPostingTextBeer : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DrinkPostingTextBeerBinding.inflate(layoutInflater)
+        binding = DrinkPostingDetailBeerBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 

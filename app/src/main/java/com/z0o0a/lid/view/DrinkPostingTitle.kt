@@ -7,19 +7,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.z0o0a.lid.DrinkPostingImg
+import com.z0o0a.lid.DrinkPostingMedia
 import com.z0o0a.lid.R
-import com.z0o0a.lid.databinding.DrinkPostingNameBinding
+import com.z0o0a.lid.databinding.DrinkPostingTitleBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.regex.Pattern
 
-class DrinkPostingName : AppCompatActivity() {
+class DrinkPostingTitle : AppCompatActivity() {
     private lateinit var vm: DrinkPostingVM
-    private lateinit var binding : DrinkPostingNameBinding
+    private lateinit var binding : DrinkPostingTitleBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_name)
+        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_title)
         vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
         binding.vm = vm
         binding.lifecycleOwner = this
@@ -33,7 +33,7 @@ class DrinkPostingName : AppCompatActivity() {
             }else if (vm.drink.value!!.drinkType == ""){  // 타입 null
                 Toast.makeText(this, "종류를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }else{
-                intent = Intent(this, DrinkPostingImg::class.java)
+                intent = Intent(this, DrinkPostingMedia::class.java)
                 startActivity(intent)
             }
         }

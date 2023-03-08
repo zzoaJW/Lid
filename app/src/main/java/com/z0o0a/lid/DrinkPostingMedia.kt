@@ -7,18 +7,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.z0o0a.lid.databinding.DrinkPostingImgBinding
+import com.z0o0a.lid.databinding.DrinkPostingMediaBinding
 import com.z0o0a.lid.view.DrinkPostingText
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 
 
-class DrinkPostingImg : AppCompatActivity() {
+class DrinkPostingMedia : AppCompatActivity() {
     private lateinit var vm: DrinkPostingVM
-    private lateinit var binding: DrinkPostingImgBinding
+    private lateinit var binding: DrinkPostingMediaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_img)
+        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_media)
         vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
         binding.vm = vm
         binding.lifecycleOwner = this
@@ -65,13 +65,13 @@ class DrinkPostingImg : AppCompatActivity() {
         var drinkType = vm.drink.value!!.drinkType
 
         if (drinkType == "위스키"){
-            intent = Intent(this, DrinkPostingTextWhiskey::class.java)
+            intent = Intent(this, DrinkPostingDetailWhiskey::class.java)
             startActivity(intent)
         }else if (drinkType == "와인"){
-            intent = Intent(this, DrinkPostingTextWine::class.java)
+            intent = Intent(this, DrinkPostingDetailWine::class.java)
             startActivity(intent)
         }else if (drinkType == "맥주"){
-            intent = Intent(this, DrinkPostingTextBeer::class.java)
+            intent = Intent(this, DrinkPostingDetailBeer::class.java)
             startActivity(intent)
         }else{
             intent = Intent(this, DrinkPostingText::class.java)

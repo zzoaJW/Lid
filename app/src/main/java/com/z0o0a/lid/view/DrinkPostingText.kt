@@ -13,17 +13,17 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.z0o0a.lid.MainActivity
 import com.z0o0a.lid.R
-import com.z0o0a.lid.databinding.DrinkPostingTextBinding
+import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.util.*
 
 class DrinkPostingText : AppCompatActivity() {
     private lateinit var vm: DrinkPostingVM
-    private lateinit var binding: DrinkPostingTextBinding
+    private lateinit var binding: DrinkPostingDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_text)
+        binding = DataBindingUtil.setContentView(this, R.layout.drink_posting_detail)
         vm = ViewModelProvider(this)[DrinkPostingVM::class.java]
         binding.vm = vm
         binding.lifecycleOwner = this
