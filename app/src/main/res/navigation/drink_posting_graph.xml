@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drink_posting_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drink_posting_graph"
+    app:startDestination="@id/drinkPostingTitle">
 
+    <fragment
+        android:id="@+id/drinkPostingTitle"
+        android:name="com.z0o0a.lid.view.DrinkPostingTitle"
+        android:label="drink_posting_title"
+        tools:layout="@layout/drink_posting_title">
+        <action
+            android:id="@+id/action_drinkPostingTitle_to_drinkPostingMedia"
+            app:destination="@id/drinkPostingMedia" />
+    </fragment>
+    <fragment
+        android:id="@+id/drinkPostingMedia"
+        android:name="com.z0o0a.lid.DrinkPostingMedia"
+        android:label="drink_posting_media"
+        tools:layout="@layout/drink_posting_media">
+        <action
+            android:id="@+id/action_drinkPostingMedia_to_drinkPostingDetail"
+            app:destination="@id/drinkPostingDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/drinkPostingDetail"
+        android:name="com.z0o0a.lid.view.DrinkPostingDetail"
+        android:label="drink_posting_detail"
+        tools:layout="@layout/drink_posting_detail"/>
 </navigation>
