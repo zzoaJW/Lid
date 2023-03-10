@@ -17,6 +17,7 @@ import com.z0o0a.lid.MainActivity
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
+import java.text.SimpleDateFormat
 import java.util.*
 
 class DrinkPostingDetail : Fragment() {
@@ -50,6 +51,8 @@ class DrinkPostingDetail : Fragment() {
 
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
+
+                activity?.finish()
             }catch (e:Exception){
                 Toast.makeText(requireContext(), "저장에 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
             }
@@ -108,7 +111,18 @@ class DrinkPostingDetail : Fragment() {
         DatePickerDialog(requireContext(), dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
     }
 
+    private fun getCurrentDate(): String {
+        val now = System.currentTimeMillis()
+        val y = SimpleDateFormat("yyyy", Locale.KOREAN).format(now).toInt()
+        val m = SimpleDateFormat("MM", Locale.KOREAN).format(now).toInt()
+        val d = SimpleDateFormat("dd", Locale.KOREAN).format(now).toInt()
+
+        return "${y}.${m}.${d}"
+    }
+
     private fun saveDrink(){
+        vm.drink.value!!.drinkPostingDate = getCurrentDate()
+
         vm.insertDrink()
 //        when(vm.drink.value!!.drinkType){
 //            "위스키" -> {
