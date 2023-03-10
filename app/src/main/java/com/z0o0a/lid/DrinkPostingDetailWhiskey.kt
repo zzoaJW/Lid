@@ -205,6 +205,8 @@ class DrinkPostingDetailWhiskey : Fragment() {
             .setPositiveButton("네") { dialog, which ->
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
+
+                activity?.finish()
             }
             .setNegativeButton("아니오", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {

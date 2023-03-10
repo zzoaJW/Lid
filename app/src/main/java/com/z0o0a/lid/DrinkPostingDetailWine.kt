@@ -54,7 +54,7 @@ class DrinkPostingDetailWine : Fragment()  {
         }
 
         binding.btnWineDetail.setOnClickListener {
-            hideDetail()
+            hideWiDetail()
         }
 
         binding.switchPostWiRimVariation.setOnClickListener{
@@ -104,7 +104,7 @@ class DrinkPostingDetailWine : Fragment()  {
         }
     }
 
-    private fun hideDetail(){
+    private fun hideWiDetail(){
         if (binding.wineDetailLayout.visibility == View.VISIBLE) {
             vm.drinkWine.value!!.wiShort = true
             binding.wineDetailLayout.visibility = View.GONE
@@ -174,6 +174,8 @@ class DrinkPostingDetailWine : Fragment()  {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     val intent = Intent(requireContext(), MainActivity::class.java)
                     startActivity(intent)
+
+                    activity?.finish()
                 }
             })
             .setNegativeButton("아니오", object : DialogInterface.OnClickListener {
