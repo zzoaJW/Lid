@@ -123,9 +123,11 @@ class DrinkPostingDetailWhiskey : Fragment() {
         if (binding.detailLayout.visibility == View.VISIBLE) {
             vm.drinkWhiskey.value!!.whShort = true
             binding.detailLayout.visibility = View.GONE
+            binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#E0F14E"))
         } else{
             vm.drinkWhiskey.value!!.whShort = false
             binding.detailLayout.visibility = View.VISIBLE
+            binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#CDCDCD"))
         }
     }
 
