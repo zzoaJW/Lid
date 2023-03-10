@@ -20,7 +20,7 @@ class RoomTypeConverter {
 
     // Bitmap -> ByteArray 변환
     @TypeConverter
-    fun bitmaptoByteArray(bitmap : Bitmap) : ByteArray{
+    fun bitmaptoByteArray(bitmap : Bitmap?) : ByteArray{
         if (bitmap == null){
             return byteArrayOf()
         }else{

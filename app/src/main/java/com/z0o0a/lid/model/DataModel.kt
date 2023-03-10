@@ -96,7 +96,7 @@ data class DrinkBeer(
 
 data class DrinkListData (
     var drinkId : Int,
-    var drinkImg : Bitmap,
+    var drinkImg : Bitmap?,
     var drinkEngName : String,
     var drinkKrName : String,
     var drinkType : String,

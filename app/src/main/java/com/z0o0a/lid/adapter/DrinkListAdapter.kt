@@ -2,6 +2,7 @@ package com.z0o0a.lid.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -33,10 +34,9 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
     }
 
 
-    //그냥 class사용도 되지만 그냥 class 시용시 static처리가 되어
-    //쓸데없이 메모리를 잡아먹게된다.
-
-    //ViewHolder는 현재 화면에 보이는 아이템 레이아웃 개수만큼 생성되고 새롭게 그려 	   //저야 할 아이템 레이아웃이 있다면(스크롤 동작) 가장 위의 ViewHolder를 재사용해	  //서 데이터만 바꿉니다.
+    //그냥 class사용도 되지만 그냥 class 시용시 static처리가 되어 쓸데없이 메모리를 잡아먹게됨
+    //ViewHolder는 현재 화면에 보이는 아이템 레이아웃 개수만큼 생성되고 새롭게 그려저야 할 아이템 레이아웃이 있다면(스크롤 동작)
+    // 가장 위의 ViewHolder를 재사용해서 데이터만 바꿈
     inner class ViewHolder(var itemDrinkListBinding: ItemDrinkListBinding) : RecyclerView.ViewHolder(itemDrinkListBinding.root) {
         private var position : Int? = null
 
@@ -44,7 +44,12 @@ class DrinkListAdapter: RecyclerView.Adapter<DrinkListAdapter.ViewHolder>() {
         fun setData(content : DrinkListData, position: Int) {
             this.position = position
             itemDrinkListBinding.itemListDrinkId.text = content.drinkId.toString()
-            itemDrinkListBinding.itemListDrinkImg.setImageBitmap(content.drinkImg)
+
+            if (content.drinkImg == null){
+                itemDrinkListBinding.itemListDrinkImg.setImageBitmap(BitmapFactory.decodeResource(itemView.resources, R.drawable.bottle))
+            }else{
+                itemDrinkListBinding.itemListDrinkImg.setImageBitmap(content.drinkImg)
+            }
 
             // 너무 길어지면 ...로 처리
             if (content.drinkEngName.length > 18) {
