@@ -556,7 +556,7 @@
                         android:background="@drawable/chip_background"
                         android:indeterminateTint="@color/font_default"
                         android:max="6"
-                        android:progress="@={vm.drinkBeer.setBAromaFermentation}"
+                        android:progress="@={vm.drinkBeer.bAromaFermentation}"
                         android:progressTint="#00000000"
                         android:thumbTint="@color/font_default"
                         app:layout_constraintEnd_toEndOf="@+id/post_b_aroma_malt"

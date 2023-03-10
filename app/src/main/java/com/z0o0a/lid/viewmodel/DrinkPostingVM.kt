@@ -35,9 +35,9 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     init {
         drink.value = Drink(0,null, "", "", "", 0L, "",
                              0f, "", "", "개봉일 선택", "", "")
-        drinkWhiskey.value = DrinkWhiskey(0, false, "-", "", arrayListOf(), arrayListOf(),
+        drinkWhiskey.value = DrinkWhiskey(0, false, "-", "#000000", arrayListOf(), arrayListOf(),
                                    3, 3, 3, arrayListOf())
-        drinkWine.value = DrinkWine(0, false, "-", 0, 0, 0, false,
+        drinkWine.value = DrinkWine(0, false, "-", 3, 3, 3, false,
                                      3, "", "", arrayListOf(), 3, 3, 3, 3)
         drinkBeer.value = DrinkBeer(0, false, "-", "", 3, "", 3, 3,
                                       3, 3, 3, "", 3, 3, 3,
@@ -73,6 +73,7 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     }
 
     fun insertDrink(){
+        //
         postingRepo.insert(drink.value!!)
     }
 

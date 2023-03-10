@@ -72,11 +72,11 @@ class DrinkPostingMedia : Fragment() {
 //        var drinkType = vm.drink.value!!.drinkType
 //
 //        if (drinkType == "위스키"){
-//            findNavController().navigate(R.id.drink_posting_detail_whiskey)
+//            findNavController().navigate(R.id.drinkPostingDetailWhiskey)
 //        }else if (drinkType == "와인"){
-//            findNavController().navigate(R.id.drink_posting_detail_wine)
+//            findNavController().navigate(R.id.drinkPostingDetailWine)
 //        }else if (drinkType == "맥주"){
-//            findNavController().navigate(R.id.drink_posting_detail_beer)
+//            findNavController().navigate(R.id.drinkPostingDetailBeer)
 //        }else{
             findNavController().navigate(R.id.drinkPostingDetail)
 //        }
