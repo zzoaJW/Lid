@@ -101,8 +101,7 @@
                     android:layout_marginTop="50dp"
                     android:numStars="5"
                     android:rating="@={vm.drink.drinkRating}"
-                    android:progressBackgroundTint="@color/font_gray"
-                    android:progressTint="@color/lime"
+                    android:theme="@style/RatingBar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/beer_detail_layout" />
