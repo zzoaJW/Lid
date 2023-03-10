@@ -22,10 +22,34 @@
         <action
             android:id="@+id/action_drinkPostingMedia_to_drinkPostingDetail"
             app:destination="@id/drinkPostingDetail" />
+        <action
+            android:id="@+id/action_drinkPostingMedia_to_drinkPostingDetailWhiskey"
+            app:destination="@id/drinkPostingDetailWhiskey" />
+        <action
+            android:id="@+id/action_drinkPostingMedia_to_drinkPostingDetailWine"
+            app:destination="@id/drinkPostingDetailWine" />
+        <action
+            android:id="@+id/action_drinkPostingMedia_to_drinkPostingDetailBeer"
+            app:destination="@id/drinkPostingDetailBeer" />
     </fragment>
     <fragment
         android:id="@+id/drinkPostingDetail"
         android:name="com.z0o0a.lid.view.DrinkPostingDetail"
         android:label="drink_posting_detail"
         tools:layout="@layout/drink_posting_detail"/>
+    <fragment
+        android:id="@+id/drinkPostingDetailWhiskey"
+        android:name="com.z0o0a.lid.DrinkPostingDetailWhiskey"
+        android:label="DrinkPostingDetailWhiskey"
+        tools:layout="@layout/drink_posting_detail_whiskey"/>
+    <fragment
+        android:id="@+id/drinkPostingDetailWine"
+        android:name="com.z0o0a.lid.DrinkPostingDetailWine"
+        android:label="DrinkPostingDetailWine"
+        tools:layout="@layout/drink_posting_detail_wine"/>
+    <fragment
+        android:id="@+id/drinkPostingDetailBeer"
+        android:name="com.z0o0a.lid.DrinkPostingDetailBeer"
+        android:label="DrinkPostingDetailBeer"
+        tools:layout="@layout/drink_posting_detail_beer"/>
 </navigation>

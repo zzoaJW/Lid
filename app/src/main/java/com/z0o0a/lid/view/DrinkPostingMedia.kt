@@ -69,17 +69,17 @@ class DrinkPostingMedia : Fragment() {
 
 
     private fun goPostingTextPerType(){
-//        var drinkType = vm.drink.value!!.drinkType
-//
-//        if (drinkType == "위스키"){
-//            findNavController().navigate(R.id.drinkPostingDetailWhiskey)
-//        }else if (drinkType == "와인"){
-//            findNavController().navigate(R.id.drinkPostingDetailWine)
-//        }else if (drinkType == "맥주"){
-//            findNavController().navigate(R.id.drinkPostingDetailBeer)
-//        }else{
+        var drinkType = vm.drink.value!!.drinkType
+
+        if (drinkType == "위스키"){
+            findNavController().navigate(R.id.drinkPostingDetailWhiskey)
+        }else if (drinkType == "와인"){
+            findNavController().navigate(R.id.drinkPostingDetailWine)
+        }else if (drinkType == "맥주"){
+            findNavController().navigate(R.id.drinkPostingDetailBeer)
+        }else{
             findNavController().navigate(R.id.drinkPostingDetail)
-//        }
+        }
     }
 
 }
