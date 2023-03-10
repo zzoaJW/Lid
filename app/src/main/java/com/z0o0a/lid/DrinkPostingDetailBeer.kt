@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -41,6 +42,8 @@ class DrinkPostingDetailBeer : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setDrinkImg()
 
         binding.btnBeerBack.setOnClickListener {
             findNavController().navigate(R.id.drinkPostingMedia)
@@ -85,6 +88,16 @@ class DrinkPostingDetailBeer : Fragment() {
             cancelConfirm()
         }
 
+    }
+
+    private fun setDrinkImg(){
+        val drinkImg = vm.drink.value!!.drinkImg
+
+        if(drinkImg == null){
+            binding.postingBeerImg.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.bottle))
+        }else{
+            binding.postingBeerImg.setImageBitmap(drinkImg)
+        }
     }
 
     private fun hideDetail(){
