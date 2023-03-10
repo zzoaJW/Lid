@@ -22,6 +22,7 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
     // 술 종류마다 다른 정보 입력 받기
 
     val drink = MutableLiveData<Drink>()
+
     val drinkWhiskey = MutableLiveData<DrinkWhiskey>()
     val drinkWine = MutableLiveData<DrinkWine>()
     val drinkBeer = MutableLiveData<DrinkBeer>()
@@ -68,12 +69,11 @@ class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
             0 -> drink.value!!.drinkType = "위스키"
             1 -> drink.value!!.drinkType = "와인"
             2 -> drink.value!!.drinkType = "맥주"
-            3 -> drink.value!!.drinkType = "기타"
+            3 -> drink.value!!.drinkType = ""
         }
     }
 
     fun insertDrink(){
-        //
         postingRepo.insert(drink.value!!)
     }
 

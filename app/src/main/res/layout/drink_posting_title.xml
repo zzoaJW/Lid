@@ -125,6 +125,7 @@
             android:gravity="center"
             android:singleLine="true"
             android:hint="종류를 작성해주세요"
+            android:text="@={vm.drink.drinkType}"
             android:textColorHint="@color/font_gray"
             android:textSize="15dp"
             android:background="@drawable/edittext_background"

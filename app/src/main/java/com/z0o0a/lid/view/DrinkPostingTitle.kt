@@ -31,6 +31,8 @@ class DrinkPostingTitle : Fragment() {
         setEngNameFilter()
         setKrNameFilter()
 
+        setOtherTypeVisible()
+
         binding.btnNext.setOnClickListener {
             if(vm.drink.value!!.drinkEngName == "" && vm.drink.value!!.drinkKrName == ""){  // 이름 null
                 Toast.makeText(requireContext(), "이름을 작성해주세요.", Toast.LENGTH_SHORT).show()
@@ -75,5 +77,24 @@ class DrinkPostingTitle : Fragment() {
         }
 
         binding.inputDrinkKrName.filters = arrayOf(krNameFilter)
+    }
+
+    private fun setOtherTypeVisible(){
+        binding.radioGroupDrinkType.setOnCheckedChangeListener { radioGroup, radioButtonid ->
+            when(radioButtonid){
+                R.id.radio_btn_wiskey -> {
+                    binding.editTxtEtcType.visibility = View.INVISIBLE
+                }
+                R.id.radio_btn_wine -> {
+                    binding.editTxtEtcType.visibility = View.INVISIBLE
+                }
+                R.id.radio_btn_beer -> {
+                    binding.editTxtEtcType.visibility = View.INVISIBLE
+                }
+                R.id.radio_btn_etc -> {
+                    binding.editTxtEtcType.visibility = View.VISIBLE
+                }
+            }
+        }
     }
 }
