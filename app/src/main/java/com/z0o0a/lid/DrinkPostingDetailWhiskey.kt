@@ -5,75 +5,62 @@ import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkPostingDetailWhiskeyBinding
 import com.z0o0a.lid.model.PostingDrinkSingleton
 import com.z0o0a.lid.repository.DrinkDatabase
+import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class DrinkPostingDetailWhiskey : AppCompatActivity() {
+class DrinkPostingDetailWhiskey : Fragment() {
     private lateinit var binding: DrinkPostingDetailWhiskeyBinding
+    private val vm: DrinkPostingVM by activityViewModels()
 
-    var whShort = false
-
-    var drinkImg : Bitmap? = null
-    var drinkEngName = ""
-    var drinkKrName = ""
-    var drinkType = ""
-
-    var whId : Long = 0
-    var whType = "-" // 소분류 (일단 다 -로 저장)
-
-    var whColors = ""
     val whNoses : MutableList<String> = mutableListOf()
     val whPalates : MutableList<String> = mutableListOf()
-    var whCharSweet = 3
-    var whCharSpicy = 3
-    var whCharBody = 3
     val whFinishs : MutableList<String> = mutableListOf()
 
-    var whRating = 0f
-    var whOverallStr = ""
-    var whRegion = ""
-    var whPrice = ""
-
-    var whPlace = ""
-    var whKeepDate = ""
-    var whPostingDate = ""
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DrinkPostingDetailWhiskeyBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        binding.vm = vm
+        binding.lifecycleOwner = requireActivity()
+        return binding.root
+    }
 
-        getSingletonValues()
-        setSingletonValuesToUI()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setDrinkImg()
 
         binding.btnWhiskeyBack.setOnClickListener {
-            finish()
+            findNavController().navigate(R.id.drinkPostingMedia)
         }
 
-        binding.btnWhiskeyCancel.setOnClickListener {
-            cancelConfirm()
+        binding.btnWhiskeyDetail.setOnClickListener {
+            hideWhDetail()
         }
 
         binding.btnWhiskeyColor.setOnClickListener {
             showColorDialog()
         }
+
 
         binding.whiskeyNoseChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
             whNoses.clear()
@@ -103,131 +90,97 @@ class DrinkPostingDetailWhiskey : AppCompatActivity() {
         }
 
 
-        binding.btnWhiskeyDetail.setOnClickListener {
-            hideWhDetail()
-        }
-
         binding.switchWhiskeyKeep.setOnClickListener {
-            if (binding.txtWhiskeyKeep.isVisible) {
-                binding.txtWhiskeyKeep.visibility = View.INVISIBLE
-                binding.whiskeyKeepDate.visibility = View.VISIBLE
-            } else {
-                binding.whiskeyKeepDate.text = "개봉일 선택"
-                binding.whiskeyKeepDate.visibility = View.INVISIBLE
-                binding.txtWhiskeyKeep.visibility = View.VISIBLE
-            }
+            setDatePickerVisible()
         }
 
         binding.whiskeyKeepDate.setOnClickListener {
-            var dateString = ""
+            showDatePickerDialog()
+        }
 
-            val cal = Calendar.getInstance()    //캘린더뷰 만들기
-            val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                dateString = "${year}.${month+1}.${dayOfMonth}"
-                binding.whiskeyKeepDate.text = dateString
-            }
-            DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(
-                Calendar.DAY_OF_MONTH)).show()
+
+        binding.btnWhiskeyCancel.setOnClickListener {
+            cancelConfirm()
         }
 
         binding.btnWhiskeyPosting.setOnClickListener {
-            getCharacters()
-            getOverallEtc()
+            try{
+                saveDrink()
+                Toast.makeText(requireContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
-            saveWhiskey()
-            saveDrink()
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
 
-
-            Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
-
-            intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+                activity?.finish()
+            }catch (e:Exception){
+                Toast.makeText(requireContext(), "저장에 실패하였습니다. 관리자에 문의해주세요.", Toast.LENGTH_SHORT).show()
+            }
         }
 
-    }
-
-    private fun cancelConfirm(){
-        AlertDialog.Builder(this)
-            .setTitle("작성을 취소하시겠습니까?")
-            .setPositiveButton("네", object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
-                }
-            })
-            .setNegativeButton("아니오", object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    dialog.dismiss()
-                }
-            })
-            .create()
-            .show()
     }
 
     private fun hideWhDetail(){
         if (binding.detailLayout.visibility == View.VISIBLE) {
-            whShort = true
+            vm.drinkWhiskey.value!!.whShort = true
             binding.detailLayout.visibility = View.GONE
-            binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#E0F14E"))
         } else{
-            whShort = false
+            vm.drinkWhiskey.value!!.whShort = false
             binding.detailLayout.visibility = View.VISIBLE
-            binding.btnWhiskeyDetail.setTextColor(Color.parseColor("#CDCDCD"))
+        }
+    }
+
+    private fun setDrinkImg(){
+        val drinkImg = vm.drink.value!!.drinkImg
+
+        if(drinkImg == null){
+            binding.postingWhiskeyImg.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.bottle))
+        }else{
+            binding.postingWhiskeyImg.setImageBitmap(drinkImg)
         }
     }
 
     private fun showColorDialog(){
         MaterialColorPickerDialog
-            .Builder(this) // Pass Activity Instance
+            .Builder(requireContext()) // Pass Activity Instance
             .setTitle("") // Dialog 제목
             .setColorShape(ColorShape.SQAURE) // 컬러칩 모양
             .setColors(resources.getStringArray(R.array.whiskey_colors)) // 컬러 구성
 //                .setDefaultColor("#FCEE97") // Pass Default Color
             .setColorListener { color, colorHex ->
                 binding.btnWhiskeyColor.setBackgroundColor(colorHex.toColorInt())
-                whColors = colorHex
+                vm.drinkWhiskey.value!!.whColor = colorHex
             }
             .show()
     }
 
-    private fun getCharacters(){
-        whCharSweet = binding.whiskeySweet.progress
-        whCharSpicy = binding.whiskeySpicy.progress
-        whCharBody = binding.whiskeyBody.progress
+    // TODO : data binding으로 해결하기
+    private fun setWhNosePalateFinish(){
+        vm.drinkWhiskey.value!!.whNose = whNoses
+        vm.drinkWhiskey.value!!.whPalate = whPalates
+        vm.drinkWhiskey.value!!.whFinish = whFinishs
     }
 
-    private fun getOverallEtc(){
-        whRating = binding.whiskeyRatingBar.rating
-
-        whOverallStr = binding.whiskeyOverallStr.text.toString()
-        if (whOverallStr == "") {
-            whOverallStr = "-"
+    private fun setDatePickerVisible(){
+        if (binding.txtWhiskeyKeep.isVisible) {
+            binding.txtWhiskeyKeep.visibility = View.INVISIBLE
+            binding.whiskeyKeepDate.visibility = View.VISIBLE
+        } else {
+            binding.txtWhiskeyKeep.visibility = View.VISIBLE
+            binding.whiskeyKeepDate.visibility = View.INVISIBLE
         }
-
-        whRegion = binding.whiskeyRegion.text.toString()
-        if (whRegion == "") {
-            whRegion = "-"
-        }
-
-        whPrice = binding.whiskeyPrice.text.toString()
-        if (whPrice == "") {
-            whPrice = "-"
-        }
-
-        whPlace = binding.whiskeyPlace.text.toString()
-        if (whPlace == "") {
-            whPlace = "-"
-        }
-
-        whKeepDate = binding.whiskeyKeepDate.text.toString()
-        if (whKeepDate == "개봉일 선택") {
-            whKeepDate = "보관 안함"
-        }
-
-        whPostingDate = getCurrentDate()
     }
 
-    fun getCurrentDate(): String {
+    private fun showDatePickerDialog(){
+        val cal = Calendar.getInstance()    //캘린더뷰 만들기
+        val dateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            val dateString = "${year}.${month+1}.${dayOfMonth}"
+            binding.whiskeyKeepDate.text = dateString
+        }
+        DatePickerDialog(requireContext(), dateSetListener, cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH)).show()
+    }
+
+
+    private fun getCurrentDate(): String {
         val now = System.currentTimeMillis()
         val y = SimpleDateFormat("yyyy", Locale.KOREAN).format(now).toInt()
         val m = SimpleDateFormat("MM", Locale.KOREAN).format(now).toInt()
@@ -236,71 +189,27 @@ class DrinkPostingDetailWhiskey : AppCompatActivity() {
         return "${y}.${m}.${d}"
     }
 
-    private fun getSingletonValues(){
-        val postingSingleton = PostingDrinkSingleton.getInstance(applicationContext)
-
-        drinkImg = postingSingleton?.drinkImg
-        drinkEngName = postingSingleton?.drinkEngName.toString()
-        drinkKrName = postingSingleton?.drinkKrName.toString()
-        drinkType = postingSingleton?.drinkType.toString()
-
-    }
-
-    private fun setSingletonValuesToUI(){
-        binding.postingWhiskeyImg.setImageBitmap(drinkImg)
-        binding.postingWhiskeyEngName.text = drinkEngName
-        binding.postingWhiskeyKrName.text = drinkKrName
-        binding.postingWhiskeyType.text = drinkType
-    }
-
-    private fun saveWhiskey(){
-        val run : Runnable = Runnable {
-            var drinkWhiskey = DrinkWhiskey(0,
-                whShort,
-                whType,
-                whColors,
-                whNoses,
-                whPalates,
-                whCharSweet,
-                whCharSpicy,
-                whCharBody,
-                whFinishs
-            )
-
-            val db = DrinkDatabase.getInstance(applicationContext)
-            var returnWhId = db!!.drinkDao().insertDrinkWhiskey(drinkWhiskey)
-
-            whId = returnWhId
-        }
-
-        val t = Thread(run)
-        t.start()
-
-        try {
-            t.join()
-        }catch (e : InterruptedException){
-            Log.d("위스키 저장","실패")
-        }
-    }
-
     private fun saveDrink(){
-        Thread(Runnable {
-            var newDrink = Drink(0,
-                drinkImg,
-                drinkEngName,
-                drinkKrName,
-                drinkType,
-                whId,
-                whOverallStr,
-                whRating,
-                whRegion,
-                whPrice,
-                whKeepDate,
-                whPlace,
-                whPostingDate)
+        setWhNosePalateFinish()
+        vm.drink.value!!.drinkPostingDate = getCurrentDate()
 
-            val db = DrinkDatabase.getInstance(applicationContext)
-            db!!.drinkDao().insertDrink(newDrink)
-        }).start()
+        vm.insertDrinkWhiskey()
+        vm.insertDrink()
+    }
+
+    private fun cancelConfirm(){
+        AlertDialog.Builder(requireContext())
+            .setTitle("작성을 취소하시겠습니까?")
+            .setPositiveButton("네") { dialog, which ->
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+            }
+            .setNegativeButton("아니오", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    dialog.dismiss()
+                }
+            })
+            .create()
+            .show()
     }
 }
