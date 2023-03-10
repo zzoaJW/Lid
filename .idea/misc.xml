@@ -27,7 +27,9 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.38018646240234377" />
         <entry key="app/src/main/res/layout/drink_info.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/drink_posting.xml" value="0.29266473679315474" />
-        <entry key="app/src/main/res/layout/drink_posting_detail.xml" value="0.20878623188405798" />
+        <entry key="app/src/main/res/layout/drink_posting_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/drink_posting_detail_whiskey.xml" value="0.1340728759765625" />
+        <entry key="app/src/main/res/layout/drink_posting_detail_wine.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/drink_posting_guide.xml" value="0.18478260869565216" />
         <entry key="app/src/main/res/layout/drink_posting_host.xml" value="0.15476190476190477" />
         <entry key="app/src/main/res/layout/drink_posting_img.xml" value="0.28377532958984375" />

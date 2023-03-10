@@ -1,891 +1,906 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/lid_background">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <data>
+        <variable
+            name="vm"
+            type="com.z0o0a.lid.viewmodel.DrinkPostingVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/lid_background">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:animateLayoutChanges="true">
-
-            <ImageButton
-                android:id="@+id/btn_wine_back"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="#00ff0000"
-                android:padding="10dp"
-                android:scaleType="fitCenter"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/back" />
-
-            <TextView
-                android:id="@+id/txt_wi_overall_str"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:text="총평"
-                android:textColor="@color/font_default"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/post_w_rating_bar" />
-
-            <EditText
-                android:id="@+id/wi_overall_str"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:minHeight="300dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
-                android:background="@drawable/edittext_background"
-                android:gravity="top"
-                android:padding="15dp"
-                android:textColor="@color/font_default"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_wi_overall_str" />
-
-            <EditText
-                android:id="@+id/wine_place"
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/font_gray"
-                android:gravity="left"
-                android:hint="시음 장소"
-                android:maxLength="20"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColor="@color/font_default"
-                android:textColorHint="@color/font_gray"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_wine_place"
-                app:layout_constraintStart_toEndOf="@+id/img_wine_place"
-                app:layout_constraintTop_toTopOf="@+id/img_wine_place" />
-
-            <ImageView
-                android:id="@+id/img_wine_place"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="10dp"
-                app:layout_constraintStart_toStartOf="@+id/img_wine_region"
-                app:layout_constraintTop_toBottomOf="@+id/img_wine_price"
-                app:srcCompat="@drawable/place" />
-
-            <RatingBar
-                android:id="@+id/post_w_rating_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:numStars="5"
-                android:progressBackgroundTint="@color/font_gray"
-                android:progressTint="@color/lime"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wine_detail_layout" />
-
-            <ImageView
-                android:id="@+id/posting_wine_img"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_wine_back"
-                app:srcCompat="@drawable/bottle" />
-
-            <TextView
-                android:id="@+id/posting_wine_kr_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="한글 술 이름"
-                android:textColor="@color/font_default"
-                app:layout_constraintBottom_toBottomOf="@+id/posting_wine_img"
-                app:layout_constraintStart_toEndOf="@+id/posting_wine_img"
-                app:layout_constraintTop_toTopOf="@+id/posting_wine_img" />
-
-            <TextView
-                android:id="@+id/posting_wine_eng_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="English Alcohol Name"
-                android:textColor="@color/font_default"
-                app:layout_constraintBottom_toTopOf="@+id/posting_wine_kr_name"
-                app:layout_constraintStart_toStartOf="@+id/posting_wine_kr_name" />
-
-            <TextView
-                android:id="@+id/posting_wine_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="술 종류"
-                android:textColor="@color/font_gray"
-                android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/posting_wine_kr_name"
-                app:layout_constraintTop_toBottomOf="@+id/posting_wine_kr_name" />
-
-            <Switch
-                android:id="@+id/switch_wine_keep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:thumbTint="@color/black"
-                android:trackTint="@color/black"
-                app:layout_constraintStart_toStartOf="@+id/img_wine_place"
-                app:layout_constraintTop_toBottomOf="@+id/img_wine_place" />
-
-            <TextView
-                android:id="@+id/txt_wine_keep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="개봉 후 보관 안함"
-                android:textColor="@color/font_default"
-                app:layout_constraintBottom_toBottomOf="@+id/switch_wine_keep"
-                app:layout_constraintStart_toEndOf="@+id/switch_wine_keep"
-                app:layout_constraintTop_toTopOf="@+id/switch_wine_keep" />
-
-            <Button
-                android:id="@+id/wine_keep_date"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:background="#00ff0000"
-                android:text="개봉일 선택"
-                android:visibility="invisible"
-                android:textColor="@color/font_default"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@+id/switch_wine_keep"
-                app:layout_constraintStart_toEndOf="@+id/switch_wine_keep"
-                app:layout_constraintTop_toTopOf="@+id/switch_wine_keep" />
-
-            <ImageView
-                android:id="@+id/img_wine_price"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="10dp"
-                app:layout_constraintStart_toStartOf="@+id/img_wine_region"
-                app:layout_constraintTop_toBottomOf="@+id/img_wine_region"
-                app:srcCompat="@drawable/won" />
-
-            <EditText
-                android:id="@+id/wine_price"
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/font_gray"
-                android:gravity="left"
-                android:hint="가격"
-                android:maxLength="20"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColor="@color/font_default"
-                android:textColorHint="@color/font_gray"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_wine_price"
-                app:layout_constraintStart_toEndOf="@+id/img_wine_price"
-                app:layout_constraintTop_toTopOf="@+id/img_wine_price" />
-
-            <ImageView
-                android:id="@+id/img_wine_region"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wi_overall_str"
-                app:srcCompat="@drawable/world" />
-
-            <EditText
-                android:id="@+id/wine_region"
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/font_gray"
-                android:gravity="left"
-                android:hint="생산 국가 / 지역"
-                android:maxLength="20"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:textColor="@color/font_default"
-                android:textColorHint="@color/font_gray"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_wine_region"
-                app:layout_constraintStart_toEndOf="@+id/img_wine_region"
-                app:layout_constraintTop_toTopOf="@+id/img_wine_region" />
-
-            <Button
-                android:id="@+id/btn_wine_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:background="#00000000"
-                android:text="short"
-                android:textStyle="bold"
-                android:textColor="@color/font_gray"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_wine_back"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_wine_back" />
-
-            <View
-                android:id="@+id/view3001"
-                android:layout_width="0dp"
-                android:layout_height="12dp"
-                android:layout_marginTop="30dp"
-                android:background="@color/space_separate_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/posting_wine_img" />
-
-            <View
-                android:id="@+id/view30023"
-                android:layout_width="1dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/switch_wine_keep" />
-
-            <Button
-                android:id="@+id/btn_wine_posting"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/black"
-                android:text="등록"
-                app:layout_constraintBottom_toBottomOf="@+id/view30023"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/view30023"
-                app:layout_constraintTop_toTopOf="@+id/view30023" />
-
-            <Button
-                android:id="@+id/btn_wine_cancel"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/font_gray"
-                android:text="취소"
-                app:layout_constraintBottom_toBottomOf="@+id/view30023"
-                app:layout_constraintEnd_toStartOf="@+id/view30023"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view30023" />
+            android:overScrollMode="never">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/wine_detail_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/view3001">
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true">
 
-                <View
-                    android:id="@+id/view3003"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="40dp"
-                    android:background="@color/space_separate_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                <ImageButton
+                    android:id="@+id/btn_wine_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#00ff0000"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_nose_chip_group" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back" />
 
-                <View
-                    android:id="@+id/view3000"
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="40dp"
-                    android:background="@color/space_separate_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                <TextView
+                    android:id="@+id/txt_wi_overall_str"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="총평"
+                    android:textColor="@color/font_default"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_rim_layout" />
+                    app:layout_constraintTop_toBottomOf="@+id/post_w_rating_bar" />
+
+                <EditText
+                    android:id="@+id/wi_overall_str"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="300dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/edittext_background"
+                    android:gravity="top"
+                    android:padding="15dp"
+                    android:text="@={vm.drink.drinkOverallStr}"
+                    android:textColor="@color/font_default"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_wi_overall_str" />
+
+                <EditText
+                    android:id="@+id/wine_place"
+                    android:layout_width="200sp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/font_gray"
+                    android:gravity="left"
+                    android:hint="시음 장소"
+                    android:maxLength="20"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="@={vm.drink.drinkPlace}"
+                    android:textColor="@color/font_default"
+                    android:textColorHint="@color/font_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_wine_place"
+                    app:layout_constraintStart_toEndOf="@+id/img_wine_place"
+                    app:layout_constraintTop_toTopOf="@+id/img_wine_place" />
+
+                <ImageView
+                    android:id="@+id/img_wine_place"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/img_wine_region"
+                    app:layout_constraintTop_toBottomOf="@+id/img_wine_price"
+                    app:srcCompat="@drawable/place" />
+
+                <RatingBar
+                    android:id="@+id/post_w_rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:numStars="5"
+                    android:rating="@={vm.drink.drinkRating}"
+                    android:progressBackgroundTint="@color/font_gray"
+                    android:progressTint="@color/lime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wine_detail_layout" />
+
+                <ImageView
+                    android:id="@+id/posting_wine_img"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_wine_back"
+                    app:srcCompat="@drawable/bottle" />
+
+                <TextView
+                    android:id="@+id/posting_wine_kr_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@={vm.drink.drinkKrName}"
+                    android:textColor="@color/font_default"
+                    app:layout_constraintBottom_toBottomOf="@+id/posting_wine_img"
+                    app:layout_constraintStart_toEndOf="@+id/posting_wine_img"
+                    app:layout_constraintTop_toTopOf="@+id/posting_wine_img" />
+
+                <TextView
+                    android:id="@+id/posting_wine_eng_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@={vm.drink.drinkEngName}"
+                    android:textColor="@color/font_default"
+                    app:layout_constraintBottom_toTopOf="@+id/posting_wine_kr_name"
+                    app:layout_constraintStart_toStartOf="@+id/posting_wine_kr_name" />
+
+                <TextView
+                    android:id="@+id/posting_wine_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@={vm.drink.drinkType}"
+                    android:textColor="@color/font_gray"
+                    android:textSize="13dp"
+                    app:layout_constraintStart_toStartOf="@+id/posting_wine_kr_name"
+                    app:layout_constraintTop_toBottomOf="@+id/posting_wine_kr_name" />
+
+                <Switch
+                    android:id="@+id/switch_wine_keep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:thumbTint="@color/black"
+                    android:trackTint="@color/black"
+                    app:layout_constraintStart_toStartOf="@+id/img_wine_place"
+                    app:layout_constraintTop_toBottomOf="@+id/img_wine_place" />
+
+                <TextView
+                    android:id="@+id/txt_wine_keep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="개봉 후 보관 안함"
+                    android:textColor="@color/font_default"
+                    app:layout_constraintBottom_toBottomOf="@+id/switch_wine_keep"
+                    app:layout_constraintStart_toEndOf="@+id/switch_wine_keep"
+                    app:layout_constraintTop_toTopOf="@+id/switch_wine_keep" />
+
+                <Button
+                    android:id="@+id/wine_keep_date"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="#00ff0000"
+                    android:text="@={vm.drink.drinkKeepDate}"
+                    android:visibility="invisible"
+                    android:textColor="@color/font_default"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/switch_wine_keep"
+                    app:layout_constraintStart_toEndOf="@+id/switch_wine_keep"
+                    app:layout_constraintTop_toTopOf="@+id/switch_wine_keep" />
+
+                <ImageView
+                    android:id="@+id/img_wine_price"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/img_wine_region"
+                    app:layout_constraintTop_toBottomOf="@+id/img_wine_region"
+                    app:srcCompat="@drawable/won" />
+
+                <EditText
+                    android:id="@+id/wine_price"
+                    android:layout_width="200sp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/font_gray"
+                    android:gravity="left"
+                    android:hint="가격"
+                    android:maxLength="20"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="@={vm.drink.drinkPrice}"
+                    android:textColor="@color/font_default"
+                    android:textColorHint="@color/font_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_wine_price"
+                    app:layout_constraintStart_toEndOf="@+id/img_wine_price"
+                    app:layout_constraintTop_toTopOf="@+id/img_wine_price" />
+
+                <ImageView
+                    android:id="@+id/img_wine_region"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wi_overall_str"
+                    app:srcCompat="@drawable/world" />
+
+                <EditText
+                    android:id="@+id/wine_region"
+                    android:layout_width="200sp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/font_gray"
+                    android:gravity="left"
+                    android:hint="생산 국가 / 지역"
+                    android:maxLength="20"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="@={vm.drink.drinkRegion}"
+                    android:textColor="@color/font_default"
+                    android:textColorHint="@color/font_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_wine_region"
+                    app:layout_constraintStart_toEndOf="@+id/img_wine_region"
+                    app:layout_constraintTop_toTopOf="@+id/img_wine_region" />
+
+                <Button
+                    android:id="@+id/btn_wine_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:background="#00000000"
+                    android:text="short"
+                    android:textStyle="bold"
+                    android:textColor="@color/font_gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_wine_back"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_wine_back" />
 
                 <View
-                    android:id="@+id/view3005"
+                    android:id="@+id/view3001"
                     android:layout_width="0dp"
                     android:layout_height="12dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="30dp"
                     android:background="@color/space_separate_gray"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                    app:layout_constraintTop_toBottomOf="@+id/posting_wine_img" />
 
-                <TextView
-                    android:id="@+id/txt_wine_appearance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
-                    android:text="외관"
-                    android:textColor="@color/font_default"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txt_wine_nose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
-                    android:text="향"
-                    android:textColor="@color/font_default"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view3000" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_palate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
-                    android:text="맛"
-                    android:textColor="@color/font_default"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view3003" />
-
-                <TextView
-                    android:id="@+id/txt_wine_appearance2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Appearance"
-                    android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_wine_appearance"
-                    app:layout_constraintStart_toEndOf="@+id/txt_wine_appearance" />
-
-                <TextView
-                    android:id="@+id/txt_wine_nose2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Nose"
-                    android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_wine_nose"
-                    app:layout_constraintStart_toEndOf="@+id/txt_wine_nose" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_palate2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="Palate"
-                    android:textColor="@color/font_gray"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_post_wi_palate"
-                    app:layout_constraintStart_toEndOf="@+id/txt_post_wi_palate" />
-
-                <com.google.android.material.chip.ChipGroup
-                    android:id="@+id/post_wi_nose_chip_group"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="30dp"
-                    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-                    app:chipSpacingHorizontal="15dp"
+                <View
+                    android:id="@+id/view30023"
+                    android:layout_width="1dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="50dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_wine_nose">
+                    app:layout_constraintTop_toBottomOf="@+id/switch_wine_keep" />
 
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/wi_nose_chip_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="과일"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/wi_nose_chip_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="꽃"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/wi_nose_chip_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="나무"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/wi_nose_chip_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checkable="true"
-                        android:text="흙"
-                        android:textColor="@color/font_default"
-                        app:chipMinTouchTargetSize="40dp" />
-
-                </com.google.android.material.chip.ChipGroup>
-
-                <SeekBar
-                    android:id="@+id/post_wi_brightness"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <Button
+                    android:id="@+id/btn_wine_posting"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
+                    android:layout_height="0dp"
+                    android:background="@color/black"
+                    android:text="등록"
+                    app:layout_constraintBottom_toBottomOf="@+id/view30023"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/txt_post_wi_brightness"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_clarity" />
+                    app:layout_constraintStart_toEndOf="@+id/view30023"
+                    app:layout_constraintTop_toTopOf="@+id/view30023" />
 
-                <SeekBar
-                    android:id="@+id/post_wi_sweet"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <Button
+                    android:id="@+id/btn_wine_cancel"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/txt_post_wi_sweet"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_post_wi_palate" />
-
-                <SeekBar
-                    android:id="@+id/post_wi_body"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_sweet"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_acidity" />
-
-                <SeekBar
-                    android:id="@+id/post_wi_acidity"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_sweet"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_sweet" />
-
-                <SeekBar
-                    android:id="@+id/post_wi_tannin"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_sweet"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_body" />
-
-                <SeekBar
-                    android:id="@+id/post_wi_clarity"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_brightness"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_brightness"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_wine_appearance" />
-
-                <SeekBar
-                    android:id="@+id/post_wi_tear"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/chip_background"
-                    android:indeterminateTint="@color/font_default"
-                    android:max="6"
-                    android:progress="3"
-                    android:progressTint="#00000000"
-                    android:thumbTint="@color/font_default"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_brightness"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_brightness"
-                    app:layout_constraintTop_toBottomOf="@+id/post_wi_brightness" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_sweet1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="드라이"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_sweet"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_sweet" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_clarity1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="깨끗"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_clarity"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_clarity" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_tear2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="높음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_tear"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_tear" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_brightness2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="어두움"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_brightness"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_brightness" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_acidity2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="높음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_acidity"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_acidity" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_tannin2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="많음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_tannin"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_tannin" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_acidity1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="낮음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_acidity"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_acidity" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_tannin1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="적음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_tannin"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_tannin" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_brightness1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="밝음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_brightness"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_brightness" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_clarity2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="탁함"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_clarity"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_clarity" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="가벼움"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_body"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_body" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_sweet2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="스위트"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_sweet"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_body2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="무거움"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_body"
-                    app:layout_constraintEnd_toEndOf="@+id/post_wi_body" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_clarity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:text="투명도"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_clarity"
+                    android:layout_height="0dp"
+                    android:background="@color/font_gray"
+                    android:text="취소"
+                    app:layout_constraintBottom_toBottomOf="@+id/view30023"
+                    app:layout_constraintEnd_toStartOf="@+id/view30023"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_clarity" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_brightness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="표면 밝기"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_brightness"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_clarity"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_brightness" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_tear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="눈물 점도"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_tear"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_clarity"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_tear" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_rim_variation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:text="림 변화"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_clarity"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_post_wi_tear" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_sweet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:text="당도"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_sweet"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_sweet" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_acidity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="산미"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_acidity"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_sweet"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_acidity" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_body"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="바디"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_body"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_sweet"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_body" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_tannin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="탄닌*"
-                    android:textColor="@color/font_default"
-                    android:textSize="14dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/post_wi_tannin"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_sweet"
-                    app:layout_constraintTop_toTopOf="@+id/post_wi_tannin" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="* 레드와인 한정"
-                    android:textColor="@color/font_gray"
-                    android:textSize="14dp"
-                    app:layout_constraintStart_toStartOf="@+id/txt_post_wi_tannin"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_post_wi_tannin" />
-
-                <TextView
-                    android:id="@+id/txt_post_wi_tear1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:text="낮음"
-                    android:textColor="@color/font_default"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toTopOf="@+id/post_wi_tear"
-                    app:layout_constraintStart_toStartOf="@+id/post_wi_tear" />
+                    app:layout_constraintTop_toTopOf="@+id/view30023" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/post_wi_rim_layout"
+                    android:id="@+id/wine_detail_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@+id/switch_post_wi_rim_variation"
-                    tools:layout_editor_absoluteX="-16dp">
+                    app:layout_constraintTop_toBottomOf="@id/view3001">
 
-                    <SeekBar
-                        android:id="@+id/post_wi_rim_area"
-                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    <View
+                        android:id="@+id/view3003"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="30dp"
-                        android:background="@drawable/chip_background"
-                        android:indeterminateTint="@color/font_default"
-                        android:max="6"
-                        android:progress="3"
-                        android:progressTint="#00000000"
-                        android:thumbTint="@color/font_default"
-                        app:layout_constraintBottom_toBottomOf="@+id/txt_post_wi_rim_area"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@color/space_separate_gray"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/txt_post_wi_rim_area"
-                        app:layout_constraintTop_toTopOf="@+id/txt_post_wi_rim_area" />
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_nose_chip_group" />
+
+                    <View
+                        android:id="@+id/view3000"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@color/space_separate_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_rim_layout" />
+
+                    <View
+                        android:id="@+id/view3005"
+                        android:layout_width="0dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@color/space_separate_gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
                     <TextView
-                        android:id="@+id/txt_post_wi_rim_area"
+                        android:id="@+id/txt_wine_appearance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="40dp"
-                        android:text="림 넓이"
+                        android:text="외관"
                         android:textColor="@color/font_default"
-                        android:textSize="14dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/txt_post_wi_rim_area1"
+                        android:id="@+id/txt_wine_nose"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:text="좁음"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="40dp"
+                        android:text="향"
                         android:textColor="@color/font_default"
-                        android:textSize="12dp"
-                        app:layout_constraintBottom_toTopOf="@+id/post_wi_rim_area"
-                        app:layout_constraintStart_toStartOf="@+id/post_wi_rim_area" />
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view3000" />
 
                     <TextView
-                        android:id="@+id/txt_post_wi_rim_area2"
+                        android:id="@+id/txt_post_wi_palate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="40dp"
+                        android:text="맛"
+                        android:textColor="@color/font_default"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view3003" />
+
+                    <TextView
+                        android:id="@+id/txt_wine_appearance2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Appearance"
+                        android:textColor="@color/font_gray"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_wine_appearance"
+                        app:layout_constraintStart_toEndOf="@+id/txt_wine_appearance" />
+
+                    <TextView
+                        android:id="@+id/txt_wine_nose2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Nose"
+                        android:textColor="@color/font_gray"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_wine_nose"
+                        app:layout_constraintStart_toEndOf="@+id/txt_wine_nose" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_palate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Palate"
+                        android:textColor="@color/font_gray"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_post_wi_palate"
+                        app:layout_constraintStart_toEndOf="@+id/txt_post_wi_palate" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/post_wi_nose_chip_group"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="30dp"
+                        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                        app:chipSpacingHorizontal="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_wine_nose">
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/wi_nose_chip_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:text="과일"
+                            android:textColor="@color/font_default"
+                            app:chipMinTouchTargetSize="40dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/wi_nose_chip_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:text="꽃"
+                            android:textColor="@color/font_default"
+                            app:chipMinTouchTargetSize="40dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/wi_nose_chip_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:text="나무"
+                            android:textColor="@color/font_default"
+                            app:chipMinTouchTargetSize="40dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/wi_nose_chip_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:text="흙"
+                            android:textColor="@color/font_default"
+                            app:chipMinTouchTargetSize="40dp" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <SeekBar
+                        android:id="@+id/post_wi_brightness"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiBrightness}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_post_wi_brightness"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_clarity" />
+
+                    <SeekBar
+                        android:id="@+id/post_wi_sweet"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="30dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiSweet}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_post_wi_sweet"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_post_wi_palate" />
+
+                    <SeekBar
+                        android:id="@+id/post_wi_body"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiBody}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_sweet"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_acidity" />
+
+                    <SeekBar
+                        android:id="@+id/post_wi_acidity"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiAcidity}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_sweet"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_sweet" />
+
+                    <SeekBar
+                        android:id="@+id/post_wi_tannin"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiTannin}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_sweet"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_body" />
+
+                    <SeekBar
+                        android:id="@+id/post_wi_clarity"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiClarity}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_brightness"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_brightness"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_wine_appearance" />
+
+                    <SeekBar
+                        android:id="@+id/post_wi_tear"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/chip_background"
+                        android:indeterminateTint="@color/font_default"
+                        android:max="6"
+                        android:progress="@={vm.drinkWine.wiTears}"
+                        android:progressTint="#00000000"
+                        android:thumbTint="@color/font_default"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_brightness"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_brightness"
+                        app:layout_constraintTop_toBottomOf="@+id/post_wi_brightness" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_sweet1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:text="넓음"
+                        android:text="드라이"
                         android:textColor="@color/font_default"
                         android:textSize="12dp"
-                        app:layout_constraintBottom_toTopOf="@+id/post_wi_rim_area"
-                        app:layout_constraintEnd_toEndOf="@+id/post_wi_rim_area" />
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_sweet"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_sweet" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_clarity1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="깨끗"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_clarity"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_clarity" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_tear2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="높음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_tear"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_tear" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_brightness2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="어두움"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_brightness"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_brightness" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_acidity2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="높음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_acidity"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_acidity" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_tannin2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="많음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_tannin"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_tannin" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_acidity1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="낮음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_acidity"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_acidity" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_tannin1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="적음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_tannin"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_tannin" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_brightness1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="밝음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_brightness"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_brightness" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_clarity2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="탁함"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_clarity"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_clarity" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="가벼움"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_body"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_body" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_sweet2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="스위트"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_sweet"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_sweet" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="무거움"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_body"
+                        app:layout_constraintEnd_toEndOf="@+id/post_wi_body" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_clarity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="투명도"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_clarity"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_clarity" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="표면 밝기"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_brightness"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_clarity"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_brightness" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_tear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="눈물 점도"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_tear"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_clarity"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_tear" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_rim_variation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="림 변화"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_clarity"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_post_wi_tear" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_sweet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="당도"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_sweet"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_sweet" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_acidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="산미"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_acidity"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_sweet"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_acidity" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="바디"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_body"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_sweet"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_body" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_tannin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="탄닌*"
+                        android:textColor="@color/font_default"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/post_wi_tannin"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_sweet"
+                        app:layout_constraintTop_toTopOf="@+id/post_wi_tannin" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="* 레드와인 한정"
+                        android:textColor="@color/font_gray"
+                        android:textSize="14dp"
+                        app:layout_constraintStart_toStartOf="@+id/txt_post_wi_tannin"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_post_wi_tannin" />
+
+                    <TextView
+                        android:id="@+id/txt_post_wi_tear1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="낮음"
+                        android:textColor="@color/font_default"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/post_wi_tear"
+                        app:layout_constraintStart_toStartOf="@+id/post_wi_tear" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/post_wi_rim_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/switch_post_wi_rim_variation"
+                        tools:layout_editor_absoluteX="-16dp">
+
+                        <SeekBar
+                            android:id="@+id/post_wi_rim_area"
+                            style="@style/Widget.AppCompat.SeekBar.Discrete"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginEnd="30dp"
+                            android:background="@drawable/chip_background"
+                            android:indeterminateTint="@color/font_default"
+                            android:max="6"
+                            android:progress="@={vm.drinkWine.wiRimArea}"
+                            android:progressTint="#00000000"
+                            android:thumbTint="@color/font_default"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_post_wi_rim_area"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/txt_post_wi_rim_area"
+                            app:layout_constraintTop_toTopOf="@+id/txt_post_wi_rim_area" />
+
+                        <TextView
+                            android:id="@+id/txt_post_wi_rim_area"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="40dp"
+                            android:text="림 넓이"
+                            android:textColor="@color/font_default"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txt_post_wi_rim_area1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="좁음"
+                            android:textColor="@color/font_default"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toTopOf="@+id/post_wi_rim_area"
+                            app:layout_constraintStart_toStartOf="@+id/post_wi_rim_area" />
+
+                        <TextView
+                            android:id="@+id/txt_post_wi_rim_area2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="넓음"
+                            android:textColor="@color/font_default"
+                            android:textSize="12dp"
+                            app:layout_constraintBottom_toTopOf="@+id/post_wi_rim_area"
+                            app:layout_constraintEnd_toEndOf="@+id/post_wi_rim_area" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Switch
+                        android:id="@+id/switch_post_wi_rim_variation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:thumbTint="@color/black"
+                        android:trackTint="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_post_wi_rim_variation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txt_post_wi_rim_variation" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <Switch
-                    android:id="@+id/switch_post_wi_rim_variation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="30dp"
-                    android:thumbTint="@color/black"
-                    android:trackTint="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@+id/txt_post_wi_rim_variation"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/txt_post_wi_rim_variation" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
