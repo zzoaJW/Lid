@@ -47,6 +47,7 @@ class DrinkPostingMedia : Fragment() {
             val cameraPermission = Manifest.permission.CAMERA
             val galleryPermission = Manifest.permission.READ_EXTERNAL_STORAGE
 
+            // TODO 카메라 권한 받았는데 인식 못하는 버그 수정
 //            if (result[cameraPermission] != true) {
 //                Toast.makeText(requireContext(), "카메라 권한을 허용해주세요.", Toast.LENGTH_SHORT).show()
 //            }
@@ -60,12 +61,12 @@ class DrinkPostingMedia : Fragment() {
 
 
         binding.btnGetCamera.setOnClickListener {
+            // TODO 카메라에서 이미지 촬영/가져오기 Repo 분리
             getCameraImg()
         }
 
         binding.btnGetImg.setOnClickListener {
-            // TODO (3-1) 갤러리에서 이미지 선택 [Repo -> (VM ->) View]
-            // TODO (3-2) 갤러리에서 이미지 가져오면 imageView 바꾸기 [View]
+            // TODO 갤러리에서 이미지 선택/가져오기 Repo 분리
             getGalleyImg()
         }
 
