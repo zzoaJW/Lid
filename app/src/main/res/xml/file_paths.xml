@@ -19,8 +19,4 @@
     <external-files-path
         name="external-files"
         path="."/>
-
-<!--    <external-path-->
-<!--        name="my_images"-->
-<!--        path="Android/data/com.z0o0a.lid/files/Pictures" />-->
 </paths>
