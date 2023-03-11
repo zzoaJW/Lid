@@ -60,12 +60,13 @@ class DrinkPostingMedia : Fragment() {
 
 
         binding.btnGetCamera.setOnClickListener {
-            getCameraPhoto()
+            getCameraImg()
         }
 
         binding.btnGetImg.setOnClickListener {
             // TODO (3-1) 갤러리에서 이미지 선택 [Repo -> (VM ->) View]
             // TODO (3-2) 갤러리에서 이미지 가져오면 imageView 바꾸기 [View]
+            getGalleyImg()
         }
 
         binding.btnBack2.setOnClickListener {
@@ -92,7 +93,7 @@ class DrinkPostingMedia : Fragment() {
         }
     }
 
-    private fun getCameraPhoto() {
+    private fun getCameraImg() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if(intent.resolveActivity(requireActivity().packageManager) != null){
             var photoFile = requireActivity().cacheDir
@@ -117,6 +118,14 @@ class DrinkPostingMedia : Fragment() {
                 startActivityForResult(intent, 200)
             }
         }
+    }
+
+    private fun getGalleyImg(){
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+
+        startActivityForResult(intent, 300)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -149,6 +158,15 @@ class DrinkPostingMedia : Fragment() {
                 Firebase.crashlytics.log(expt)
             }
 
+        }
+        else if(requestCode == 300 && data != null){
+            val selectedImg = data!!.data
+            val bitmap = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, selectedImg)
+
+            if(selectedImg != null){
+                binding.galleyPic.setImageBitmap(bitmap)
+                vm.drink.value!!.drinkImg = bitmap
+            }
         }
     }
 
