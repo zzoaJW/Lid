@@ -18,6 +18,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
 import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
 import com.z0o0a.lid.databinding.DrinkPostingDetailWineBinding
@@ -97,11 +98,11 @@ class DrinkPostingDetailWine : Fragment()  {
     private fun setDrinkImg(){
         val drinkImg = vm.drink.value!!.drinkImg
 
-        if(drinkImg == null){
-            binding.postingWineImg.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.bottle))
-        }else{
-            binding.postingWineImg.setImageBitmap(drinkImg)
-        }
+        Glide.with(this)
+            .load(drinkImg)
+            .error(R.drawable.bottle)
+            .fallback(R.drawable.bottle)
+            .into(binding.postingWineImg)
     }
 
     private fun hideWiDetail(){

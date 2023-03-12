@@ -18,6 +18,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.google.android.material.chip.Chip
@@ -134,11 +135,11 @@ class DrinkPostingDetailWhiskey : Fragment() {
     private fun setDrinkImg(){
         val drinkImg = vm.drink.value!!.drinkImg
 
-        if(drinkImg == null){
-            binding.postingWhiskeyImg.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.bottle))
-        }else{
-            binding.postingWhiskeyImg.setImageBitmap(drinkImg)
-        }
+        Glide.with(this)
+            .load(drinkImg)
+            .error(R.drawable.bottle)
+            .fallback(R.drawable.bottle)
+            .into(binding.postingWhiskeyImg)
     }
 
     private fun showColorDialog(){
@@ -194,6 +195,9 @@ class DrinkPostingDetailWhiskey : Fragment() {
     private fun saveDrink(){
         setWhNosePalateFinish()
         vm.drink.value!!.drinkPostingDate = getCurrentDate()
+
+        Log.d("위스키 확인", vm.drinkWhiskey.value.toString())
+        Log.d("드링크 확인", vm.drink.value.toString())
 
         vm.insertDrinkWhiskey()
         vm.insertDrink()

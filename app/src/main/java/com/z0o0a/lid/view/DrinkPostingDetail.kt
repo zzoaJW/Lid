@@ -13,6 +13,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.z0o0a.lid.MainActivity
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
@@ -65,17 +66,16 @@ class DrinkPostingDetail : Fragment() {
         binding.drinkKeepDate.setOnClickListener {
             showDatePickerDialog()
         }
-
     }
 
     private fun setDrinkImg(){
         val drinkImg = vm.drink.value!!.drinkImg
 
-        if(drinkImg == null){
-            binding.postingDrinkImg.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.bottle))
-        }else{
-            binding.postingDrinkImg.setImageBitmap(drinkImg)
-        }
+        Glide.with(this)
+            .load(drinkImg)
+            .error(R.drawable.bottle)
+            .fallback(R.drawable.bottle)
+            .into(binding.postingDrinkImg)
     }
 
     private fun showConfirmDialog(){
@@ -124,20 +124,5 @@ class DrinkPostingDetail : Fragment() {
         vm.drink.value!!.drinkPostingDate = getCurrentDate()
 
         vm.insertDrink()
-//        when(vm.drink.value!!.drinkType){
-//            "위스키" -> {
-//                vm.insertDrinkWhiskey()
-//                vm.insertDrink()
-//            }
-//            "와인" -> {
-//                vm.insertDrinkWine()
-//                vm.insertDrink()
-//            }
-//            "맥주" -> {
-//                vm.insertDrinkBeer()
-//                vm.insertDrink()
-//            }
-//            else -> vm.insertDrink()
-//        }
     }
 }

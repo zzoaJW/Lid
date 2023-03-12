@@ -17,6 +17,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.ktx.Firebase
 import com.z0o0a.lid.R
@@ -143,15 +144,19 @@ class DrinkPostingMedia : Fragment() {
                         ExifInterface.ORIENTATION_UNDEFINED
                     )
 
-                    var rotatedBitmap: Bitmap? = null
-                    rotatedBitmap = when (orientation) {
+                    val rotatedBitmap = when (orientation) {
                         ExifInterface.ORIENTATION_ROTATE_90 -> rotateImage(bitmap, 90f)
                         ExifInterface.ORIENTATION_ROTATE_180 -> rotateImage(bitmap, 180f)
                         ExifInterface.ORIENTATION_ROTATE_270 -> rotateImage(bitmap, 270f)
                         else -> bitmap
                     }
 
-                    binding.galleyPic.setImageBitmap(rotatedBitmap)
+                    Glide.with(this)
+                        .load(rotatedBitmap)
+                        .error(R.drawable.img_error)
+                        .fallback(R.drawable.img_error)
+                        .into(binding.galleyPic)
+
                     vm.drink.value!!.drinkImg = rotatedBitmap
                 }
             } catch (e: Exception) {
@@ -161,13 +166,17 @@ class DrinkPostingMedia : Fragment() {
 
         }
         else if(requestCode == 300 && data != null){
-            val selectedImg = data!!.data
+            val selectedImg = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, selectedImg)
 
-            if(selectedImg != null){
-                binding.galleyPic.setImageBitmap(bitmap)
-                vm.drink.value!!.drinkImg = bitmap
-            }
+            Glide.with(this)
+                .load(selectedImg)
+                .error(R.drawable.img_error)
+                .fallback(R.drawable.img_error)
+                .into(binding.galleyPic)
+
+            vm.drink.value!!.drinkImg = bitmap
+
         }
     }
 
