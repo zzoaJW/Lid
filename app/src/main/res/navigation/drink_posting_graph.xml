@@ -39,17 +39,17 @@
         tools:layout="@layout/drink_posting_detail"/>
     <fragment
         android:id="@+id/drinkPostingDetailWhiskey"
-        android:name="com.z0o0a.lid.DrinkPostingDetailWhiskey"
+        android:name="com.z0o0a.lid.view.DrinkPostingDetailWhiskey"
         android:label="DrinkPostingDetailWhiskey"
         tools:layout="@layout/drink_posting_detail_whiskey"/>
     <fragment
         android:id="@+id/drinkPostingDetailWine"
-        android:name="com.z0o0a.lid.DrinkPostingDetailWine"
+        android:name="com.z0o0a.lid.view.DrinkPostingDetailWine"
         android:label="DrinkPostingDetailWine"
         tools:layout="@layout/drink_posting_detail_wine"/>
     <fragment
         android:id="@+id/drinkPostingDetailBeer"
-        android:name="com.z0o0a.lid.DrinkPostingDetailBeer"
+        android:name="com.z0o0a.lid.view.DrinkPostingDetailBeer"
         android:label="DrinkPostingDetailBeer"
         tools:layout="@layout/drink_posting_detail_beer"/>
 </navigation>

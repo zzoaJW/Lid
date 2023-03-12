@@ -1,11 +1,9 @@
-package com.z0o0a.lid
+package com.z0o0a.lid.view
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -22,9 +20,9 @@ import com.bumptech.glide.Glide
 import com.github.dhaval2404.colorpicker.MaterialColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
 import com.google.android.material.chip.Chip
+import com.z0o0a.lid.MainActivity
+import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingDetailWhiskeyBinding
-import com.z0o0a.lid.model.PostingDrinkSingleton
-import com.z0o0a.lid.repository.DrinkDatabase
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
 import java.text.SimpleDateFormat
 import java.util.*
