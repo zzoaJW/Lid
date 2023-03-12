@@ -13,14 +13,6 @@ import com.z0o0a.lid.repository.DrinkPostingRepo
 import com.z0o0a.lid.repository.ReqPermissionCameraGallery
 
 class DrinkPostingVM(application: Application) : AndroidViewModel(application) {
-    // [ 이름 페이지 ]
-    // (1) 영어 이름 (2) 원하는 언어 이름 (3) 술 종류
-    // [ 촬영or이미지 페이지 ]
-    // (1) 촬영 화질 높이기 (2) 이미지 선택
-    // (3) 이미지 선택 안했을때 null로 저장하되 나중에 NullPoint예외 안나오게하는 방법 찾기 (예외 발생 안하고 기본 이미지 불러오는 방법)
-    // [ 나머지 정보 페이지 ]
-    // 술 종류마다 다른 정보 입력 받기
-
     val drink = MutableLiveData<Drink>()
 
     val drinkWhiskey = MutableLiveData<DrinkWhiskey>()

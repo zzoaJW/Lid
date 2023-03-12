@@ -76,6 +76,7 @@ class MainFragmentDrinks: Fragment() {
 
                 activity?.runOnUiThread {
                     Toast.makeText(activity?.applicationContext, "노트 불러오기를 실패했습니다. 관리자에 문의해주세요.", Toast.LENGTH_LONG).show()
+                    Log.d("[노트 불러오기 실패]", "message : " + e.message + "cause : " + e.cause)
                 }
             }
 
