@@ -16,7 +16,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
-import com.z0o0a.lid.MainActivity
+import com.z0o0a.lid.MainHost
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingDetailWineBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
@@ -79,7 +79,7 @@ class DrinkPostingDetailWine : Fragment()  {
                 saveDrink()
                 Toast.makeText(requireContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(requireContext(), MainActivity::class.java)
+                val intent = Intent(requireContext(), MainHost::class.java)
                 startActivity(intent)
 
                 activity?.finish()
@@ -168,7 +168,7 @@ class DrinkPostingDetailWine : Fragment()  {
             .setTitle("작성을 취소하시겠습니까?")
             .setPositiveButton("네", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
-                    val intent = Intent(requireContext(), MainActivity::class.java)
+                    val intent = Intent(requireContext(), MainHost::class.java)
                     startActivity(intent)
 
                     activity?.finish()

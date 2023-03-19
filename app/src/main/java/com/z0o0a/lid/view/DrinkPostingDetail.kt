@@ -3,7 +3,6 @@ package com.z0o0a.lid.view
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.z0o0a.lid.MainActivity
+import com.z0o0a.lid.MainHost
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.DrinkPostingDetailBinding
 import com.z0o0a.lid.viewmodel.DrinkPostingVM
@@ -50,7 +49,7 @@ class DrinkPostingDetail : Fragment() {
                 saveDrink()
                 Toast.makeText(requireContext(), "저장되었습니다.", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(requireContext(), MainActivity::class.java)
+                val intent = Intent(requireContext(), MainHost::class.java)
                 startActivity(intent)
 
                 activity?.finish()
@@ -82,7 +81,7 @@ class DrinkPostingDetail : Fragment() {
         AlertDialog.Builder(requireContext())
             .setTitle("작성을 취소하시겠습니까?")
             .setPositiveButton("네") { _, _ ->
-                val intent = Intent(requireContext(), MainActivity::class.java)
+                val intent = Intent(requireContext(), MainHost::class.java)
                 startActivity(intent)
             }
             .setNegativeButton("아니오") { dialog, _ ->

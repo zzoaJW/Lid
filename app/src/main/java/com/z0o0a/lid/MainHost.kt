@@ -3,14 +3,14 @@ package com.z0o0a.lid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.z0o0a.lid.databinding.ActivityMainBinding
+import com.z0o0a.lid.databinding.MainHostBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MainHost : AppCompatActivity() {
+    private lateinit var binding: MainHostBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = MainHostBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
             setOnNavigationItemSelectedListener {
                 when (it.itemId) {
                     R.id.item_calendar -> {
-                        changeFragment(MainFragmentCalendar())
+                        changeFragment(MainCalendar())
                     }
                     R.id.item_drinks -> {
-                        changeFragment(MainFragmentDrinks())
+                        changeFragment(MainDrinks())
                     }
                     R.id.item_user -> {
-                        changeFragment(MainFragmentUser())
+                        changeFragment(MainUser())
                     }
                 }
                 true

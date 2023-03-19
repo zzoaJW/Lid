@@ -10,20 +10,20 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.adapter.DrinkListAdapter
-import com.z0o0a.lid.databinding.MainFragmentDrinksBinding
+import com.z0o0a.lid.databinding.MainDrinksBinding
 import com.z0o0a.lid.repository.DrinkDatabase
 import com.z0o0a.lid.view.DrinkPostingHost
 import com.z0o0a.lid.view.DrinkPostingTitle
 
-class MainFragmentDrinks: Fragment() {
-    private lateinit var binding: MainFragmentDrinksBinding
+class MainDrinks: Fragment() {
+    private lateinit var binding: MainDrinksBinding
 
     private val recyclerviewData : MutableList<DrinkListData> = mutableListOf()
     private var adapter : DrinkListAdapter? = null
     private var allDrinkNum = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = MainFragmentDrinksBinding.inflate(inflater, container, false)
+        binding = MainDrinksBinding.inflate(inflater, container, false)
 
         getDrinks()
 

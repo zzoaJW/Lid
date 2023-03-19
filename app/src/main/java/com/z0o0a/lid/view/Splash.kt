@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.z0o0a.lid.MainActivity
+import com.z0o0a.lid.MainHost
 import com.z0o0a.lid.R
 import com.z0o0a.lid.databinding.SplashBinding
 
@@ -19,7 +19,7 @@ class Splash : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainHost::class.java)
             startActivity(intent)
             finish()
         }, 2000)

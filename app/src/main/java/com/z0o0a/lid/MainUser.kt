@@ -10,19 +10,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.data.*
-import com.z0o0a.lid.databinding.MainFragmentUserBinding
+import com.z0o0a.lid.databinding.MainUserBinding
 import com.z0o0a.lid.repository.DrinkDatabase
 import com.z0o0a.lid.view.OpenLicenseList
 import com.z0o0a.lid.view.UserLetter
 
 
-class MainFragmentUser: Fragment() {
-    private lateinit var binding: MainFragmentUserBinding
+class MainUser: Fragment() {
+    private lateinit var binding: MainUserBinding
 
     private val drinkNumOfTypeList : MutableList<DrinkNumOfType> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = MainFragmentUserBinding.inflate(inflater, container, false)
+        binding = MainUserBinding.inflate(inflater, container, false)
 
         // 일단 이렇게하구... 나중에 리팩토링할때 메소드로 빼기
         Thread(Runnable {

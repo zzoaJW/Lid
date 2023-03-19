@@ -11,20 +11,20 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.z0o0a.lid.adapter.DrinkListAdapter
-import com.z0o0a.lid.databinding.MainFragmentCalendarBinding
+import com.z0o0a.lid.databinding.MainCalendarBinding
 import com.z0o0a.lid.repository.DrinkDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainFragmentCalendar: Fragment() {
-    private lateinit var binding: MainFragmentCalendarBinding
+class MainCalendar: Fragment() {
+    private lateinit var binding: MainCalendarBinding
 
     private val recyclerviewData : MutableList<DrinkListData> = mutableListOf()
     private var adapter : DrinkListAdapter? = null
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = MainFragmentCalendarBinding.inflate(inflater, container, false)
+        binding = MainCalendarBinding.inflate(inflater, container, false)
 
         // 초기 세팅
         var today = getCurrentDate()

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainDrinks">
+
+    <fragment
+        android:id="@+id/mainDrinks"
+        android:name="com.z0o0a.lid.MainDrinks"
+        android:label="MainDrinks"
+        tools:layout="@layout/main_drinks">
+        <action
+            android:id="@+id/action_mainDrinks_to_mainUser"
+            app:destination="@id/mainUser" />
+        <action
+            android:id="@+id/action_mainDrinks_to_mainCalendar"
+            app:destination="@id/mainCalendar" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainCalendar"
+        android:name="com.z0o0a.lid.MainCalendar"
+        android:label="MainCalendar"
+        tools:layout="@layout/main_calendar"/>
+    <fragment
+        android:id="@+id/mainUser"
+        android:name="com.z0o0a.lid.MainUser"
+        android:label="MainUser"
+        tools:layout="@layout/main_user"/>
+</navigation>
